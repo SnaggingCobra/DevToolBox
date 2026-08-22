@@ -1,0 +1,404 @@
+🧰 DevToolBox — Project Blueprint
+1. Overall structure
+DevToolBox/
+│
+├── index.html                  ← Main homepage
+├── style.css                   ← Global styling
+├── script.js                   ← Homepage logic
+│
+├── assets/
+│   ├── icons/
+│   └── images/
+│
+├── tools/
+│   │
+│   ├── code/
+│   │   ├── json-formatter/
+│   │   │   ├── index.html
+│   │   │   ├── style.css
+│   │   │   └── script.js
+│   │   │
+│   │   ├── json-validator/
+│   │   ├── regex-tester/
+│   │   ├── diff-checker/
+│   │   └── markdown-preview/
+│   │
+│   ├── encoding/
+│   │   ├── base64/
+│   │   ├── url-encoder/
+│   │   └── jwt-decoder/
+│   │
+│   ├── generators/
+│   │   ├── uuid/
+│   │   ├── password/
+│   │   ├── random-string/
+│   │   └── qr-code/
+│   │
+│   ├── css/
+│   │   ├── color-converter/
+│   │   ├── gradient-generator/
+│   │   ├── box-shadow/
+│   │   ├── border-radius/
+│   │   ├── flexbox/
+│   │   └── grid-generator/
+│   │
+│   ├── converters/
+│   │   ├── timestamp/
+│   │   ├── px-rem/
+│   │   ├── aspect-ratio/
+│   │   └── file-size/
+│   │
+│   └── text/
+│       ├── case-converter/
+│       ├── word-counter/
+│       ├── duplicate-remover/
+│       └── lorem-ipsum/
+│
+├── external/
+│   ├── github/
+│   ├── mdn/
+│   ├── stackoverflow/
+│   ├── npm/
+│   ├── regex101/
+│   ├── codepen/
+│   └── devdocs/
+│
+└── README.md
+2. 🏠 Homepage
+
+The homepage is the central dashboard.
+
+Something like:
+
+┌──────────────────────────────────────────────────────┐
+│                                                      │
+│                    DevToolBox                        │
+│          Developer tools, all in one place           │
+│                                                      │
+│     ┌──────────────────────────────────────────┐     │
+│     │ 🔍 Search developer tools...             │     │
+│     └──────────────────────────────────────────┘     │
+│                                                      │
+├──────────────────────────────────────────────────────┤
+│                                                      │
+│  ⭐ Popular Tools                                    │
+│                                                      │
+│  ┌────────────┐ ┌────────────┐ ┌────────────┐       │
+│  │ JSON       │ │ Base64     │ │ UUID       │       │
+│  │ Formatter  │ │ Encoder    │ │ Generator  │       │
+│  └────────────┘ └────────────┘ └────────────┘       │
+│                                                      │
+│  💻 Code                                            │
+│  ┌────────────┐ ┌────────────┐ ┌────────────┐       │
+│  │ JSON       │ │ Regex      │ │ Diff       │       │
+│  │ Formatter  │ │ Tester     │ │ Checker    │       │
+│  └────────────┘ └────────────┘ └────────────┘       │
+│                                                      │
+│  🎨 CSS                                             │
+│  ┌────────────┐ ┌────────────┐ ┌────────────┐       │
+│  │ Gradient   │ │ Shadow     │ │ Flexbox    │       │
+│  │ Generator  │ │ Generator  │ │ Generator  │       │
+│  └────────────┘ └────────────┘ └────────────┘       │
+│                                                      │
+│  🔗 External Tools                                  │
+│  GitHub • MDN • npm • CodePen • Regex101             │
+│                                                      │
+└──────────────────────────────────────────────────────┘
+3. 🔎 Search system
+
+This is one of the most important features.
+
+User searches:
+
+json
+
+DevToolBox shows:
+
+JSON Formatter
+JSON Validator
+JSON Minifier
+JSON → CSV
+JSON → YAML
+
+Search:
+
+css
+
+Shows:
+
+Color Converter
+Gradient Generator
+Box Shadow Generator
+Flexbox Generator
+Grid Generator
+
+Search:
+
+github
+
+Can show:
+
+Git Command Generator
+.gitignore Generator
+
+External:
+GitHub
+GitHub Gist
+
+So the homepage becomes a tool directory.
+
+4. 🛠️ Individual tool architecture
+
+Every tool should be independent.
+
+For example:
+
+tools/code/json-formatter/
+
+contains:
+
+index.html
+style.css
+script.js
+
+The page could look like:
+
+┌──────────────────────────────────────────────────────┐
+│ ← DevToolBox     JSON Formatter                     │
+├──────────────────────────────────────────────────────┤
+│                                                      │
+│  JSON Input                    Formatted JSON        │
+│                                                      │
+│ ┌─────────────────────┐     ┌─────────────────────┐ │
+│ │ {                   │     │ {                   │ │
+│ │   "name":"Cobra"    │  →  │   "name": "Cobra"   │ │
+│ │ }                   │     │ }                   │ │
+│ └─────────────────────┘     └─────────────────────┘ │
+│                                                      │
+│ [Format] [Minify] [Validate] [Copy] [Clear]         │
+│                                                      │
+└──────────────────────────────────────────────────────┘
+5. 🔗 External tools
+
+Not everything should be rebuilt.
+
+We'll have an External Tools category.
+
+For example:
+
+External Tools
+
+┌──────────────────────────────┐
+│ GitHub                       │
+│ Code hosting & repositories  │
+│                    Open →    │
+└──────────────────────────────┘
+
+┌──────────────────────────────┐
+│ MDN                          │
+│ Web development docs         │
+│                    Open →    │
+└──────────────────────────────┘
+
+Clicking it simply opens the external website.
+
+6. 🧠 Tool metadata
+
+Instead of hardcoding every tool into the homepage later, we can have a central list.
+
+Conceptually:
+
+Tool
+├── name
+├── description
+├── category
+├── icon
+├── URL
+├── type
+└── tags
+
+For example:
+
+JSON Formatter
+    category: Code
+    type: Internal
+    url: /tools/code/json-formatter/
+    tags:
+        json
+        formatter
+        validator
+
+And:
+
+GitHub
+    category: External
+    type: External
+    url: https://github.com
+    tags:
+        git
+        github
+        repository
+
+This will make the search system much easier.
+
+7. 📱 Responsive design
+
+The toolbox should work on:
+
+Desktop
+   ↓
+Laptop
+   ↓
+Tablet
+   ↓
+Phone
+
+Desktop:
+
+┌─────────┬───────────────────────────────┐
+│ Sidebar │ Tools                         │
+│         │                               │
+│ Code    │ ┌────┐ ┌────┐ ┌────┐        │
+│ CSS     │ │    │ │    │ │    │        │
+│ Text    │ └────┘ └────┘ └────┘        │
+│ etc.    │                               │
+└─────────┴───────────────────────────────┘
+
+Mobile:
+
+┌─────────────────────┐
+│ ☰ DevToolBox   🔍  │
+├─────────────────────┤
+│ JSON Formatter      │
+├─────────────────────┤
+│ Base64 Encoder      │
+├─────────────────────┤
+│ UUID Generator      │
+└─────────────────────┘
+8. ⭐ Favorites
+
+Later, users can click:
+
+☆ JSON Formatter
+
+and make it:
+
+★ JSON Formatter
+
+Then the homepage has:
+
+⭐ Your Favorites
+
+No account required if we use browser localStorage.
+
+9. 🕐 Recently used
+
+Also using localStorage:
+
+Recently Used
+
+JSON Formatter
+Color Converter
+UUID Generator
+Base64 Encoder
+
+This makes the toolbox feel much more like a real application.
+
+10. 🌙 Theme
+
+I'd include:
+
+☀ Light
+🌙 Dark
+
+And remember the user's choice with localStorage.
+
+Since it's a developer toolbox, dark mode should probably be the primary visual style.
+
+11. 🔒 Privacy principle
+
+A major selling point:
+
+Your data stays in your browser.
+
+For tools like:
+
+JSON Formatter
+Base64
+JWT Decoder
+Password Generator
+Hash Generator
+Text tools
+
+we should process everything locally whenever possible.
+
+That means users can paste potentially sensitive development data without sending it to our server.
+
+12. 🚀 Development phases
+
+I would build it in this order:
+
+Phase 1 — Foundation
+Homepage
+Navigation
+Categories
+Tool cards
+Search
+Responsive layout
+Dark/light theme
+Phase 2 — First tools
+JSON Formatter
+JSON Validator
+Base64
+URL Encoder
+UUID Generator
+Timestamp Converter
+Color Converter
+Password Generator
+Phase 3 — More powerful tools
+Regex Tester
+Diff Checker
+Gradient Generator
+Box Shadow Generator
+Flexbox Generator
+Grid Generator
+Markdown Previewer
+QR Generator
+Phase 4 — External directory
+GitHub
+MDN
+npm
+DevDocs
+CodePen
+Regex101
+Stack Overflow
+Can I Use
+Phase 5 — Quality-of-life
+Favorites
+Recently Used
+Keyboard shortcuts
+Copy buttons
+Shareable URLs
+Tool search
+Tool tags
+🎯 The final idea
+
+The whole project should feel like:
+
+                     DevToolBox
+                         │
+          ┌──────────────┼──────────────┐
+          ↓              ↓              ↓
+       INTERNAL       EXTERNAL        FUTURE
+        TOOLS          TOOLS           TOOLS
+          │              │              │
+     ┌────┼────┐     GitHub          AI tools
+     ↓    ↓    ↓     MDN             API tools
+    Code CSS  Text    npm             etc.
+     │
+     ├── JSON Formatter
+     ├── Regex Tester
+     ├── Base64
+     ├── UUID
+     ├── Color Tools
+     └── ...

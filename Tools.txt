@@ -1,0 +1,89 @@
+DevToolBox — Tool Ideas
+Tool	What it does	Build ourselves?	Redirect?
+JSON Formatter	Beautify JSON	✅	
+JSON Validator	Check JSON errors	✅	
+JSON Minifier	Compress JSON	✅	
+JSON → CSV	Convert JSON to CSV	✅	
+JSON → YAML	Convert JSON to YAML	✅	
+YAML Formatter	Format YAML	✅	
+XML Formatter	Format XML	✅	
+Base64 Encoder/Decoder	Encode/decode Base64	✅	
+URL Encoder/Decoder	Encode/decode URLs	✅	
+HTML Entity Encoder	Encode HTML characters	✅	
+JWT Decoder	Decode JWT payload/header	✅	
+UUID Generator	Generate UUIDs	✅	
+Random String Generator	Generate random strings	✅	
+Password Generator	Generate passwords	✅	
+Hash Generator	SHA-256/SHA-512 etc.	✅	
+Timestamp Converter	Unix timestamp ↔ date	✅	
+Unix Timestamp Generator	Generate timestamps	✅	
+Regex Tester	Test regex patterns	✅	🔗 Advanced → Regex101
+Regex Generator	Generate regex from requirements	⚠️ Basic	🔗 AI/Regex tools
+Diff Checker	Compare two texts/files	✅	
+Markdown Editor	Write + preview Markdown	✅	
+Markdown → HTML	Convert Markdown	✅	
+Lorem Ipsum Generator	Generate placeholder text	✅	
+Case Converter	camelCase, snake_case, etc.	✅	
+Word/Character Counter	Count text	✅	
+Text Sorter	Sort lines alphabetically	✅	
+Duplicate Line Remover	Remove duplicate lines	✅	
+Text Escape/Unescape	Escape code/text	✅	
+Color Picker	Pick colors	✅	
+HEX ↔ RGB ↔ HSL	Convert colors	✅	
+Color Palette Generator	Generate palettes	✅	
+Contrast Checker	Check WCAG contrast	✅	
+Gradient Generator	Generate CSS gradients	✅	
+Box Shadow Generator	Generate CSS shadows	✅	
+Border Radius Generator	Generate CSS border-radius	✅	
+Flexbox Generator	Visual Flexbox builder	✅	
+CSS Grid Generator	Visual Grid builder	✅	
+CSS Formatter	Format CSS	✅	
+CSS Minifier	Minify CSS	✅	
+HTML Formatter	Format HTML	✅	
+HTML Minifier	Minify HTML	✅	
+JS Formatter	Format JavaScript	✅	
+JS Minifier	Minify JavaScript	⚠️	🔗 Advanced tools
+URL Parser	Break URL into components	✅	
+Query String Builder	Build URL parameters	✅	
+HTTP Status Lookup	Explain HTTP codes	✅	
+MIME Type Lookup	Find MIME types	✅	
+HTTP Header Lookup	Explain headers	✅	
+Cron Generator	Create cron expressions	⚠️	🔗 Cronitor
+.gitignore Generator	Generate .gitignore	✅	
+Git Command Generator	Generate Git commands	✅	
+Git Commit Helper	Create conventional commits	✅	
+GitHub README Generator	Generate README template	⚠️	🔗 GitHub
+QR Code Generator	Generate QR codes	✅	
+Image Resizer	Resize images	✅	
+Image Compressor	Compress images	✅	
+Image → Base64	Convert image to Base64	✅	
+Base64 → Image	Convert Base64 to image	✅	
+SVG Viewer	Preview SVG	✅	
+SVG → PNG	Convert SVG	⚠️	🔗 Dedicated converters
+File Hash Checker	Calculate file hashes	✅	
+File Size Converter	KB/MB/GB conversion	✅	
+px ↔ rem	CSS unit conversion	✅	
+Aspect Ratio Calculator	Calculate ratios	✅	
+Screen Resolution Calculator	Resolution calculations	✅	
+Device Breakpoint Generator	Generate responsive breakpoints	✅	
+User-Agent Parser	Analyze browser User-Agent	⚠️	🔗 Dedicated parsers
+API Request Builder	Build HTTP requests	⚠️	🔗 Postman/Insomnia
+REST API Tester	Test APIs	⚠️	🔗 Postman
+GraphQL Explorer	Test GraphQL APIs	❌	🔗 GraphiQL/Apollo
+WebSocket Tester	Test WebSockets	⚠️	🔗 Dedicated tools
+SQL Formatter	Format SQL	⚠️	🔗 SQL formatter
+SQL Playground	Run SQL	❌/⚠️	🔗 DB Fiddle
+Code Playground	Run HTML/CSS/JS	⚠️	🔗 CodePen/JSFiddle
+Online IDE	Full coding environment	❌	🔗 Replit
+Package Search	Search packages	❌	🔗 npm
+Documentation Search	Search developer docs	❌	🔗 DevDocs/MDN
+Browser Compatibility	Check browser support	❌	🔗 Can I Use
+Code Hosting	Host repositories	❌	🔗 GitHub/GitLab
+Code Snippets	Share code	⚠️	🔗 GitHub Gist
+Online Regex	Advanced regex testing	❌	🔗 Regex101
+JSON Visualization	Visual JSON tree	⚠️	🔗 JSON Crack
+Image Editor	Advanced image editing	❌	🔗 Photopea
+Diagram Maker	Create diagrams	❌	🔗 Excalidraw/draw.io
+API Documentation	Create API docs	❌	🔗 Swagger
+AI Coding Assistant	AI code generation	❌/⚠️	🔗 ChatGPT/Copilot
+AI Prompt Tester	Test AI prompts	⚠️	🔗 AI platforms
