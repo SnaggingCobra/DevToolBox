@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #111;
+    background-image: url("images/background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    color: black;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+}
+
+nav {
+    max-width: 1000px;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+nav a:hover {
+    color: #00ff99;
+}
+
+main {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+section {
+    min-height: 70vh;
+    padding: 100px 20px;
+    border-bottom: 1px solid #444;
+}
+
+h1 {
+    font-size: 70px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+p {
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+#home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#home a {
+    background-color: #00ff99;
+    color: black;
+    padding: 12px 20px;
+    width: fit-content;
+    border-radius: 5px;
+}
+
+article {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+article a {
+    color: #00ff99;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+#contact a {
+    color: #00ff99;
+    margin-right: 20px;
+}
+
+footer {
+    padding: 30px 20px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav a {
+        margin-left: 10px;
+    }
+
+    h1 {
+        font-size: 45px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    section {
+        padding: 70px 10px;
+    }
+}
