@@ -1,0 +1,77 @@
+<div class="json-tool">
+
+    <div class="tool-header">
+        <h2>JSON Formatter</h2>
+
+        <p>
+            Format and beautify your JSON data.
+        </p>
+    </div>
+
+
+    <div class="json-editor">
+
+        <!-- Input -->
+        <div class="json-panel">
+
+            <div class="panel-header">
+                <span>Input JSON</span>
+            </div>
+
+            <textarea
+                id="jsonInput"
+                placeholder='Paste your JSON here...
+
+Example:
+{
+  "name": "DevToolBox",
+  "version": 1
+}'
+            ></textarea>
+
+        </div>
+
+        <div class="json-panel">
+
+            <div class="panel-header">
+                <span>Formatted JSON</span>
+            </div>
+
+            <textarea
+                id="jsonOutput"
+                readonly
+                placeholder="Formatted JSON will appear here..."
+            ></textarea>
+
+        </div>
+
+    </div>
+
+    <div class="json-actions">
+
+        <button id="formatJson">
+            Format JSON
+        </button>
+
+        <button id="minifyJson">
+            Minify
+        </button>
+
+        <button id="clearJson">
+            Clear
+        </button>
+
+        <button id="copyJson">
+            Copy
+        </button>
+
+    </div>
+
+    <div
+        id="jsonStatus"
+        class="json-status"
+    >
+        Ready
+    </div>
+
+</div>

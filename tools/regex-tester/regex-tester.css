@@ -1,0 +1,130 @@
+.regex-tool {
+    width: 100%;
+    max-width: 1000px;
+}
+
+/* header */
+
+.regex-tool .regex-header {
+    margin-bottom: 25px;
+}
+
+.regex-tool .regex-header h2 {
+    color: #f0f6fc;
+    font-size: 27px;
+    margin-bottom: 5px;
+
+}
+
+.regex-tool .regex-header p {
+    color: #8b8b8b;
+}
+
+/* Input */
+
+.regex-inputs {
+    display: grid;
+    grid-template-columns: 1fr 180px;
+    gap: 16px;
+}
+
+.regex-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.regex-field label {
+    margin-bottom: 7px;
+    color: #8b949e;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.regex-field input,
+.regex-field textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 9px;
+    color: #f0f6fc;
+    font-family: monospace;
+    font-size: 14px;
+    outline: none;
+}
+
+.regex-field input {
+    height: 42px;
+}
+.regex-field textarea {
+    height: 220px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+.regex-field input:focus,
+.regex-field textarea:focus {
+    border-color: #58a6ff;
+}
+
+
+.regex-field input::placeholder,
+.regex-field textarea::placeholder {
+    color: #6e7681;
+}
+
+/* Buttons */
+
+.regex-actions {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+
+.regex-actions button {
+    padding: 9px 16px;
+    border: 1px solid #30363d;
+    border-radius: 7px;
+    background-color: #21262d;
+    color: #f0f6fc;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+
+.regex-actions button:hover {
+    background-color: #1f6feb;
+    border-color: #58a6ff;
+}
+
+
+/* Result */
+
+.regex-result,
+.regex-results {
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #161b22;
+}
+
+
+.result-header {
+    padding: 10px 12px;
+    border-bottom: 1px solid #30363d;
+    color: #8b949e;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+#regexResult {
+    padding: 16px;
+    color: #f0f6fc;
+    font-family: monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+}

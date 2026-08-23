@@ -1,0 +1,49 @@
+<div class="json-validator-tool">
+
+    <div class="tool-header">
+
+        <h2>JSON Validator</h2>
+        <p>
+            Check whether your JSON is valid and find syntax errors.
+        </p>
+
+    </div>
+
+    <div class="validator-panel">
+
+        <div class="panel-header">
+            <span>JSON Input</span>
+        </div>
+        <textarea
+            id="validatorInput"
+            placeholder='Paste your JSON here...
+
+Example:
+{
+  "name": "DevToolBox",
+  "version": 1
+}'
+        ></textarea>
+
+    </div>
+
+    <div class="validator-actions">
+
+        <button id="validateJson">
+            Validate JSON
+        </button>
+        <button id="clearValidator">
+            Clear
+        </button>
+
+    </div>
+
+
+    <div
+        id="validatorResult"
+        class="validator-result"
+    >
+        Ready to validate your JSON.
+    </div>
+
+</div>

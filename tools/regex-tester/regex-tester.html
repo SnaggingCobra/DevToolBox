@@ -1,0 +1,54 @@
+<div class="regex-tool">
+
+    <div class="tool-header">
+        <h2>Regex Tester</h2>
+        <p>
+            Test regular expressions against your text.
+        </p>
+
+    </div>
+
+    <div class="regex-inputs">
+
+        <div class="regex-field">
+            <label for="regexPattern">
+                Regular Expression
+            </label>
+
+            <input type="text" id="regexPattern" placeholder="Example: /d+...">
+        </div>
+    </div>
+        <div class="regex-field">
+            <label for="regexFlags">Flags</label>
+
+            <input type="text" id="regexFlags" placeholder="Example: gi">
+
+        </div>
+        <div class="regex-field">
+            <label for="regexText">
+                Test Text
+            </label>
+
+            <textarea id="regexText" placeholder="Enter the Text you want to test"></textarea>
+        </div>
+        <div class="regex-actions">
+
+            <button id="testRegex">
+                Test Regex
+            </button>
+            <button id="clearRegex">Clear</button>
+        </div>
+
+        <div class="regex-result"> 
+             <div class="result-header">
+                Matches
+
+             </div>
+
+             <div id="regexResult">
+                Enter a regex and some text to begin
+
+             </div>
+        </div>
+
+</div>
