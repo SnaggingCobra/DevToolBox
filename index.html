@@ -18,13 +18,8 @@
               </div>
 
               <div class="topbar-actions">
-
-                  <button class="header-button" title="Toggle theme">
-                      <img src="assets/mode.png" alt="Settings">
-                  </button>
-
-                  <button class="header-button" title="Settings">
-                      <img src="assets/setting.png" alt="Settings">
+                  <button class="header-button" id="themeButton" title="Toggle theme" aria-label="Toggle theme">
+                      <img src="assets/mode.png" alt="Toggle theme">
                   </button>
               </div>
 
@@ -36,26 +31,18 @@
                 <h2>🧰 ToolBar</h2>
             </div>
                
-              <div class="search-box">
-                  <input type="text" placeholder="🔍 Search tools...">
+              <div class="search-box" >
+                  <input type="text" id="toolSearch" placeholder="🔍 Search tools...">
               </div>
-
-              <div class="quick-links">
-
-                <button>⭐ Favorite</button>
-                <button>🕐 Recent</button>
-
-              </div>
-
 
         <nav class="tool-navigation">
               <div class="tool-category">
                 <h3>💻 Code</h3>
 
-                <button>JSON Formatter</button>
-                <button>JSON Validator</button>
-                <button>Regex Tester</button>
-                <button>Diff Checker</button>
+                <button id="jsonFormatterTool" >JSON Formatter</button>
+                <button id="ValidatorTool" >JSON Validator</button>
+                <button id="RegexTesterTool">Regex Tester</button>
+                <button id="DiffCheakerTool">Diff Checker</button>
 
 
 

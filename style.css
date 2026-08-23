@@ -6,9 +6,15 @@
 
 body {
     font-family: Arial, sans-serif;
-    min-height: 100vh;
-}
 
+    height: 100vh;
+    margin: 0;
+
+    background-color: #0d1117;
+    color: #f0f6fc;
+
+    overflow: hidden;
+}
 /* Header */
 .topbar {
     height: 60px;
@@ -18,9 +24,12 @@ body {
     align-items: center;
     justify-content: space-between;
 
-    border-bottom: 1px solid #ddd;
+    background-color: #172840;
+    border-bottom: 1px solid #30363d;
 
-    background: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 
@@ -39,21 +48,19 @@ body {
 }
 
 .brand h1 {
-    font-size: 30px;
-    font-weight: 900;
+    font-size: 18px;
+    font-weight: 600;
+    color: #f0f6fc;
 }
 
 
-/* Header actions */
+/* Header*/
 
 .topbar-actions {
     display: flex;
     align-items: center;
     gap: 6px;
 }
-
-
-/* Header buttons */
 
 .header-button {
     width: 38px;
@@ -63,38 +70,50 @@ body {
     justify-content: center;
     border: none;
     border-radius: 8px;
-    background: transparent;
-    font-size: 17px;
+    background-color: transparent;
+    color: #8b949e;
     cursor: pointer;
 }
 .header-button img {
     width: 18px;
     height: 18px;
+    border-radius: 30px;
     object-fit: contain;
 }
 
 .header-button:hover {
-    background: #f0f0f0;
+    background: #21262d;
+    color: #f0f6fc;
+    border-radius: 10px;
 }
-
 main {
     display: flex;
     height: calc(100vh - 60px);
+    min-height: 0;
+    overflow: hidden;
 }
-
-/* Left sidebar */
-aside {
-    width: 250px;
-    padding: 20px;
-    border-right: 1px solid #ddd;
-}
-
 /* Toolbar */
-.sidebar{
+.toolbar {
     width: 260px;
+    min-width: 260px;
+    height: 100%;
     padding: 16px;
-    border-right: 1px solid #ddd;
+    background-color: #161b22;
+    border-right: 1px solid #30363d;
     overflow-y: auto;
+    overflow-x: hidden;
+    flex-shrink: 0;
+    scrollbar-width: thin;
+    scrollbar-color: #6e7681 transparent;
+}
+
+.toolbar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.toolbar::-webkit-scrollbar-thumb {
+    background: #6e7681;
+    border-radius: 8px;
 }
 
 /* Sidebar title */
@@ -111,40 +130,21 @@ aside {
 .search-box{
   margin-bottom: 5px;
 }
-.search-box input{
-  width: 100%;
-  padding: 5px 5px;
-  border: 2px solid #6e6868;
-  border-radius: 10px;
-  font-size: 14px;
-  outline: none;
+.search-box input {
+    width: 100%;
+    padding: 10px 12px;
+    background-color: #0d1117;
+    color: #f0f6fc;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+}
+.search-box input::placeholder {
+    color: #6f7b8c;
 }
 .search-box input:focus {
-    border-color: #555;
-}
-
-/* Quick links */
-
-.quick-links {
-    display: flex;
-   flex-direction: row;
-    gap: 3px;
-
-    margin-bottom: 20px;
-}
-
-.quick-links button {
-    width: 100%;
-    padding: 4px 2px;
-    border: none;
-    border-radius: 15px;
-    background: transparent;
-    text-align: left;
-    cursor: pointer;
-    font-size: 12px; 
-}
-.quick-links button:hover {
-    background: #f3d0d0;
+    border-color: #58a6ff;
 }
 
 /* Tool categories */
@@ -154,10 +154,12 @@ aside {
 }
 
 .tool-category h3 {
-  margin-top: 10px;
     margin-bottom: 6px;
-    font-size: 13px;
+    color: #6e7681;
+    font-size: 14px;
     font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
 }
 
 /* Tool buttons */
@@ -165,17 +167,19 @@ aside {
 .tool-category button {
     display: block;
     width: 100%;
-    padding: 4px 10px;
+    padding: 8px 10px;
     border: none;
     border-radius: 7px;
-    background: transparent;
+    background-color: transparent;
+    color: #8b949e;
     text-align: left;
     cursor: pointer;
     font-size: 14px;
 }
 
 .tool-category button:hover {
-    background: #f0f0f0;
+    background-color: #21262d;
+    color: #f0f6fc;
 }
 
 /* WorkSpace */
@@ -185,45 +189,94 @@ aside {
     justify-content: center;
     align-items: center;
     padding: 40px;
-    overflow: auto;
+    background-color: #0d1117;
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-width: 0;
+    min-height: 0;
 }
 
-
-/* Welcome screen */
 
 .welcome-screen {
     text-align: center;
     max-width: 500px;
 }
 
-
-/* Icon */
-
-.welcome-icon {
-    font-size: 54px;
-    margin-bottom: 20px;
-}
-
-
-/* Title */
-
 .welcome-screen h2 {
-    font-size: 35px;
+    font-size: 32px;
     margin-bottom: 10px;
+
+    color: #f0f6fc;
 }
-
-
-/* Description */
 
 .welcome-screen p {
     font-size: 18px;
     margin-bottom: 10px;
+
+    color: #8b949e;
 }
-
-
-/* Instruction */
 
 .welcome-screen span {
     font-size: 14px;
-    color: #5d5c5c;
+
+    color: #6e7681;
+}
+/* ========================================
+   LIGHT MODE
+   ======================================== */
+
+body.light-mode {
+    background-color: #ffffff;
+    color: #24292f;
+}
+
+body.light-mode .topbar {
+    background-color: #f6f8fa;
+    border-bottom-color: #d0d7de;
+}
+
+body.light-mode .sidebar {
+    background-color: #f6f8fa;
+    border-right-color: #d0d7de;
+}
+
+body.light-mode .workspace {
+    background-color: #ffffff;
+}
+
+body.light-mode .brand h1 {
+    color: #24292f;
+}
+
+body.light-mode .search-box input {
+    background-color: #ffffff;
+    color: #24292f;
+    border-color: #d0d7de;
+}
+
+body.light-mode .tool-category button,
+body.light-mode .quick-links button {
+    color: #57606a;
+}
+
+body.light-mode .tool-category button:hover,
+body.light-mode .quick-links button:hover {
+    background-color: #eaeef2;
+    color: #24292f;
+}
+
+body.light-mode .tool-category h3 {
+    color: #6e7781;
+}
+
+body.light-mode .welcome-screen h2 {
+    color: #24292f;
+}
+
+body.light-mode .welcome-screen p {
+    color: #57606a;
+}
+
+body.light-mode .welcome-screen span {
+    color: #6e7781;
 }
