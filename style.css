@@ -1,13 +1,131 @@
-body {
-  margin: 0;
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  background: #dfeeff;
-  color: #1f2937;
-  font-family: Arial, sans-serif;
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.container {
-  text-align: center;
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+header {
+    height: 60px;
+    padding: 0 20px;
+
+    display: flex;
+    align-items: center;
+
+    border-bottom: 1px solid #dda4a4;
+
+    font-size: 25px;
+}
+
+main {
+    display: flex;
+    height: calc(100vh - 60px);
+}
+
+/* Left sidebar */
+aside {
+    width: 250px;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+}
+
+/* Right workspace */
+section {
+    flex: 1;
+    padding: 40px;
+}
+
+/* Toolbar */
+.sidebar{
+    width: 260px;
+    padding: 16px;
+
+    border-right: 1px solid #ddd;
+
+    overflow-y: auto;
+}
+
+/* Sidebar title */
+
+.toolbar-header {
+    margin-bottom: 20px;
+}
+
+.toolbar-header h2 {
+    font-size: 25px;
+}
+
+/* Search */
+.search-box{
+  margin-bottom: 5px;
+}
+.search-box input{
+  width: 100%;
+  padding: 5px 5px;
+  border: 2px solid #6e6868;
+  border-radius: 10px;
+  font-size: 14px;
+  outline: none;
+}
+.search-box input:focus {
+    border-color: #555;
+}
+
+/* Quick links */
+
+.quick-links {
+    display: flex;
+   flex-direction: row;
+    gap: 3px;
+
+    margin-bottom: 20px;
+}
+
+.quick-links button {
+    width: 100%;
+    padding: 4px 2px;
+    border: none;
+    border-radius: 15px;
+    background: transparent;
+    text-align: left;
+    cursor: pointer;
+    font-size: 12px; 
+}
+.quick-links button:hover {
+    background: #f3d0d0;
+}
+
+/* Tool categories */
+
+.tool-category {
+    margin-bottom: 22px;
+}
+
+.tool-category h3 {
+  margin-top: 10px;
+    margin-bottom: 6px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Tool buttons */
+
+.tool-category button {
+    display: block;
+    width: 100%;
+    padding: 4px 10px;
+    border: none;
+    border-radius: 7px;
+    background: transparent;
+    text-align: left;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.tool-category button:hover {
+    background: #f0f0f0;
 }
