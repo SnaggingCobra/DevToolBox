@@ -9,16 +9,72 @@ body {
     min-height: 100vh;
 }
 
-header {
+/* Header */
+.topbar {
     height: 60px;
-    padding: 0 20px;
+    padding: 0 18px;
 
     display: flex;
     align-items: center;
+    justify-content: space-between;
 
-    border-bottom: 1px solid #dda4a4;
+    border-bottom: 1px solid #ddd;
 
-    font-size: 25px;
+    background: #ffffff;
+}
+
+
+/* Brand */ 
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand-icon img {
+    width: 60px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.brand h1 {
+    font-size: 30px;
+    font-weight: 900;
+}
+
+
+/* Header actions */
+
+.topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+
+/* Header buttons */
+
+.header-button {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    font-size: 17px;
+    cursor: pointer;
+}
+.header-button img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.header-button:hover {
+    background: #f0f0f0;
 }
 
 main {
@@ -33,19 +89,11 @@ aside {
     border-right: 1px solid #ddd;
 }
 
-/* Right workspace */
-section {
-    flex: 1;
-    padding: 40px;
-}
-
 /* Toolbar */
 .sidebar{
     width: 260px;
     padding: 16px;
-
     border-right: 1px solid #ddd;
-
     overflow-y: auto;
 }
 
@@ -128,4 +176,54 @@ section {
 
 .tool-category button:hover {
     background: #f0f0f0;
+}
+
+/* WorkSpace */
+.workspace {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    overflow: auto;
+}
+
+
+/* Welcome screen */
+
+.welcome-screen {
+    text-align: center;
+    max-width: 500px;
+}
+
+
+/* Icon */
+
+.welcome-icon {
+    font-size: 54px;
+    margin-bottom: 20px;
+}
+
+
+/* Title */
+
+.welcome-screen h2 {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+
+/* Description */
+
+.welcome-screen p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+
+/* Instruction */
+
+.welcome-screen span {
+    font-size: 14px;
+    color: #5d5c5c;
 }
