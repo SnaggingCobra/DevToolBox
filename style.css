@@ -86,12 +86,14 @@ body {
     color: #f0f6fc;
     border-radius: 10px;
 }
+
 main {
     display: flex;
     height: calc(100vh - 60px);
     min-height: 0;
     overflow: hidden;
 }
+
 /* Toolbar */
 .toolbar {
     width: 260px;

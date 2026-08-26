@@ -28,7 +28,6 @@ validateJson.addEventListener("click", () => {
         return;
 
     }
-
     try {
 
         JSON.parse(input);

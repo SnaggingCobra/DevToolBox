@@ -73,21 +73,17 @@ document.getElementById("ValidatorTool")
         );
 
         const html = await response.text();
-
         workspace.innerHTML = html;
-
 
         const css = document.createElement("link");
 
         css.rel = "stylesheet";
-
         css.href =
             "tools/json-validator/json-validator.css";
 
         document.head.appendChild(css);
 
         const script = document.createElement("script");
-
         script.src =
             "tools/json-validator/json-validator.js";
 
@@ -95,7 +91,8 @@ document.getElementById("ValidatorTool")
 
     });
 
-// REGEX TESTER
+
+
 
 document.getElementById("RegexTesterTool")
     .addEventListener("click", async () => {
@@ -106,38 +103,40 @@ document.getElementById("RegexTesterTool")
         const html = await response.text();
 
         workspace.innerHTML = html;
+        const css = document.createElement("link");
+
+        css.rel = "stylesheet";
+        css.href =
+            "tools/regex-tester/regex-tester.css";
+        document.head.appendChild(css);
+        const script = document.createElement("script");
+        script.src =
+            "tools/regex-tester/regex-tester.js";
+        document.body.appendChild(script);
+    });
+
+document.getElementById("DiffCheakerTool")
+    .addEventListener("click", async () => {
+
+        const response = await fetch(
+            "tools/diff-checker/diff-checker.html"
+        );
+        const html = await response.text();
+
+        workspace.innerHTML = html;
 
         const css = document.createElement("link");
 
         css.rel = "stylesheet";
-
         css.href =
-            "tools/regex-tester/regex-tester.css";
-
+            "tools/diff-checker/diff-checker.css";
         document.head.appendChild(css);
-
 
         const script = document.createElement("script");
 
         script.src =
-            "tools/regex-tester/regex-tester.js";
-
+            "tools/diff-checker/diff-checker.js";
         document.body.appendChild(script);
 
     });
-    // DIFF CHECKER
-
-    document.getElementById("DiffCheakerTool")
-        .addEventListener("click", () => {
-            workspace.innerHTML = `
-                <div class="tool-screen">
-                    <h2>Diff Checker</h2>
-                    <p>
-                        Compare two pieces of text.
-                    </p>
-                </div>
-            `;
-
-        });
-
-});
+})
