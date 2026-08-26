@@ -139,4 +139,51 @@ document.getElementById("DiffCheakerTool")
         document.body.appendChild(script);
 
     });
+
+document.getElementById("ColorConverterTool")
+    .addEventListener("click", async () => {
+
+        const response = await fetch(
+            "tools/color-converter/color-converter.html"
+        );
+        const html = await response.text();
+        workspace.innerHTML = html;
+
+        const css = document.createElement("link");
+
+        css.rel = "stylesheet";
+        css.href =
+            "tools/color-converter/color-converter.css";
+        document.head.appendChild(css);
+
+        const script = document.createElement("script");
+        script.src =
+            "tools/color-converter/color-converter.js";
+        document.body.appendChild(script);
+    });
+
+
+document.getElementById("GradientGeneratorTool")
+    .addEventListener("click", async () => {
+
+        const response = await fetch(
+            "tools/gradient-generator/gradient-generator.html"
+        );
+        const html = await response.text();
+        workspace.innerHTML = html;
+
+        const css = document.createElement("link");
+        css.rel = "stylesheet";
+        css.href =
+            "tools/gradient-generator/gradient-generator.css";
+
+        document.head.appendChild(css);
+
+
+        const script = document.createElement("script");
+        script.src =
+            "tools/gradient-generator/gradient-generator.js";
+        document.body.appendChild(script);
+
+    });
 })

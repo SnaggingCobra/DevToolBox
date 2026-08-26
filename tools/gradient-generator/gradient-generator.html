@@ -1,0 +1,51 @@
+<div class="gradient-tool">
+    <div class="tool-header">
+        <h2>Gradient generator</h2>
+        <p>Create CSS gradients and copy the code.</p>
+    </div>
+
+    <div id="gradientPreview" class="gradient-preview"></div>
+
+    <div class="gradient-controls">
+        <div class="gradient-field">
+            <label for="gradientType">Type</label>
+            <select id="gradientType">
+                <option value="linear">Linear</option>
+                <option value="radial">Radial</option>
+            </select>
+        </div>
+
+        <div class="gradient-field" id="angleField">
+            <label for="gradientAngle">Angle <span id="angleValue">90°</span></label>
+            <input type="range" id="gradientAngle" min="0" max="360" value="90">
+        </div>
+
+        <div class="gradient-field">
+            <label for="gradientColor1">Color 1</label>
+            <div class="color-input">
+                <input type="color" id="gradientColor1" value="#58a6ff">
+                <input type="text" id="gradientHex1" value="#58a6ff">
+            </div>
+        </div>
+
+        <div class="gradient-field">
+            <label for="gradientColor2">Color 2</label>
+            <div class="color-input">
+                <input type="color" id="gradientColor2" value="#bc8cff">
+                <input type="text" id="gradientHex2" value="#bc8cff">
+            </div>
+        </div>
+    </div>
+
+    <div class="gradient-actions">
+        <button id="generateGradient">Generate</button>
+        <button id="randomGradient">Random</button>
+    </div>
+
+    <div class="css-output-row">
+        <code id="gradientCSS">background: linear-gradient(90deg, #58a6ff, #bc8cff);</code>
+        <button id="copyGradientCSS">Copy</button>
+    </div>
+
+    <div id="gradientStatus" class="gradient-status">Ready</div>
+</div>

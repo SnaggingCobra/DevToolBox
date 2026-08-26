@@ -1,0 +1,39 @@
+<div class="color-tool">
+    <div class="tool-header">
+        <h2>Color Converter</h2>
+        <p>
+            Convert colors between HEX, RGB and HSL.
+        </p>
+    </div>
+
+    <div class="color-preview-section">
+        <div id="colorPreview" class="color-preview"></div>
+        <input type="color" id="colorPicker" value="#58a6ff">
+    </div>
+
+    <div class="color-values">
+        <div class="color-field">
+            <label for="hexColor">HEX</label>
+            <input type="text" id="hexColor" value="#58a6ff" placeholder="#58a6ff">
+        </div>
+
+        <div class="color-field">
+            <label for="rgbColor">RGB</label>
+            <input type="text" id="rgbColor" readonly>
+        </div>
+
+        <div class="color-field">
+            <label for="hslColor">HSL</label>
+            <input type="text" id="hslColor" readonly>
+        </div>
+    </div>
+
+    <div class="color-actions">
+        <button id="convertColor">Convert</button>
+        <button id="copyHex">Copy HEX</button>
+        <button id="copyRgb">Copy RGB</button>
+        <button id="copyHsl">Copy HSL</button>
+    </div>
+
+    <div id="colorStatus" class="color-status">Ready</div>
+</div>
