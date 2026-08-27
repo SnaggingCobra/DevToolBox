@@ -1,0 +1,176 @@
+.shadow-tool {
+    width: 100%;
+    max-width: 1000px;
+}
+
+.shadow-tool .tool-header {
+    margin-bottom: 24px;
+}
+
+.shadow-tool .tool-header h2 {
+    color: #f0f6fc;
+    font-size: 28px;
+    margin-bottom: 6px;
+}
+
+.shadow-tool .tool-header p {
+    color: #8b949e;
+    font-size: 14px;
+}
+
+.shadow-preview-area {
+    width: 100%;
+    height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+}
+
+.shadow-box {
+    width: 180px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f6fc;
+    border-radius: 10px;
+    color: #0d1117;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: 10px 10px 15px 0px rgba(0, 0, 0, 0.5);
+}
+
+.shadow-controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.shadow-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.shadow-field label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    color: #8b949e;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.shadow-field input[type="range"] {
+    width: 100%;
+    accent-color: #58a6ff;
+    cursor: pointer;
+}
+
+.shadow-color {
+    display: flex;
+    gap: 8px;
+}
+
+.shadow-color input[type="color"] {
+    width: 50px;
+    height: 42px;
+    padding: 3px;
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.shadow-color input[type="text"] {
+    flex: 1;
+    min-width: 0;
+    height: 42px;
+    padding: 10px 12px;
+    background-color: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    color: #f0f6fc;
+    font-family: monospace;
+    outline: none;
+}
+
+.shadow-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    color: #8b949e;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.shadow-checkbox input {
+    width: 16px;
+    height: 16px;
+    accent-color: #58a6ff;
+    cursor: pointer;
+}
+
+.shadow-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.shadow-actions button {
+    padding: 9px 16px;
+    border: 1px solid #30363d;
+    border-radius: 7px;
+    background-color: #21262d;
+    color: #f0f6fc;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.shadow-actions button:hover {
+    background-color: #1f6feb;
+    border-color: #58a6ff;
+}
+
+.shadow-output {
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #161b22;
+}
+
+.output-header {
+    padding: 10px 12px;
+    border-bottom: 1px solid #30363d;
+    color: #8b949e;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.css-output-row {
+    padding: 15px;
+}
+
+.css-output-row code {
+    color: #f0f6fc;
+    font-family: monospace;
+    font-size: 13px;
+    word-break: break-word;
+}
+
+.shadow-status {
+    margin-top: 12px;
+    color: #8b949e;
+    font-size: 13px;
+}
+
+@media (max-width: 700px) {
+    .shadow-controls {
+        grid-template-columns: 1fr;
+    }
+}

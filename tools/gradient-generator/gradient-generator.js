@@ -53,18 +53,15 @@ function updateGradient() {
 
     angleValue.textContent =
         `${angle}°`;
-
     let gradient;
 
     if (type === "linear") {
-
         gradient =
             `linear-gradient(${angle}deg, ${color1}, ${color2})`;
 
     } else {
         gradient =
             `radial-gradient(circle, ${color1}, ${color2})`;
-
     }
 
     gradientPreview.style.background =
@@ -74,7 +71,7 @@ function updateGradient() {
         `background: ${gradient};`;
 
     gradientStatus.textContent =
-        "✓ Gradient updated.";
+        "Gradient updated.";
 
 }
 
@@ -93,7 +90,6 @@ gradientColor2.addEventListener(
     () => {
         gradientHex2.value =
             gradientColor2.value;
-
         updateGradient();
     }
 );
@@ -101,19 +97,17 @@ gradientColor2.addEventListener(
 gradientHex1.addEventListener(
     "change",
     () => {
-
         const value =
             gradientHex1.value.trim();
 
         if (/^#[0-9A-Fa-f]{6}$/.test(value)) {
-
             gradientColor1.value =
                 value;
             updateGradient();
 
         } else {
             gradientStatus.textContent =
-                "✕ Invalid Color 1.";
+                "Invalid Color 1.";
         }
     }
 );
@@ -145,7 +139,6 @@ gradientAngle.addEventListener(
 gradientType.addEventListener(
     "change",
     () => {
-
         updateGradient();
     }
 );
@@ -154,7 +147,6 @@ generateGradient.addEventListener(
     "click",
     updateGradient
 );
-
 
 randomGradient.addEventListener(
     "click",

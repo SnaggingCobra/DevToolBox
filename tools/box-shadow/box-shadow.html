@@ -1,0 +1,64 @@
+<div class="shadow-tool">
+    <div class="tool-header">
+        <h2>Box Shadow Generator</h2>
+        <p>Create CSS box shadow and copy the code.</p>
+    </div>
+
+    <div class="shadow-preview-area">
+        <div id="shadowBox" class="shadow-box">Preview</div>
+    </div>
+
+    <div class="shadow-controls">
+        <div class="shadow-field">
+            <label for="shadowX">Horizontal <span id="shadowXValue">10px</span></label>
+            <input type="range" id="shadowX" min="-50" max="50" value="10">
+        </div>
+
+        <div class="shadow-field">
+            <label for="shadowY">Vertical <span id="shadowYValue">10px</span></label>
+            <input type="range" id="shadowY" min="-50" max="50" value="10">
+        </div>
+
+        <div class="shadow-field">
+            <label for="shadowBlur">Blur <span id="shadowBlurValue">15px</span></label>
+            <input type="range" id="shadowBlur" min="0" max="100" value="15">
+        </div>
+
+        <div class="shadow-field">
+            <label for="shadowSpread">Spread <span id="shadowSpreadValue">0px</span></label>
+            <input type="range" id="shadowSpread" min="-50" max="50" value="0">
+        </div>
+
+        <div class="shadow-field">
+            <label for="shadowOpacity">Opacity <span id="shadowOpacityValue">50%</span></label>
+            <input type="range" id="shadowOpacity" min="0" max="100" value="50">
+        </div>
+
+        <div class="shadow-field">
+            <label for="shadowColor">Color</label>
+            <div class="shadow-color">
+                <input type="color" id="shadowColor" value="#000000">
+                <input type="text" id="shadowColorHex" value="#000000">
+            </div>
+        </div>
+    </div>
+
+    <label class="shadow-checkbox" for="shadowInset">
+        <input type="checkbox" id="shadowInset">
+        Inset shadow
+    </label>
+
+    <div class="shadow-actions">
+        <button id="copyShadow">Copy CSS</button>
+        <button id="resetShadow">Reset</button>
+    </div>
+
+    <div class="shadow-output">
+        <div class="output-header">CSS Output</div>
+        <div class="css-output-row">
+            <code id="shadowCSS">box-shadow: 10px 10px 15px 0px rgba(0, 0, 0, 0.5);</code>
+        </div>
+    </div>
+
+    <div id="shadowStatus" class="shadow-status">Ready</div>
+</div>

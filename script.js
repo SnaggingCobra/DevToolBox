@@ -176,7 +176,6 @@ document.getElementById("GradientGeneratorTool")
         css.rel = "stylesheet";
         css.href =
             "tools/gradient-generator/gradient-generator.css";
-
         document.head.appendChild(css);
 
 
@@ -186,4 +185,32 @@ document.getElementById("GradientGeneratorTool")
         document.body.appendChild(script);
 
     });
+
+
+    document.getElementById("BoxShadowTool")
+    .addEventListener("click", async () => {
+
+        const response = await fetch(
+            "tools/box-shadow/box-shadow.html"
+        );
+
+        const html = await response.text();
+        workspace.innerHTML = html;
+
+
+        const css = document.createElement("link");
+
+        css.rel = "stylesheet";
+        css.href =
+            "tools/box-shadow/box-shadow.css";
+
+        document.head.appendChild(css);
+
+        const script = document.createElement("script");
+
+        script.src =
+            "tools/box-shadow/box-shadow.js";
+        document.body.appendChild(script);
+
+            });
 })
