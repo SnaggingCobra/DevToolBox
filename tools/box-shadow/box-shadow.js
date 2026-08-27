@@ -101,22 +101,7 @@ resetShadow.addEventListener("click", () => {
     shadowColorHex.value = "#000000";
     shadowInset.checked = false;
     updateShadow();
+    shadowStatus.textContent = "✓ Shadow reset.";
 });
 
 updateShadow();
-        shadowColorHex.value =
-            "#000000";
-
-        shadowInset.checked = false;
-
-        updateShadow();
-
-        shadowStatus.textContent =
-            "✓ Shadow reset.";
-
-    }
-);
-
-updateShadow();
-
-}
