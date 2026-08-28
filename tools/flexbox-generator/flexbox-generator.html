@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Generator</title>
+    <link rel="stylesheet" href="flexbox-generator.css">
+</head>
+<body>
+<div class="flexbox-tool">
+
+    <div class="tool-header">
+        <h2>Flexbox Generator</h2>
+
+        <p>
+            Visually create Flexbox layouts and generate CSS.
+        </p>
+    </div>
+
+
+    <div class="flexbox-preview-area">
+
+        <div id="flexboxPreview" class="flexbox-preview">
+
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">3</div>
+            <div class="flex-item">4</div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="flexbox-controls">
+
+
+        <div class="flexbox-field">
+
+            <label for="flexDirection">
+                Flex Direction
+            </label>
+
+            <select id="flexDirection">
+
+                <option value="row">
+                    row
+                </option>
+
+                <option value="row-reverse">
+                    row-reverse
+                </option>
+
+                <option value="column">
+                    column
+                </option>
+
+                <option value="column-reverse">
+                    column-reverse
+                </option>
+
+            </select>
+
+        </div>
+
+        <div class="flexbox-field">
+
+            <label for="justifyContent">
+                Justify Content
+            </label>
+
+            <select id="justifyContent">
+
+                <option value="flex-start">
+                    flex-start
+                </option>
+
+                <option value="center">
+                    center
+                </option>
+
+                <option value="flex-end">
+                    flex-end
+                </option>
+
+                <option value="space-between">
+                    space-between
+                </option>
+
+                <option value="space-around">
+                    space-around
+                </option>
+
+                <option value="space-evenly">
+                    space-evenly
+                </option>
+
+            </select>
+
+        </div>
+
+        <div class="flexbox-field">
+
+            <label for="alignItems">
+                Align Items
+            </label>
+
+            <select id="alignItems">
+
+                <option value="stretch">
+                    stretch
+                </option>
+
+                <option value="flex-start">
+                    flex-start
+                </option>
+
+                <option value="center">
+                    center
+                </option>
+
+                <option value="flex-end">
+                    flex-end
+                </option>
+
+                <option value="baseline">
+                    baseline
+                </option>
+
+            </select>
+
+        </div>
+
+        <div class="flexbox-field">
+
+            <label for="flexWrap">
+                Flex Wrap
+            </label>
+
+            <select id="flexWrap">
+
+                <option value="nowrap">
+                    nowrap
+                </option>
+
+                <option value="wrap">
+                    wrap
+                </option>
+
+                <option value="wrap-reverse">
+                    wrap-reverse
+                </option>
+
+            </select>
+
+        </div>
+
+        <div class="flexbox-field">
+
+            <label for="flexGap">
+                Gap
+                <span id="flexGapValue">10px</span>
+            </label>
+
+            <input
+                type="range"
+                id="flexGap"
+                min="0"
+                max="100"
+                value="10"
+            >
+
+        </div>
+
+        <div class="flexbox-field">
+
+            <label for="flexColumnGap">
+                Column Gap
+                <span id="flexColumnGapValue">10px</span>
+            </label>
+
+            <input
+                type="range"
+                id="flexColumnGap"
+                min="0"
+                max="100"
+                value="10"
+            >
+
+        </div>
+
+    </div>
+
+
+    <div class="flexbox-actions">
+
+        <button id="resetFlexbox">
+            Reset
+        </button>
+
+        <button id="copyFlexboxCSS">
+            Copy CSS
+        </button>
+
+    </div>
+
+
+    <div class="flexbox-output">
+
+        <div class="output-header">
+            CSS
+        </div>
+
+        <pre id="flexboxCSS"></pre>
+
+    </div>
+
+    <div id="flexboxStatus" class="flexbox-status">
+        Ready
+    </div>
+</div>
+
+<script src="flexbox-generator.js"></script>
+</body>
+</html>

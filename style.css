@@ -189,13 +189,18 @@ main {
     flex: 1;
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 40px;
+    align-items: flex-start;
+    padding: 24px 40px 40px;
     background-color: #0d1117;
     overflow-y: auto;
     overflow-x: hidden;
     min-width: 0;
     min-height: 0;
+}
+
+.workspace > * {
+    width: 100%;
+    max-width: 1000px;
 }
 
 

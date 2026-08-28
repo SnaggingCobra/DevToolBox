@@ -186,7 +186,6 @@ document.getElementById("GradientGeneratorTool")
 
     });
 
-
     document.getElementById("BoxShadowTool")
     .addEventListener("click", async () => {
 
@@ -196,7 +195,6 @@ document.getElementById("GradientGeneratorTool")
 
         const html = await response.text();
         workspace.innerHTML = html;
-
 
         const css = document.createElement("link");
 
@@ -213,4 +211,32 @@ document.getElementById("GradientGeneratorTool")
         document.body.appendChild(script);
 
             });
+
+    
+document.getElementById("FlexboxGeneratorTool")
+    .addEventListener("click", async () => {
+
+        const response = await fetch(
+            "tools/flexbox-generator/flexbox-generator.html"
+        );
+        const html = await response.text();
+
+        workspace.innerHTML = html;
+
+
+        const css = document.createElement("link");
+        css.rel = "stylesheet";
+
+        css.href =
+            "tools/flexbox-generator/flexbox-generator.css";
+
+        document.head.appendChild(css);
+
+        const script = document.createElement("script");
+
+        script.src =
+            "tools/flexbox-generator/flexbox-generator.js";
+        document.body.appendChild(script);
+
+    });
 })
