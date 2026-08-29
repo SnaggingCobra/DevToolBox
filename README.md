@@ -3,8 +3,7 @@
 DevToolBox is a project I made to keep some small developer tools that I use while coding in one place.
 
 When I'm working on a website, I sometimes need to convert a color, test a regex, format JSON, make a CSS gradient, or check what changed between two pieces of code. Normally I would have to search for a different website for each of these things. I wanted to make my own small toolbox instead.
-
-I started with a few tools and kept adding more as I thought of things that would be useful. The whole project is made with HTML, CSS and JavaScript, without using a framework or a build tool.
+.
 
 ## What I built
 
