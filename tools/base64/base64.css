@@ -1,0 +1,108 @@
+.base64-tool {
+    width: 100%;
+    max-width: 1000px;
+
+}
+
+.base64-tool .tool-header  {
+    margin-bottom: 25px;
+
+}
+
+.base64-tool .tool-header h2 {
+    color: #f0f6fc; 
+    font-size: 29px;
+    margin-bottom: 6px;
+}
+
+.base64-tool .tool-header p {
+    color: #8b949e;
+    font-size: 14px;
+
+}
+
+.base64-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+
+.base64-section > label,
+.output-label label {
+    margin-bottom: 8px;
+
+    color: #8b949e;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.base64-section textarea {
+    width: 100%;
+    min-height: 220px;
+    padding: 14px;
+    resize: vertical;
+    background-color: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    color: #f0f6fc;
+    font-family: monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    outline: none;
+
+}
+
+.base64-section textarea:focus {
+    border-color: #58a6ff;
+}
+
+.base64-section textarea::placeholder {
+    color: #6e7681;
+
+}
+
+.base64-actions {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 22px;
+
+}
+
+.base64-actions button,
+#copyBase64 {
+    padding: 9px 16px;
+    border: 1px solid #30363d;
+    border-radius: 7px;
+    background-color: #21262d;
+    color: #f0f6fc;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.output-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.output-label label {
+    margin-bottom: 9px;
+
+
+}
+
+.base64-status {
+    margin-top: 5px;
+    color: #8b949e;
+    font-size: 13px;
+}
+
+@media (max-width: 600px) {
+    .base64-actions {
+
+        flex-wrap: wrap;
+    }
+}

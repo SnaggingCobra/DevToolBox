@@ -172,6 +172,7 @@ document.getElementById("GradientGeneratorTool")
         const html = await response.text();
         workspace.innerHTML = html;
 
+        
         const css = document.createElement("link");
         css.rel = "stylesheet";
         css.href =
@@ -192,6 +193,7 @@ document.getElementById("GradientGeneratorTool")
         const response = await fetch(
             "tools/box-shadow/box-shadow.html"
         );
+
 
         const html = await response.text();
         workspace.innerHTML = html;
@@ -223,12 +225,13 @@ document.getElementById("FlexboxGeneratorTool")
 
         workspace.innerHTML = html;
 
-
         const css = document.createElement("link");
         css.rel = "stylesheet";
 
         css.href =
             "tools/flexbox-generator/flexbox-generator.css";
+
+
 
         document.head.appendChild(css);
 
@@ -239,4 +242,33 @@ document.getElementById("FlexboxGeneratorTool")
         document.body.appendChild(script);
 
     });
+
+    document.getElementById("Base64Tool")
+        .addEventListener("click", async () => {
+            const response = await fetch(
+                "tools/base64/base64.html"
+            );
+
+            const html = await response.text();
+
+            workspace.innerHTML = html;
+
+            const css = 
+                document.createElement("link");
+
+
+            css.rel = "stylesheet";
+
+            css.href = "tools/base64/base64.css";
+
+            document.head.appendChild(css);
+
+
+            const script =
+                document.createElement("script");
+
+            script.src =
+                "tools/base64/base64.js";
+            document.body.appendChild(script);
+        });
 })

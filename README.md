@@ -68,3 +68,6 @@ AI assistance was used sparingly in this project. It helped with small parts of 
 - If a tool does not render correctly, try serving the project via the simple HTTP server above instead of opening files directly — some browsers restrict local resource loading.
 - Open the browser console (F12) for runtime errors; most tools are small and will log helpful messages there.
 
+## AUTHOR
+
+    -- Prajwol Gynawali
