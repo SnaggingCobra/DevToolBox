@@ -80,6 +80,12 @@ decodeBase64.addEventListener("click", () => {
     }
     });
 
+clearBase64.addEventListener("click", () => {
+    base64Input.value = "";
+    base64Output.value = "";
+    base64Status.textContent = "Ready";
+});
+
 
     copyBase64.addEventListener("click", async () => {
         if (base64Output.value === "") {
