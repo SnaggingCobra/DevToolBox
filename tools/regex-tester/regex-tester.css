@@ -5,18 +5,18 @@
 
 /* header */
 
-.regex-tool .regex-header {
+.regex-tool .tool-header {
     margin-bottom: 25px;
 }
 
-.regex-tool .regex-header h2 {
+.regex-tool .tool-header h2 {
     color: #f0f6fc;
     font-size: 27px;
     margin-bottom: 5px;
 
 }
 
-.regex-tool .regex-header p {
+.regex-tool .tool-header p {
     color: #8b8b8b;
 }
 
@@ -127,4 +127,8 @@
     font-size: 14px;
     line-height: 1.6;
     white-space: pre-wrap;
+}
+
+@media (max-width: 700px) {
+    .regex-inputs { grid-template-columns: 1fr; }
 }

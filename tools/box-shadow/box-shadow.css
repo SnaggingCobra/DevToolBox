@@ -173,4 +173,6 @@
     .shadow-controls {
         grid-template-columns: 1fr;
     }
+
+    .shadow-preview-area { height: 220px; }
 }

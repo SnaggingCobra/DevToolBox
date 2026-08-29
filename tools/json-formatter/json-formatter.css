@@ -110,3 +110,8 @@
     color: #8b949e;
     font-size: 13px;
 }
+
+@media (max-width: 700px) {
+    .json-editor { grid-template-columns: 1fr; }
+    .json-panel textarea { height: 260px; }
+}

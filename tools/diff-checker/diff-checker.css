@@ -6,7 +6,7 @@
 /* header */
  
 .diff-tool .tool-header{
-    margin-bottom: 24%;
+    margin-bottom: 24px;
 }
 .diff-tool .tool-header h2{
     color: #f0f6fc;
@@ -14,7 +14,7 @@
     margin-bottom: 6px;
 }
  
-.diff-tool /.tool-header p{
+.diff-tool .tool-header p{
     color: #8b949e;
     font-size: 14px;
 }
@@ -32,10 +32,6 @@
     flex-direction: column;
 }
 
-.diff-panel{
-    display: flex;
-    flex-direction: column;
-}
 .diff-panel-header{
     padding: 10px 12px;
     background-color: #161b22;
@@ -90,14 +86,14 @@
     font-size: 14px;
 }
 
-.diff-actions button::hover{
+.diff-actions button:hover{
     background-color: #1f6feb;
     border-color: #58a6ff;
 }
 
 /* Result  */
 
-diff-result {
+.diff-results {
     border: 1px solid #30363d;
 
     border-radius: 8px;
@@ -153,4 +149,8 @@ diff-result {
 
 .diff-changed {
     color: #d29922;
+}
+
+@media (max-width: 700px) {
+    .diff-editor { grid-template-columns: 1fr; }
 }

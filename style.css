@@ -242,7 +242,7 @@ body.light-mode .topbar {
     border-bottom-color: #d0d7de;
 }
 
-body.light-mode .sidebar {
+body.light-mode .toolbar {
     background-color: #f6f8fa;
     border-right-color: #d0d7de;
 }
@@ -286,4 +286,62 @@ body.light-mode .welcome-screen p {
 
 body.light-mode .welcome-screen span {
     color: #6e7781;
+}
+
+body.light-mode .workspace .tool-header h2,
+body.light-mode .workspace #regexResult,
+body.light-mode .workspace #diffResult,
+body.light-mode .workspace #flexboxCSS,
+body.light-mode .workspace .css-output-row code {
+    color: #24292f;
+}
+
+body.light-mode .workspace .tool-header p,
+body.light-mode .workspace label,
+body.light-mode .workspace .panel-header,
+body.light-mode .workspace .diff-panel-header,
+body.light-mode .workspace .diff-result-header,
+body.light-mode .workspace .result-header,
+body.light-mode .workspace .output-header,
+body.light-mode .workspace .json-status,
+body.light-mode .workspace .validator-result,
+body.light-mode .workspace .regex-result,
+body.light-mode .workspace .color-status,
+body.light-mode .workspace .gradient-status,
+body.light-mode .workspace .shadow-status,
+body.light-mode .workspace .flexbox-status {
+    color: #57606a;
+}
+
+body.light-mode .workspace textarea,
+body.light-mode .workspace input[type="text"],
+body.light-mode .workspace select {
+    color: #24292f;
+    background-color: #ffffff;
+    border-color: #d0d7de;
+}
+
+body.light-mode .workspace .panel-header,
+body.light-mode .workspace .diff-panel-header,
+body.light-mode .workspace .diff-results,
+body.light-mode .workspace .regex-result,
+body.light-mode .workspace .validator-result,
+body.light-mode .workspace .shadow-output,
+body.light-mode .workspace .flexbox-output {
+    background-color: #f6f8fa;
+    border-color: #d0d7de;
+}
+
+.tool-load-error {
+    padding: 16px;
+    color: #f85149;
+    border: 1px solid #f85149;
+    border-radius: 8px;
+}
+
+@media (max-width: 720px) {
+    body { overflow: auto; }
+    main { height: auto; min-height: calc(100vh - 60px); flex-direction: column; overflow: visible; }
+    .toolbar { width: 100%; min-width: 0; height: auto; }
+    .workspace { padding: 24px 16px; overflow: visible; }
 }

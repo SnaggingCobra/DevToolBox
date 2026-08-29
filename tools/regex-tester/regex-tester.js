@@ -43,10 +43,11 @@ testRegex.addEventListener("click", () => {
         const regex =
             new RegExp(pattern, flags);
 
-        const matches =
-            text.match(regex);
+        const matches = flags.includes("g")
+            ? [...text.matchAll(regex)].map((match) => match[0])
+            : (text.match(regex) || []).slice(0, 1);
 
-        if (!matches) {
+        if (matches.length === 0) {
             regexResult.textContent =
                 "No matches found.";
 

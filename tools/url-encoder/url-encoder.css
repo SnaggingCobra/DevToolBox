@@ -1,0 +1,113 @@
+.url-encoder-tool {
+    width: 100%;
+    max-width: 1000px;
+}
+
+.url-encoder-tool .tool-header {
+    margin-bottom: 24px;
+
+}
+
+.url-encoder-tool .tool-header h2 {
+    color: #f0f6fc;
+    font-size: 28px;
+    margin-bottom: 8px;
+
+}
+
+.url-encoder-tool .tool-header p {
+    color: #8b949e;
+    font-size: 14px;
+}
+
+.url-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+
+}
+
+.url-section > label,
+.url-output-label label {
+    margin-bottom: 8px;
+    color: #8b949e;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.url-section textarea {
+    width: 100%;
+    min-height: 220px;
+    padding: 14px;
+    resize: vertical;
+    background-color: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    color: #f0f6fc;
+    font-family: monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    outline: none;
+}
+
+.url-section textarea:focus {
+    border-color: #58a6ff;
+
+}
+
+.url-section textarea::placeholder {
+    color: #6e7681;
+
+}
+
+.url-actions {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 22px;
+
+}
+
+.url-actions button,
+#copyUrl {
+    padding: 9px 16px;
+    border: 1px solid #30363d;
+    border-radius: 7px;
+    background-color: #21262d;
+    color: #f0f6fc;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.url-actions button:hover,
+#copyUrl:hover {
+    background-color: #1f6feb;
+    border-color: #58a6ff;
+}
+
+.url-output-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.url-output-label label {
+    margin-bottom: 8px;
+
+}
+
+.url-status {
+    margin-top: 5px;
+    color: #8b949e;
+    font-size: 13px;
+
+}
+
+@media (max-width: 600px) {
+
+    .url-actions {
+        flex-wrap: wrap;
+    }
+
+}
+

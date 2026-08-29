@@ -1,274 +1,69 @@
 document.addEventListener("DOMContentLoaded", () => {
-
-
+    const workspace = document.getElementById("Workspace");
     const themeButton = document.getElementById("themeButton");
+    const searchInput = document.getElementById("toolSearch");
+    const toolButtons = document.querySelectorAll(".tool-category button");
+
+    const tools = {
+        jsonFormatterTool: "json-formatter",
+        ValidatorTool: "json-validator",
+        RegexTesterTool: "regex-tester",
+        DiffCheakerTool: "diff-checker",
+        ColorConverterTool: "color-converter",
+        GradientGeneratorTool: "gradient-generator",
+        BoxShadowTool: "box-shadow",
+        FlexboxGeneratorTool: "flexbox-generator"
+    };
 
     themeButton.addEventListener("click", () => {
         document.body.classList.toggle("light-mode");
     });
 
-
-    const searchInput = document.getElementById("toolSearch");
-
-    const toolButtons = document.querySelectorAll(
-        ".tool-category button"
-    );
-
     searchInput.addEventListener("input", () => {
-
         const searchText = searchInput.value.toLowerCase();
-
         toolButtons.forEach((button) => {
+            button.hidden = !button.textContent.toLowerCase().includes(searchText);
+        });
+    });
 
-            const toolName = button.textContent.toLowerCase();
+    async function loadTool(toolName) {
+        workspace.setAttribute("aria-busy", "true");
 
-            if (toolName.includes(searchText)) {
-                button.style.display = "block";
-            } else {
-                button.style.display = "none";
+        try {
+            const response = await fetch(`tools/${toolName}/${toolName}.html`);
+            if (!response.ok) throw new Error(`Could not load ${toolName}`);
+
+            workspace.innerHTML = await response.text();
+
+            let stylesheet = document.getElementById("active-tool-styles");
+            if (!stylesheet) {
+                stylesheet = document.createElement("link");
+                stylesheet.id = "active-tool-styles";
+                stylesheet.rel = "stylesheet";
+                document.head.appendChild(stylesheet);
             }
+            stylesheet.href = `tools/${toolName}/${toolName}.css`;
 
-        });
+            const oldScript = document.getElementById("active-tool-script");
+            if (oldScript) oldScript.remove();
 
+            const toolScript = document.createElement("script");
+            toolScript.id = "active-tool-script";
+            toolScript.type = "module";
+            toolScript.src = `tools/${toolName}/${toolName}.js?reload=${Date.now()}`;
+            toolScript.onerror = () => {
+                workspace.innerHTML = "<p class=\"tool-load-error\">This tool could not be started. Please try again.</p>";
+            };
+            document.body.appendChild(toolScript);
+        } catch (error) {
+            workspace.innerHTML = "<p class=\"tool-load-error\">This tool could not be loaded. Please try again.</p>";
+            console.error(error);
+        } finally {
+            workspace.removeAttribute("aria-busy");
+        }
+    }
+
+    Object.entries(tools).forEach(([buttonId, toolName]) => {
+        document.getElementById(buttonId).addEventListener("click", () => loadTool(toolName));
     });
-
-
-
-    const workspace = document.getElementById("Workspace");
-
-// JSON FORMATTER
-
-document.getElementById("jsonFormatterTool")
-    .addEventListener("click", async () => {
-
-        const response = await fetch(
-            "tools/json-formatter/json-formatter.html"
-        );
-
-        const html = await response.text();
-
-        workspace.innerHTML = html;
-
-        // Load the tool CSS
-        const css = document.createElement("link");
-        css.rel = "stylesheet";
-        css.href = "tools/json-formatter/json-formatter.css";
-
-        document.head.appendChild(css);
-
-        // Load the tool JavaScript
-        const script = document.createElement("script");
-        script.src = "tools/json-formatter/json-formatter.js";
-        document.body.appendChild(script);
-
-    });
-
-// JSON VALIDATOR
-
-document.getElementById("ValidatorTool")
-    .addEventListener("click", async () => {
-
-        const response = await fetch(
-            "tools/json-validator/json-validator.html"
-        );
-
-        const html = await response.text();
-        workspace.innerHTML = html;
-
-        const css = document.createElement("link");
-
-        css.rel = "stylesheet";
-        css.href =
-            "tools/json-validator/json-validator.css";
-
-        document.head.appendChild(css);
-
-        const script = document.createElement("script");
-        script.src =
-            "tools/json-validator/json-validator.js";
-
-        document.body.appendChild(script);
-
-    });
-
-
-
-
-document.getElementById("RegexTesterTool")
-    .addEventListener("click", async () => {
-
-        const response = await fetch(
-            "tools/regex-tester/regex-tester.html"
-        );
-        const html = await response.text();
-
-        workspace.innerHTML = html;
-        const css = document.createElement("link");
-
-        css.rel = "stylesheet";
-        css.href =
-            "tools/regex-tester/regex-tester.css";
-        document.head.appendChild(css);
-        const script = document.createElement("script");
-        script.src =
-            "tools/regex-tester/regex-tester.js";
-        document.body.appendChild(script);
-    });
-
-document.getElementById("DiffCheakerTool")
-    .addEventListener("click", async () => {
-
-        const response = await fetch(
-            "tools/diff-checker/diff-checker.html"
-        );
-        const html = await response.text();
-
-        workspace.innerHTML = html;
-
-        const css = document.createElement("link");
-
-        css.rel = "stylesheet";
-        css.href =
-            "tools/diff-checker/diff-checker.css";
-        document.head.appendChild(css);
-
-        const script = document.createElement("script");
-
-        script.src =
-            "tools/diff-checker/diff-checker.js";
-        document.body.appendChild(script);
-
-    });
-
-document.getElementById("ColorConverterTool")
-    .addEventListener("click", async () => {
-
-        const response = await fetch(
-            "tools/color-converter/color-converter.html"
-        );
-        const html = await response.text();
-        workspace.innerHTML = html;
-
-        const css = document.createElement("link");
-
-        css.rel = "stylesheet";
-        css.href =
-            "tools/color-converter/color-converter.css";
-        document.head.appendChild(css);
-
-        const script = document.createElement("script");
-        script.src =
-            "tools/color-converter/color-converter.js";
-        document.body.appendChild(script);
-    });
-
-
-document.getElementById("GradientGeneratorTool")
-    .addEventListener("click", async () => {
-
-        const response = await fetch(
-            "tools/gradient-generator/gradient-generator.html"
-        );
-        const html = await response.text();
-        workspace.innerHTML = html;
-
-        
-        const css = document.createElement("link");
-        css.rel = "stylesheet";
-        css.href =
-            "tools/gradient-generator/gradient-generator.css";
-        document.head.appendChild(css);
-
-
-        const script = document.createElement("script");
-        script.src =
-            "tools/gradient-generator/gradient-generator.js";
-        document.body.appendChild(script);
-
-    });
-
-    document.getElementById("BoxShadowTool")
-    .addEventListener("click", async () => {
-
-        const response = await fetch(
-            "tools/box-shadow/box-shadow.html"
-        );
-
-
-        const html = await response.text();
-        workspace.innerHTML = html;
-
-        const css = document.createElement("link");
-
-        css.rel = "stylesheet";
-        css.href =
-            "tools/box-shadow/box-shadow.css";
-
-        document.head.appendChild(css);
-
-        const script = document.createElement("script");
-
-        script.src =
-            "tools/box-shadow/box-shadow.js";
-        document.body.appendChild(script);
-
-            });
-
-    
-document.getElementById("FlexboxGeneratorTool")
-    .addEventListener("click", async () => {
-
-        const response = await fetch(
-            "tools/flexbox-generator/flexbox-generator.html"
-        );
-        const html = await response.text();
-
-        workspace.innerHTML = html;
-
-        const css = document.createElement("link");
-        css.rel = "stylesheet";
-
-        css.href =
-            "tools/flexbox-generator/flexbox-generator.css";
-
-
-
-        document.head.appendChild(css);
-
-        const script = document.createElement("script");
-
-        script.src =
-            "tools/flexbox-generator/flexbox-generator.js";
-        document.body.appendChild(script);
-
-    });
-
-    document.getElementById("Base64Tool")
-        .addEventListener("click", async () => {
-            const response = await fetch(
-                "tools/base64/base64.html"
-            );
-
-            const html = await response.text();
-
-            workspace.innerHTML = html;
-
-            const css = 
-                document.createElement("link");
-
-
-            css.rel = "stylesheet";
-
-            css.href = "tools/base64/base64.css";
-
-            document.head.appendChild(css);
-
-
-            const script =
-                document.createElement("script");
-
-            script.src =
-                "tools/base64/base64.js";
-            document.body.appendChild(script);
-        });
-})
+});
