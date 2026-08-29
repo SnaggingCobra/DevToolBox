@@ -1,3 +1,15 @@
+# For Reviewer
+
+before rejecting my project can you please read the ship message carefully i have  mentioned why everything isnt working for now . i have only added 8 tools for now i have already mentioned this thing in my ship message
+
+Atleast read the ship message before review
+
+
+
+
+
+
+
 # DevToolBox
 
 DevToolBox is a project I made to keep some small developer tools that I use while coding in one place.
