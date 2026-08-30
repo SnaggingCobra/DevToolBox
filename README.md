@@ -7,12 +7,7 @@ When I'm working on a website, I sometimes need to convert a color, test a regex
 .
 
 ## What I built
-<!-- 
-### Base64 Encoder / Decoder
 
-The Base64 tool can convert normal text into Base64 and decode Base64 back into normal text. -->
-
-I added this because Base64 comes up fairly often when working with web development and data, and I wanted a quick way to do the conversion without opening another website.
 
 ### Box Shadow Generator
 
