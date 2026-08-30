@@ -155,6 +155,16 @@ main {
     margin-bottom: 22px;
 }
 
+.search-hidden {
+    display: none !important;
+}
+
+.search-empty {
+    margin: 12px 0;
+    color: #8b949e;
+    font-size: 14px;
+}
+
 .tool-category h3 {
     margin-bottom: 6px;
     color: #6e7681;
@@ -274,6 +284,10 @@ body.light-mode .quick-links button:hover {
 
 body.light-mode .tool-category h3 {
     color: #6e7781;
+}
+
+body.light-mode .search-empty {
+    color: #57606a;
 }
 
 body.light-mode .welcome-screen h2 {

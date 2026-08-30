@@ -32,8 +32,10 @@
             </div>
                
               <div class="search-box" >
-                  <input type="text" id="toolSearch" placeholder="🔍 Search tools...">
+                  <input type="search" id="toolSearch" placeholder="🔍 Search tools..." aria-label="Search tools">
               </div>
+
+              <p class="search-empty" id="searchEmpty" hidden>No tools found.</p>
 
         <nav class="tool-navigation">
               <div class="tool-category">
@@ -43,9 +45,9 @@
                 <button id="ValidatorTool" >JSON Validator</button>
                 <button id="RegexTesterTool">Regex Tester</button>
                 <button id="DiffCheakerTool">Diff Checker</button>
+              </div>
 
-
-
+              <div class="tool-category">
                 <h3>🎨 CSS</h3>
 
                 <button id="ColorConverterTool">Color Converter</button>

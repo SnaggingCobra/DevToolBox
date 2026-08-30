@@ -2,7 +2,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const workspace = document.getElementById("Workspace");
     const themeButton = document.getElementById("themeButton");
     const searchInput = document.getElementById("toolSearch");
+    const searchEmpty = document.getElementById("searchEmpty");
     const toolButtons = document.querySelectorAll(".tool-category button");
+    const toolCategories = document.querySelectorAll(".tool-category");
 
     const tools = {
         jsonFormatterTool: "json-formatter",
@@ -20,10 +22,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     searchInput.addEventListener("input", () => {
-        const searchText = searchInput.value.toLowerCase();
+        const searchText = searchInput.value.trim().toLowerCase();
+        let matches = 0;
+
         toolButtons.forEach((button) => {
-            button.hidden = !button.textContent.toLowerCase().includes(searchText);
+            const isMatch = button.textContent.trim().toLowerCase().includes(searchText);
+            button.classList.toggle("search-hidden", !isMatch);
+            if (isMatch) matches += 1;
         });
+
+        toolCategories.forEach((category) => {
+            const hasVisibleTool = category.querySelector("button:not(.search-hidden)");
+            category.classList.toggle("search-hidden", !hasVisibleTool);
+        });
+
+        searchEmpty.hidden = matches !== 0 || searchText === "";
     });
 
     async function loadTool(toolName) {
