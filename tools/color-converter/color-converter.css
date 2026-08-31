@@ -3,8 +3,6 @@
     max-width: 900px;
 }
 
-/* Header  */
-
 .color-tool .tool-header {
     margin-bottom: 24px;
 }
@@ -26,8 +24,6 @@
     grid-template-columns: 220px 1fr;
     gap: 24px;
 }
-
-/* Preview  */
 
 .color-preview-section {
     display: flex;
@@ -78,8 +74,6 @@
 .color-field input:focus {
     border-color: #58a6ff;
 }
-
-/* button */
 
 .color-actions {
     display: flex;
