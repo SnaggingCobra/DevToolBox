@@ -17,8 +17,6 @@ const regexResult =
     document.getElementById("regexResult");
 
 
-    
-// TEST REGEX
 testRegex.addEventListener("click", () => {
 
     const pattern =
@@ -29,7 +27,6 @@ testRegex.addEventListener("click", () => {
 
     const text =
         regexText.value;
-
 
     if (!pattern) {
 
@@ -72,7 +69,6 @@ testRegex.addEventListener("click", () => {
     }
 
 });
-// CLEAR
 
 clearRegex.addEventListener("click", () => {
 
