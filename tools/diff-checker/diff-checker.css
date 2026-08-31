@@ -3,8 +3,6 @@
     max-width: 1100px;
 }
 
-/* header */
- 
 .diff-tool .tool-header{
     margin-bottom: 24px;
 }
@@ -18,8 +16,6 @@
     color: #8b949e;
     font-size: 14px;
 }
-
-/* Editor */
 
 .diff-editor {
     display: grid;
@@ -64,11 +60,8 @@
 }
 
 .diff-panel textarea::placeholder {
-    color: #6e7681;
+    color: #6e7681 
 }
-
-/* button */
-
 .diff-actions {
     display: flex;
     gap: 10px;
@@ -90,8 +83,6 @@
     background-color: #1f6feb;
     border-color: #58a6ff;
 }
-
-/* Result  */
 
 .diff-results {
     border: 1px solid #30363d;
@@ -131,26 +122,22 @@
     white-space: pre-wrap;
 }
 
-
 .diff-same {
     color: #3fb950;
 }
-
 
 .diff-added {
     color: #3fb950;
 }
 
-
 .diff-removed {
     color: #f85149;
 }
-
 
 .diff-changed {
     color: #d29922;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 600px) {
     .diff-editor { grid-template-columns: 1fr; }
 }
