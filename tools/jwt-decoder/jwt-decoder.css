@@ -1,0 +1,101 @@
+.jwt-tool {
+    width: 100%;
+    max-width: 1000px;
+
+}
+
+.jwt-tool .tool-header {
+    margin-bottom: 24px;
+
+}
+
+.jwt-tool .tool-header h2 {
+    color: #f0f6fc;
+    font-size: 28px;
+    margin-bottom: 6px;
+}
+
+.jwt-tool .tool-header p {
+    color: #8b949e;
+    font-size: 14px;
+}
+
+.jwt-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+
+}
+
+.jwt-section > label {
+    margin-bottom: 8px;
+    color: #8b949e;
+    font-size: 13px;
+    font-weight: 600;
+
+}
+
+.jwt-section textarea {
+    width: 100%;
+    min-height: 150px;
+    padding: 14px;
+    resize: vertical;
+    background-color: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    color: #f0f6fc;
+    font-family: monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    outline: none;
+}
+
+.jwt-section textarea:focus {
+    border-color: #58a6ff;
+
+}
+
+.jwt-section textarea::placeholder {
+    color: #607681;
+
+}
+
+.jwt-actions {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 22px;
+
+}
+
+.jwt-actions button {
+    padding: 9px 16px;
+    border: 1px solid #30363d;
+    border-radius: 7px;
+    background-color: #21262c;
+    color: #f0f6fc;
+    cursor: pointer;
+    font-size: 14px;
+
+}
+
+.jwt-actions button:hover {
+    background-color: #4dbe75;
+    border-color: #58a6ff;
+
+}
+
+.jwt-status {
+    margin-top: 4px;
+    color: #8b949e;
+    font-size: 13px;
+}
+
+@media (max-width: 600px) {
+
+    .jwt-actions {
+        flex-wrap: wrap;
+    }
+
+}
+
+

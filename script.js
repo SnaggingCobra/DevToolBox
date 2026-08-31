@@ -14,7 +14,10 @@ document.addEventListener("DOMContentLoaded", () => {
         ColorConverterTool: "color-converter",
         GradientGeneratorTool: "gradient-generator",
         BoxShadowTool: "box-shadow",
-        FlexboxGeneratorTool: "flexbox-generator"
+        FlexboxGeneratorTool: "flexbox-generator",
+        Base64Tool: "base64",
+        urlEncoderTool: "url-encoder",
+        jwtDecoderTool: "jwt-decoder"
     };
 
     themeButton.addEventListener("click", () => {
@@ -77,6 +80,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     Object.entries(tools).forEach(([buttonId, toolName]) => {
-        document.getElementById(buttonId).addEventListener("click", () => loadTool(toolName));
+        const button = document.getElementById(buttonId);
+        if (button) {
+            button.addEventListener("click", () => loadTool(toolName));
+        }
     });
 });

@@ -1,0 +1,36 @@
+<div class="jwt-tool">
+    <div class="tool-header">
+        <h2>JWT Decoder</h2>
+        <p>Decode a json Web Token (JWT) </p>
+    </div>
+
+    <div class="jwt-section">
+        <label for="jwtInput">JWT Token</label>
+        <textarea  id="jwtInput" placeholder="Paste your JWT token "></textarea>
+    </div>
+    
+    <div class="jwt-actions">
+
+        <button id="decodeJWT">Decode JWT</button>
+
+        <button id="clearJwt">Clear</button>
+
+    </div>
+
+    <div class="jwt-sections">
+        <label for="jwtHeader"> Header</label>
+
+        <textarea id="jwtHeader" readonly placeholder="Result"></textarea>
+
+    </div>
+
+    <div class="jwt-section">
+        <label for="jwtPayload">Payload</label>
+        <textarea id="jwtPayload" readonly placeholder="Decode result"></textarea>
+    </div>
+
+    <div id="jwtStatus" class="jwt-status">
+        Ready
+
+    </div>
+</div>
