@@ -3,9 +3,6 @@
     max-width: 1100px;
 }
 
-
-/* Header */
-
 .tool-header {
     margin-bottom: 24px;
 }
@@ -21,17 +18,12 @@
     font-size: 14px;
 }
 
-
-/* Editor */
-
 .json-editor {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
 }
 
-
-/* Panels */
 
 .json-panel {
     display: flex;
@@ -50,9 +42,6 @@
     font-size: 13px;
     font-weight: 600;
 }
-
-
-/* Textareas */
 
 .json-panel textarea {
     width: 100%;
@@ -78,8 +67,6 @@
 }
 
 
-/* Buttons */
-
 .json-actions {
     display: flex;
     gap: 10px;
@@ -103,15 +90,13 @@
 }
 
 
-/* Status */
-
 .json-status {
     margin-top: 12px;
     color: #8b949e;
     font-size: 13px;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 600px) {
     .json-editor { grid-template-columns: 1fr; }
     .json-panel textarea { height: 260px; }
 }
