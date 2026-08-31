@@ -10,15 +10,11 @@ const clearValidator =
 const validatorResult =
     document.getElementById("validatorResult");
 
-// VALIDATE JSON
 
 validateJson.addEventListener("click", () => {
 
     const input =
         validatorInput.value.trim();
-
-
-    // Empty input
 
     if (!input) {
 
@@ -43,8 +39,6 @@ validateJson.addEventListener("click", () => {
     }
 
 });
-
-// CLEAR
 
 clearValidator.addEventListener("click", () => {
 
