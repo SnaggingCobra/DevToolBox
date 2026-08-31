@@ -1,24 +1,16 @@
-# For reviewer
 
-Now I don't know what to here as recent review I have used more ai like more than e
-30% and asked me to rewrite those part but i have used ai in very small part for debugging fixxing error and very smallportion on code less than 10% if you want me to remove the ai written part of code the error fixing and debugging area or area I cannot do . so I if I remove the ai written part I'm sure the code will not work
-
-
-I don't know what to do now I declare every code is written by me
-only thing I can do now is remove the comments from code but I have done it myself to track code 
-I don't think I cab do more than this
-
-
-even after this if you think this is ai made its been 6 time. yes I have used ai in readme and ai declaration I have fixed that no issue their rewrote the whole thing 
-
-and if you still
-think it's ai rather than rejecting just delete my project now I will not  work on this project and think my 12 hours of work is just trash.
 # DevToolBox
 
 DevToolBox is a project I made to keep some small developer tools that I use while coding in one place.
 When I'm working on a website, I sometimes need to convert a color, test a regex, format JSON, make a CSS gradient, or check what changed between two pieces of code. Normally I would have to search for a different website for each of these things. I wanted to make my own small toolbox instead.
 
 ## What I built
+
+
+### JWT Decoder
+
+This tool Helps user to decode the JWT token in a JSon format and provide the formatted options in copy format Decode JWT tokens quickly and view their header and payload in a readable JSON format. No token verification is performed.
+
 
 ### Box Shadow Generator
 
