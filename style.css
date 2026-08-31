@@ -9,32 +9,22 @@ body {
 
     height: 100vh;
     margin: 0;
-
     background-color: #0d1117;
     color: #f0f6fc;
-
     overflow: hidden;
 }
-/* Header */
 .topbar {
     height: 60px;
     padding: 0 18px;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     background-color: #172840;
     border-bottom: 1px solid #30363d;
-
     position: sticky;
     top: 0;
     z-index: 100;
 }
-
-
-/* Brand */ 
-
 .brand {
     display: flex;
     align-items: center;
@@ -52,9 +42,6 @@ body {
     font-weight: 600;
     color: #f0f6fc;
 }
-
-
-/* Header*/
 
 .topbar-actions {
     display: flex;
@@ -94,7 +81,6 @@ main {
     overflow: hidden;
 }
 
-/* Toolbar */
 .toolbar {
     width: 260px;
     min-width: 260px;
@@ -117,9 +103,6 @@ main {
     background: #6e7681;
     border-radius: 8px;
 }
-
-/* Sidebar title */
-
 .toolbar-header {
     margin-bottom: 20px;
 }
@@ -128,7 +111,6 @@ main {
     font-size: 25px;
 }
 
-/* Search */
 .search-box{
   margin-bottom: 5px;
 }
@@ -148,8 +130,6 @@ main {
 .search-box input:focus {
     border-color: #58a6ff;
 }
-
-/* Tool categories */
 
 .tool-category {
     margin-bottom: 22px;
@@ -173,9 +153,6 @@ main {
     text-transform: uppercase;
     letter-spacing: 0.08em;
 }
-
-/* Tool buttons */
-
 .tool-category button {
     display: block;
     width: 100%;
@@ -193,8 +170,6 @@ main {
     background-color: #21262d;
     color: #f0f6fc;
 }
-
-/* WorkSpace */
 .workspace {
     flex: 1;
     display: flex;
@@ -238,10 +213,6 @@ main {
 
     color: #6e7681;
 }
-/* ========================================
-   LIGHT MODE
-   ======================================== */
-
 body.light-mode {
     background-color: #ffffff;
     color: #24292f;
