@@ -37,6 +37,37 @@ const resetFlexbox =
 const copyFlexboxCSS =
     document.getElementById("copyFlexboxCSS");
 
+const itemCount = document.getElementById("itemCount");
+
+const generateItems = 
+    document.getElementById("generateItems");
+
+
+
+function updateItems() {
+    let count = Number(itemCount.value);
+
+    if (!count || count <1) {
+        count = 1;
+    }
+
+    if (count > 20) {
+        count = 20;
+    }
+    
+    itemCount.value = count;
+
+
+    flexboxPreview.innerHTML = "";
+    
+    for (let i = 0; i < count; i++) {
+        const item = document.createElement("div");
+        item.className = "flex-item";
+        item.textContent = i+1;
+        flexboxPreview.appendChild(item);
+    }
+
+}
 
 
     function updateFlexbox() {
@@ -100,6 +131,15 @@ const copyFlexboxCSS =
             "✓ Flexbox updated.";
     }
 
+    generateItems.addEventListener("click", () => {
+        updateItems();
+        updateFlexbox();
+
+        flexboxStatus.textContent =
+            "Items generated.";
+    }
+);
+
 flexDirection.addEventListener(
     "change",
     updateFlexbox
@@ -158,6 +198,9 @@ copyFlexboxCSS.addEventListener(
 resetFlexbox.addEventListener(
     "click",
     () => {
+        
+        itemCount.value =4;
+
 
         flexDirection.value =
             "row";
@@ -177,13 +220,15 @@ resetFlexbox.addEventListener(
         flexColumnGap.value =
             10;
 
+        updateItems();
         updateFlexbox();
 
-        flexboxStatus.textContent =
-            "✓ Flexbox reset.";
+        flexboxStatus.textContent = " Flexbox reset.";
 
     }
 );
 
+
+updateItems();
 updateFlexbox();
     

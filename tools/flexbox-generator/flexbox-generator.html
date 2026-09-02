@@ -13,11 +13,6 @@
 
         <div id="flexboxPreview" class="flexbox-preview">
 
-            <div class="flex-item">1</div>
-            <div class="flex-item">2</div>
-            <div class="flex-item">3</div>
-            <div class="flex-item">4</div>
-
         </div>
 
     </div>
@@ -25,6 +20,24 @@
 
 
     <div class="flexbox-controls">
+
+
+        <div class="flexbox-field">
+            <label for="itemCount">
+                Number of Items
+            </label>
+
+            <input
+                type="number"
+                id="itemCount"
+                min="1"
+                max="20"
+                value="4"
+            >
+
+            <button id="generateItems" type="button">Generate</button>
+
+        </div>
 
 
         <div class="flexbox-field">
