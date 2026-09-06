@@ -68,7 +68,7 @@ I chose this structure because it keeps the project easy to understand and makes
 ## Running it
 
 There is no build process or package installation needed.
-I can open the HTML files directly in a browser. I can also run the project using a simple local server:
+Run the project with a simple local server. This is needed because the main page loads each tool from its own folder:
 python3 -m http.server 8000
 Then I can open the local server in my browser and use the tools from there.
 
@@ -87,4 +87,3 @@ The project wasn't made from one prompt. I worked on the tools myself, tested th
 
 ## Creator
    -- Prajwol Gynawali
-

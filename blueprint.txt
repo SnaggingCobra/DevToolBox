@@ -275,22 +275,6 @@ Mobile:
 ├─────────────────────┤
 │ UUID Generator      │
 └─────────────────────┘
-8. ⭐ Favorites
-
-Later, users can click:
-
-☆ JSON Formatter
-
-and make it:
-
-★ JSON Formatter
-
-Then the homepage has:
-
-⭐ Your Favorites
-
-No account required if we use browser localStorage.
-
 9. 🕐 Recently used
 
 Also using localStorage:
@@ -374,7 +358,6 @@ Regex101
 Stack Overflow
 Can I Use
 Phase 5 — Quality-of-life
-Favorites
 Recently Used
 Keyboard shortcuts
 Copy buttons

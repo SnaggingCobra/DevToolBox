@@ -138,6 +138,10 @@ function updateColor() {
         return;
     }
 
+    const normalizedHex = `#${hex.replace("#", "").length === 3
+        ? hex.replace("#", "").split("").map((character) => character + character).join("")
+        : hex.replace("#", "")}`.toUpperCase();
+
     const hsl =
         rgbToHsl(
             rgb.r,
@@ -152,10 +156,12 @@ function updateColor() {
         `hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)`;
 
     colorPreview.style.backgroundColor =
-        "#" + hex.replace("#", "");
+        normalizedHex;
 
     colorPicker.value =
-        "#" + hex.replace("#", "");
+        normalizedHex;
+
+    hexColor.value = normalizedHex;
 
     colorStatus.textContent =
         "✓ Color converted successfully.";
@@ -176,39 +182,17 @@ convertColor.addEventListener(
     updateColor
 );
 
-// COPY
-
-copyHex.addEventListener(
-    "click",
-    () => {
-        navigator.clipboard.writeText(
-            hexColor.value
-        );
-        colorStatus.textContent =
-            "✓ HEX copied.";
+async function copyColor(value, label) {
+    try {
+        await navigator.clipboard.writeText(value);
+        colorStatus.textContent = `✓ ${label} copied.`;
+    } catch {
+        colorStatus.textContent = "Could not copy. Please copy the value manually.";
     }
-);
+}
 
-copyRgb.addEventListener(
-    "click",
-    () => {
-        navigator.clipboard.writeText(
-            rgbColor.value
-        );
-        colorStatus.textContent =
-            "✓ RGB copied.";
-    }
-);
-
-copyHsl.addEventListener(
-    "click",
-    () => {
-        navigator.clipboard.writeText(
-            hslColor.value
-        );
-        colorStatus.textContent =
-            "✓ HSL copied.";
-    }
-);
+copyHex.addEventListener("click", () => copyColor(hexColor.value, "HEX"));
+copyRgb.addEventListener("click", () => copyColor(rgbColor.value, "RGB"));
+copyHsl.addEventListener("click", () => copyColor(hslColor.value, "HSL"));
 
 updateColor();

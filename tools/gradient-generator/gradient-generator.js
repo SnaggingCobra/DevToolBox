@@ -37,6 +37,9 @@ const copyGradientCSS =
 const gradientStatus =
     document.getElementById("gradientStatus");
 
+const angleField =
+    document.getElementById("angleField");
+
 function updateGradient() {
 
     const type =
@@ -50,6 +53,8 @@ function updateGradient() {
 
     const color2 =
         gradientColor2.value;
+
+    angleField.hidden = type !== "linear";
 
     angleValue.textContent =
         `${angle}°`;
@@ -209,7 +214,5 @@ copyGradientCSS.addEventListener(
         }
     }
 );
-
-updateGradient();
 
 updateGradient();

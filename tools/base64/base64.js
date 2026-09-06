@@ -21,6 +21,32 @@ const base64Status =
 
     
 
+function encodeText(value) {
+    const bytes = new TextEncoder().encode(value);
+    let binary = "";
+    bytes.forEach((byte) => {
+        binary += String.fromCharCode(byte);
+    });
+    return btoa(binary);
+}
+
+function decodeText(value) {
+    const binary = atob(value.replace(/\s/g, ""));
+    const bytes = Uint8Array.from(binary, (character) => character.charCodeAt(0));
+    return new TextDecoder("utf-8", { fatal: true }).decode(bytes);
+}
+
+async function copyText(value) {
+    if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(value);
+        return;
+    }
+
+    base64Output.focus();
+    base64Output.select();
+    if (!document.execCommand("copy")) throw new Error("Copy failed");
+}
+
 encodeBase64.addEventListener("click", () => {
     const input = base64Input.value;
 
@@ -30,22 +56,12 @@ encodeBase64.addEventListener("click", () => {
     }
 
     try {
-        const encoded =
-            btoa(
-                unescape(
-                    encodeURIComponent(input)
-                )
-            );
-            base64Output.value = 
-                encoded;
-
-                base64Status.textContent = 
-                    "text Encoded";
+        base64Output.value = encodeText(input);
+        base64Status.textContent = "Text encoded.";
 
     }
     catch (error) {
-        base64Status.textContent =
-            "coudnt encode the Text";
+        base64Status.textContent = "Could not encode the text.";
 
     }
 
@@ -63,14 +79,8 @@ decodeBase64.addEventListener("click", () => {
     }
 
     try {
-        const decoded =
-            decodeURIComponent(
-                escape(
-                    atob(input)
-                )
-            );
-            base64Output.value = decoded;
-            base64Status.textContent = "Base64 decoded";
+        base64Output.value = decodeText(input);
+        base64Status.textContent = "Base64 decoded.";
     }
 
     catch (error){
@@ -96,15 +106,11 @@ clearBase64.addEventListener("click", () => {
         }
 
         try {
-            await navigator.clipboard.writeText(
-                base64Output.value
-            );
-
-            base64Status.textContent =
-                "output copied";
+            await copyText(base64Output.value);
+            base64Status.textContent = "Output copied to clipboard.";
         }
         catch (error) {
             base64Status.textContent =
-                "coudnt copy Output";
+                "Could not copy the output.";
         }
     });

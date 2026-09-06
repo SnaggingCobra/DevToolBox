@@ -55,29 +55,52 @@
               <p class="search-empty" id="searchEmpty" hidden>No tools found.</p>
 
         <nav class="tool-navigation">
+
               <div class="tool-category">
                 <h3>💻 Code</h3>
 
-                <button id="jsonFormatterTool" >JSON Formatter</button>
-                <button id="ValidatorTool" >JSON Validator</button>
-                <button id="RegexTesterTool">Regex Tester</button>
-                <button id="DiffCheakerTool">Diff Checker</button>
+                <button class="tool-button" id="jsonFormatterTool" type="button">
+                  <span>JSON Formatter</span>
+                </button>
+                <button class="tool-button" id="ValidatorTool" type="button">
+                  <span>JSON Validator</span>
+                </button>
+                <button class="tool-button" id="RegexTesterTool" type="button">
+                  <span>Regex Tester</span>
+                </button>
+                <button class="tool-button" id="DiffCheckerTool" type="button">
+                  <span>Diff Checker</span>
+                </button>
               </div>
 
               <div class="tool-category">
                 <h3>🎨 CSS</h3>
 
-                <button id="ColorConverterTool">Color Converter</button>
-                <button id="GradientGeneratorTool">Gradient Generator</button>
-                <button id="BoxShadowTool">Box Shadow</button>
-                <button id="FlexboxGeneratorTool">Flexbox Generator</button>
+                <button class="tool-button" id="ColorConverterTool" type="button">
+                  <span>Color Converter</span>
+                </button>
+                <button class="tool-button" id="GradientGeneratorTool" type="button">
+                  <span>Gradient Generator</span>
+                </button>
+                <button class="tool-button" id="BoxShadowTool" type="button">
+                  <span>Box Shadow</span>
+                </button>
+                <button class="tool-button" id="FlexboxGeneratorTool" type="button">
+                  <span>Flexbox Generator</span>
+                </button>
 
 
                 <h3>🔐 Encoding</h3>
 
-                <button id="Base64Tool">Base64</button>
-                <button id="urlEncoderTool">URL Encoder</button>
-                <button id="jwtDecoderTool">JWT Decoder</button>
+                <button class="tool-button" id="Base64Tool" type="button">
+                  <span>Base64</span>
+                </button>
+                <button class="tool-button" id="urlEncoderTool" type="button">
+                  <span>URL Encoder</span>
+                </button>
+                <button class="tool-button" id="jwtDecoderTool" type="button">
+                  <span>JWT Decoder</span>
+                </button>
 
 
                 <!-- <h3>⚙️ Generacheck tors</h3>
@@ -107,12 +130,14 @@
               Select a tool from the sidebar to get started.
           </span>
 
+          <button class="quick-links-button" id="quickLinksButton" type="button">
+              Quick Links
+          </button>
       </div>
 
     </section>
       
     
-      
     </main>
 
     <script src="script.js"></script>

@@ -11,7 +11,7 @@ const tools = {
     jsonFormatterTool: "json-formatter",
     ValidatorTool: "json-validator",
     RegexTesterTool: "regex-tester",
-    DiffCheakerTool: "diff-checker",
+    DiffCheckerTool: "diff-checker",
     ColorConverterTool: "color-converter",
     GradientGeneratorTool: "gradient-generator",
     BoxShadowTool: "box-shadow",
@@ -21,9 +21,24 @@ const tools = {
     jwtDecoderTool: "jwt-decoder"
 };
 
+let loadVersion = 0;
+
+function setActiveTool(buttonId) {
+    toolButtons.forEach((button) => {
+        const isActive = button.id === buttonId;
+        button.classList.toggle("is-active", isActive);
+        button.setAttribute("aria-pressed", String(isActive));
+    });
+}
+
 if (themeButton) {
+    const savedTheme = localStorage.getItem("devtoolbox-theme");
+    const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+    document.body.classList.toggle("light-mode", savedTheme === "light" || (!savedTheme && prefersLight));
+
     themeButton.addEventListener("click", () => {
-        document.body.classList.toggle("light-theme");
+        const isLight = document.body.classList.toggle("light-mode");
+        localStorage.setItem("devtoolbox-theme", isLight ? "light" : "dark");
     });
 }
 
@@ -48,8 +63,10 @@ if (searchInput) {
     });
 }
 
-async function loadTool(toolName) {
+async function loadTool(toolName, buttonId) {
     if (!workspace) return;
+    const currentLoad = ++loadVersion;
+    setActiveTool(buttonId);
     workspace.setAttribute("aria-busy", "true");
     try {
         const response = await fetch(`tools/${toolName}/${toolName}.html`);
@@ -58,23 +75,31 @@ async function loadTool(toolName) {
         }
 
         const html = await response.text();
-
-        let stylesheet = document.getElementById("active-tool-style");
-        if (!stylesheet) {
-            stylesheet = document.createElement("link");
-            stylesheet.id = "active-tool-style";
-            stylesheet.rel = "stylesheet";
-            document.head.appendChild(stylesheet);
-        }
+        if (currentLoad !== loadVersion) return;
 
         const cssPath = `tools/${toolName}/${toolName}.css`;
-        await new Promise((resolve) => {
+        const stylesheet = document.createElement("link");
+        stylesheet.rel = "stylesheet";
+        stylesheet.href = cssPath;
+
+        await new Promise((resolve, reject) => {
             stylesheet.onload = resolve;
-            stylesheet.onerror = resolve;
-            stylesheet.href = cssPath;
+            stylesheet.onerror = () => reject(new Error(`Failed to load styles for ${toolName}`));
+            document.head.appendChild(stylesheet);
         });
+        if (currentLoad !== loadVersion) {
+            stylesheet.remove();
+            return;
+        }
+
+        const oldStylesheet = document.getElementById("active-tool-style");
+        if (oldStylesheet) oldStylesheet.remove();
+        stylesheet.id = "active-tool-style";
 
         workspace.innerHTML = html;
+        // ensure workspace is scrolled to top so header doesn't overlap first lines
+        if (workspace.scrollTop !== undefined) workspace.scrollTop = 0;
+        try { window.scrollTo(0,0); } catch (e) {}
 
         const oldScript = document.getElementById("active-tool-script");
         if (oldScript) oldScript.remove();
@@ -84,6 +109,7 @@ async function loadTool(toolName) {
         toolScript.type = "module";
         toolScript.src = `tools/${toolName}/${toolName}.js`;
         toolScript.onerror = () => {
+            if (currentLoad !== loadVersion) return;
             workspace.innerHTML = `
                 <p class="tool-load-error">
                     This tool could not be started.
@@ -92,6 +118,7 @@ async function loadTool(toolName) {
         };
         document.body.appendChild(toolScript);
     } catch (error) {
+        if (currentLoad !== loadVersion) return;
         workspace.innerHTML = `
             <p class="tool-load-error">
                 This tool could not be loaded.
@@ -100,13 +127,89 @@ async function loadTool(toolName) {
         `;
         console.error("Tool loading error:", error);
     } finally {
-        workspace.removeAttribute("aria-busy");
+        if (currentLoad === loadVersion) workspace.removeAttribute("aria-busy");
     }
 }
 
 Object.entries(tools).forEach(([buttonId, toolName]) => {
     const button = document.getElementById(buttonId);
     if (button) {
-        button.addEventListener("click", () => loadTool(toolName));
+        button.setAttribute("aria-pressed", "false");
+        button.addEventListener("click", () => loadTool(toolName, buttonId));
     }
 });
+
+const quickLinksButton = document.getElementById('quickLinksButton');
+
+function renderWelcomeScreen() {
+    loadVersion++;
+    setActiveTool("");
+    workspace.removeAttribute("aria-busy");
+    workspace.innerHTML = `
+    <div class="welcome-screen">
+        <div class="welcome-icon">🧰</div>
+        <h2>DevToolBox</h2>
+        <p>Developer tools, all in one place.</p>
+        <span>Select a tool from the sidebar to get started.</span>
+        <button class="quick-links-button" id="quickLinksButton" type="button">Quick Links</button>
+    </div>`;
+
+    // re-wire the quick links button in the welcome screen
+    const qbtn = document.getElementById('quickLinksButton');
+    if (qbtn) qbtn.addEventListener('click', showQuickLinksWorkspace);
+}
+
+function showQuickLinksWorkspace() {
+    loadVersion++;
+    setActiveTool("");
+    workspace.removeAttribute("aria-busy");
+    workspace.innerHTML = `
+        <div class="quick-links-workspace">
+            <div class="tool-header" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+                <div>
+                    <h2>Quick Links</h2>
+                    <p style="margin:0;color:var(--muted,#6e7681);">Search and open external tools (opens in new tab)</p>
+                </div>
+                <div>
+                    <button id="backToWelcome" class="header-button" type="button" title="Back" aria-label="Back to welcome screen">◀</button>
+                </div>
+            </div>
+            <div class="quick-links-search">
+                <input id="quickLinksSearch" type="search" placeholder="Search links..." aria-label="Search quick links" />
+            </div>
+            <div class="quick-links-columns">
+                <div class="quick-links-column">
+                    <h3>Free</h3>
+                    <ul class="quick-links-list">
+                        <li class="quick-link-card"><a href="https://gamma.app" target="_blank" rel="noopener">Gamma — Presentations</a></li>
+                    </ul>
+                </div>
+                <div class="quick-links-column">
+                    <h3>Paid</h3>
+                    <ul class="quick-links-list">
+                        <li class="quick-link-card"><a href="https://pitch.com" target="_blank" rel="noopener">Pitch — Presentation alternative</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    `;
+
+
+    const back = document.getElementById('backToWelcome');
+    if (back) back.addEventListener('click', renderWelcomeScreen);
+
+    const search = document.getElementById('quickLinksSearch');
+    if (search) {
+        search.addEventListener('input', () => {
+            const q = search.value.trim().toLowerCase();
+            document.querySelectorAll('.quick-link-card').forEach(li => {
+                const text = li.textContent.trim().toLowerCase();
+                li.style.display = text.includes(q) ? '' : 'none';
+            });
+        });
+    }
+}
+
+if (quickLinksButton) {
+    quickLinksButton.addEventListener('click', showQuickLinksWorkspace);
+}
