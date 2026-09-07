@@ -20,6 +20,8 @@ const tools = {
     urlEncoderTool: "url-encoder",
     jwtDecoderTool: "jwt-decoder",
     UUIDGeneratorTool: "uuid-generator",
+    PasswordGeneratorTool: "password-generator",
+    QRCodeGeneratorTool: "qr-code",
 };
 
 let loadVersion = 0;
@@ -70,9 +72,7 @@ async function loadTool(toolName, buttonId) {
     setActiveTool(buttonId);
     workspace.setAttribute("aria-busy", "true");
     try {
-        const toolPath = toolName === "uuid-generator"
-            ? `uuid-generator/${toolName}`
-            : `tools/${toolName}/${toolName}`;
+        const toolPath = `tools/${toolName}/${toolName}`;
         const response = await fetch(`${toolPath}.html`);
         if (!response.ok) {
             throw new Error(`Failed to load tool: ${toolName}`);
@@ -141,6 +141,8 @@ Object.entries(tools).forEach(([buttonId, toolName]) => {
         button.setAttribute("aria-pressed", "false");
         button.addEventListener("click", () => loadTool(toolName, buttonId));
     }
+
+
 });
 
 const quickLinksButton = document.getElementById('quickLinksButton');
