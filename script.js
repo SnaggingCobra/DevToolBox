@@ -18,7 +18,8 @@ const tools = {
     FlexboxGeneratorTool: "flexbox-generator",
     Base64Tool: "base64",
     urlEncoderTool: "url-encoder",
-    jwtDecoderTool: "jwt-decoder"
+    jwtDecoderTool: "jwt-decoder",
+    UUIDGeneratorTool: "uuid-generator",
 };
 
 let loadVersion = 0;
@@ -69,7 +70,10 @@ async function loadTool(toolName, buttonId) {
     setActiveTool(buttonId);
     workspace.setAttribute("aria-busy", "true");
     try {
-        const response = await fetch(`tools/${toolName}/${toolName}.html`);
+        const toolPath = toolName === "uuid-generator"
+            ? `uuid-generator/${toolName}`
+            : `tools/${toolName}/${toolName}`;
+        const response = await fetch(`${toolPath}.html`);
         if (!response.ok) {
             throw new Error(`Failed to load tool: ${toolName}`);
         }
@@ -77,7 +81,7 @@ async function loadTool(toolName, buttonId) {
         const html = await response.text();
         if (currentLoad !== loadVersion) return;
 
-        const cssPath = `tools/${toolName}/${toolName}.css`;
+        const cssPath = `${toolPath}.css`;
         const stylesheet = document.createElement("link");
         stylesheet.rel = "stylesheet";
         stylesheet.href = cssPath;
@@ -107,7 +111,7 @@ async function loadTool(toolName, buttonId) {
         const toolScript = document.createElement("script");
         toolScript.id = "active-tool-script";
         toolScript.type = "module";
-        toolScript.src = `tools/${toolName}/${toolName}.js`;
+        toolScript.src = `${toolPath}.js`;
         toolScript.onerror = () => {
             if (currentLoad !== loadVersion) return;
             workspace.innerHTML = `
