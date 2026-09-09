@@ -1,0 +1,31 @@
+<div class="barcode-generator">
+    <h2>Barcode Generator</h2>
+    <p>Generate barcodes from text or product numbers.</p>
+
+    <div class="barcode-controls">
+        <label for="barcodeText">Barcode Content</label>
+        <input type="text" id="barcodeText" value="123456789" placeholder="Enter text or numbers" autocomplete="off" />
+
+        <label for="barcodeFormat">Barcode Format</label>
+        <select id="barcodeFormat">
+            <option value="CODE128">CODE128</option>
+            <option value="CODE39">CODE39</option>
+            <option value="EAN13">EAN-13</option>
+            <option value="EAN8">EAN-8</option>
+            <option value="UPC">UPC-A</option>
+            <option value="ITF14">ITF-14</option>
+        </select>
+        <p id="barcodeFormatHelp" class="barcode-format-help">CODE128 supports text and numbers.</p>
+
+        <button id="generateBarcode" type="button">Generate Barcode</button>
+        
+    </div>
+
+    <div class="barcode-preview">
+        <svg id="barcode"></svg>
+    </div>
+
+    <div id="barcodeStatus" class="barcode-status" role="status" aria-live="polite">Ready</div>
+
+    <button id="downloadBarcode" type="button">Download PNG</button>
+</div>

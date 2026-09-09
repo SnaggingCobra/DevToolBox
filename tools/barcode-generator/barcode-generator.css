@@ -1,0 +1,87 @@
+.barcode-generator {
+    padding: 24px;
+    max-width: 750px;
+
+}
+
+.barcode-generator h2 {
+    margin-bottom: 9px;
+
+}
+
+.barcode-generator > p {
+    margin-bottom: 24px;
+    opacity: 0.8;
+
+}
+
+.barcode-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 24px;
+
+}
+
+.barcode-controls label {
+    font-size: 14px;
+    font-weight: 600;
+
+}
+
+.barcode-format-help {
+    margin: -2px 0 4px;
+    color: var(--muted, #6b7280);
+    font-size: 0.9rem;
+}
+
+#barcodeText,
+#barcodeFormat {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: var(--surface, #fff);
+    font-size: 15px;
+
+}
+
+#generateBarcode,
+#downloadBarcode {
+    width: fit-content;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: var(--accent, #2563eb);
+    color: #fff;
+}
+
+.barcode-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 180px;
+    margin-bottom: 20px;
+    padding: 24px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: var(--surface, #fff);
+    overflow: auto;
+}
+
+#barcode {
+    max-width: 100%;
+    height: auto;
+
+}
+
+.barcode-status {
+    min-height: 1.5em;
+    margin-bottom: 12px;
+    color: var(--muted, #6b7280);
+}
+
+.barcode-status.is-error {
+    color: #b91c1c;
+}

@@ -19,9 +19,12 @@ const tools = {
     Base64Tool: "base64",
     urlEncoderTool: "url-encoder",
     jwtDecoderTool: "jwt-decoder",
+    HashGeneratorTool: "hash-generator",
     UUIDGeneratorTool: "uuid-generator",
     PasswordGeneratorTool: "password-generator",
     QRCodeGeneratorTool: "qr-code",
+    BarcodeGeneratorTool: "barcode-generator",
+
 };
 
 let loadVersion = 0;
@@ -101,7 +104,6 @@ async function loadTool(toolName, buttonId) {
         stylesheet.id = "active-tool-style";
 
         workspace.innerHTML = html;
-        // ensure workspace is scrolled to top so header doesn't overlap first lines
         if (workspace.scrollTop !== undefined) workspace.scrollTop = 0;
         try { window.scrollTo(0,0); } catch (e) {}
 

@@ -4,121 +4,163 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DevToolBox</title>
-
-    <link rel="stylesheet" href="style.css" />
+    
+    <link rel="stylesheet" href="style.css" /> 
 
     <link rel="preload" href="tools/json-formatter/json-formatter.css" as="style">
     <link rel="preload" href="tools/json-validator/json-validator.css" as="style">
     <link rel="preload" href="tools/regex-tester/regex-tester.css" as="style">
     <link rel="preload" href="tools/diff-checker/diff-checker.css" as="style">
+
     <link rel="preload" href="tools/color-converter/color-converter.css" as="style">
     <link rel="preload" href="tools/gradient-generator/gradient-generator.css" as="style">
     <link rel="preload" href="tools/box-shadow/box-shadow.css" as="style">
     <link rel="preload" href="tools/flexbox-generator/flexbox-generator.css" as="style">
     <link rel="preload" href="tools/password-generator/password-generator.css" as="style">
     <link rel="preload" href="tools/qr-code/qr-code.css" as="style">
+
     <link rel="preload" href="tools/base64/base64.css" as="style">
     <link rel="preload" href="tools/url-encoder/url-encoder.css" as="style">
     <link rel="preload" href="tools/jwt-decoder/jwt-decoder.css" as="style">
+    <link rel="preload" href="tools/hash-generator/hash-generator.css" as="style">
+
+
   </head>
   <body>
-    <header class="topbar">
-      <div class="brand">
-        <span class="brand-icon">
-          <img src="assets/Logo.jpg" alt="Settings" />
-        </span>
-        <h1>DevToolBox</h1>
-      </div>
 
-      <div class="topbar-actions">
-        <button class="header-button" id="themeButton" title="Toggle theme" aria-label="Toggle theme" type="button">
-          <img src="assets/mode.png" alt="Toggle theme" />
-        </button>
-      </div>
-    </header>
+          <header class="topbar">
+
+            
+              <div class="brand">
+                  <span class="brand-icon">
+                    <img src="assets/Logo.jpg" alt="Settings">
+                  </span>
+                  <h1>DevToolBox</h1>
+              </div>
+
+              <div class="topbar-actions">
+                  <button class="header-button" id="themeButton" title="Toggle theme" aria-label="Toggle theme">
+                      <img src="assets/mode.png" alt="Toggle theme">
+                  </button>
+              </div>
+
+            </header>
 
     <main class="container">
       <aside class="toolbar">
-        <div class="toolbar-header">
-          <h2>🧰 ToolBar</h2>
-        </div>
+            <div class="toolbar-header">
+                <h2>🧰 ToolBar</h2>
+            </div>
+               
+              <div class="search-box" >
+                  <input type="search" id="toolSearch" placeholder="🔍 Search tools..." aria-label="Search tools">
+              </div>
 
-        <div class="search-box">
-          <input type="search" id="toolSearch" placeholder="🔍 Search tools..." aria-label="Search tools" />
-        </div>
-
-        <p class="search-empty" id="searchEmpty" hidden>No tools found.</p>
+              <p class="search-empty" id="searchEmpty" hidden>No tools found.</p>
 
         <nav class="tool-navigation">
-          <div class="tool-category">
-            <h3>💻 Code</h3>
 
-            <button class="tool-button" id="jsonFormatterTool" type="button">
-              <span>JSON Formatter</span>
-            </button>
-            <button class="tool-button" id="ValidatorTool" type="button">
-              <span>JSON Validator</span>
-            </button>
-            <button class="tool-button" id="RegexTesterTool" type="button">
-              <span>Regex Tester</span>
-            </button>
-            <button class="tool-button" id="DiffCheckerTool" type="button">
-              <span>Diff Checker</span>
-            </button>
-          </div>
+              
 
-          <div class="tool-category">
-            <h3>🎨 CSS</h3>
+              <div class="tool-category">
+                <h3>💻 Code</h3>
 
-            <button class="tool-button" id="ColorConverterTool" type="button">
-              <span>Color Converter</span>
-            </button>
-            <button class="tool-button" id="GradientGeneratorTool" type="button">
-              <span>Gradient Generator</span>
-            </button>
-            <button class="tool-button" id="BoxShadowTool" type="button">
-              <span>Box Shadow</span>
-            </button>
-            <button class="tool-button" id="FlexboxGeneratorTool" type="button">
-              <span>Flexbox Generator</span>
-            </button>
+                <button class="tool-button" id="jsonFormatterTool">
+                  <span>JSON Formatter</span>
+                </button>
+                <button class="tool-button" id="ValidatorTool">
+                  <span>JSON Validator</span>
+                </button>
+                <button class="tool-button" id="RegexTesterTool">
+                  <span>Regex Tester</span>
+                </button>
+                <button class="tool-button" id="DiffCheckerTool">
+                  <span>Diff Checker</span>
+                </button>
+              </div>
 
-            <h3>🔐 Encoding</h3>
+              <div class="tool-category">
+                <h3>🎨 CSS</h3>
 
-            <button class="tool-button" id="Base64Tool" type="button">
-              <span>Base64</span>
-            </button>
-            <button class="tool-button" id="urlEncoderTool" type="button">
-              <span>URL Encoder</span>
-            </button>
-            <button class="tool-button" id="jwtDecoderTool" type="button">
-              <span>JWT Decoder</span>
-            </button>
+                <button class="tool-button" id="ColorConverterTool">
+                  <span>Color Converter</span>
+                </button>
+                <button class="tool-button" id="GradientGeneratorTool">
+                  <span>Gradient Generator</span>
+                </button>
+                <button class="tool-button" id="BoxShadowTool">
+                  <span>Box Shadow</span>
+                </button>
+                <button class="tool-button" id="FlexboxGeneratorTool">
+                  <span>Flexbox Generator</span>
+                </button>
 
-            <h3>⚙️ Generators</h3>
 
-            <button class="tool-button" id="UUIDGeneratorTool" type="button">
-              <span>UUID Generator</span>
-            </button>
-            <button class="tool-button" id="PasswordGeneratorTool" type="button">
-              <span>Password Generator</span>
-            </button>
-            <button class="tool-button" id="QRCodeGeneratorTool" type="button">
-              <span>QR Code Generator</span>
-            </button>
-          </div>
+                <h3>🔐 Encoding</h3>
+
+                <button class="tool-button" id="Base64Tool">
+                  <span>Base64</span>
+                </button>
+                <button class="tool-button" id="urlEncoderTool">
+                  <span>URL Encoder</span>
+                </button>
+                <button class="tool-button" id="jwtDecoderTool">
+                  <span>JWT Decoder</span>
+                </button>
+                <button class="tool-button" id="HashGeneratorTool"> 
+                  <span>Hash Generator</span>
+                </button>
+
+
+
+
+                <h3>⚙️ Generators</h3>
+
+                <button class="tool-button" id="UUIDGeneratorTool">
+                  <span>UUID Generator</span>
+                </button>
+                <button class="tool-button" id="PasswordGeneratorTool">
+                  <span>Password Generator</span>
+                </button>
+                <button class="tool-button" id="QRCodeGeneratorTool">
+                  <span>QR Code Generator</span>
+                </button>
+                <button class="tool-button" id="BarcodeGeneratorTool">
+                  <span>Barcode Generator</span>
+                </button>
+
+ 
+              </div>
         </nav>
       </aside>
+    <section class="workspace" id="Workspace">
 
-      <section class="workspace" id="Workspace">
-        <div class="welcome-screen">
-          <div class="welcome-icon">🧰</div>
+      <div class="welcome-screen">
+
+          <div class="welcome-icon">
+              🧰
+          </div>
+
           <h2>DevToolBox</h2>
-          <p>Developer tools, all in one place.</p>
-          <span>Select a tool from the sidebar to get started.</span>
-          <button class="quick-links-button" id="quickLinksButton" type="button">Quick Links</button>
-        </div>
-      </section>
+
+          <p>
+              Developer tools, all in one place.
+          </p>
+
+          <span>
+              Select a tool from the sidebar to get started.
+         </span>
+ 
+          <button class="quick-links-button" id="quickLinksButton">
+              Quick Links
+          </button>
+          
+
+      </div>
+
+    </section>
+      
+    
     </main>
 
     <script src="script.js"></script>

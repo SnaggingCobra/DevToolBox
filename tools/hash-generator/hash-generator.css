@@ -1,0 +1,330 @@
+.hash-generator {
+    width: 100%;
+    max-width: 900px;
+    padding: 8px 0;
+}
+
+.hash-generator .tool-header {
+    margin-bottom: 24px;
+}
+
+.hash-generator .tool-header h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #f0f6fc;
+    margin-bottom: 8px;
+}
+
+.hash-generator .tool-header p {
+    color: #8b949e;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.hash-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.hash-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.hash-section-header label,
+.hash-control-item label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #8b949e;
+}
+
+.hash-meta-info {
+    font-size: 12px;
+    color: #6e7681;
+    font-family: inherit;
+}
+
+#hashInput {
+    width: 100%;
+    min-height: 130px;
+    padding: 12px 14px;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    background-color: #0d1117;
+    color: #f0f6fc;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 1.5;
+    resize: vertical;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#hashInput:focus {
+    border-color: #58a6ff;
+    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.12);
+}
+
+#hashInput::placeholder {
+    color: #6e7681;
+}
+
+.hash-controls {
+    display: flex;
+    align-items: flex-end;
+    gap: 14px;
+    margin-bottom: 22px;
+    flex-wrap: wrap;
+}
+
+.hash-control-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+#hashAlgorithm,
+#hashCase {
+    padding: 9px 12px;
+    border: 1px solid #30363d;
+    border-radius: 7px;
+    background-color: #0d1117;
+    color: #f0f6fc;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+    min-width: 130px;
+    transition: border-color 0.2s ease;
+}
+
+#hashAlgorithm:focus,
+#hashCase:focus {
+    border-color: #58a6ff;
+}
+
+.hash-actions {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+}
+
+.btn-primary {
+    padding: 9px 18px;
+    border: 1px solid #1f6feb;
+    border-radius: 7px;
+    background-color: #1f6feb;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.08s ease;
+}
+
+.btn-primary:hover {
+    background-color: #388bfd;
+    border-color: #388bfd;
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+.btn-secondary {
+    padding: 9px 16px;
+    border: 1px solid #30363d;
+    border-radius: 7px;
+    background-color: #21262d;
+    color: #c9d1d9;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #30363d;
+    border-color: #8b949e;
+    color: #f0f6fc;
+}
+
+.btn-secondary:active {
+    transform: scale(0.98);
+}
+
+.hash-output-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.btn-copy {
+    padding: 6px 14px;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    background-color: #21262d;
+    color: #c9d1d9;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.btn-copy:hover {
+    background-color: #1f6feb;
+    border-color: #58a6ff;
+    color: #ffffff;
+}
+
+.btn-copy.is-copied {
+    background-color: #238636;
+    border-color: #2ea043;
+    color: #ffffff;
+}
+
+.hash-result-container {
+    width: 100%;
+}
+
+#hashOutput {
+    width: 100%;
+    min-height: 80px;
+    padding: 12px 14px;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    background-color: #0d1117;
+    color: #7ee787;
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+    font-size: 13.5px;
+    line-height: 1.6;
+    word-break: break-all;
+    resize: vertical;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#hashOutput:focus {
+    border-color: #58a6ff;
+    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.12);
+}
+
+#hashOutput::placeholder {
+    color: #6e7681;
+}
+
+.hash-status {
+    margin-top: 4px;
+    color: #8b949e;
+    font-size: 13px;
+    min-height: 20px;
+    transition: color 0.2s ease;
+}
+
+.hash-status.is-error {
+    color: #f85149;
+}
+
+/* Light Mode Theme Overrides */
+body.light-mode .hash-generator .tool-header h2 {
+    color: #24292f;
+}
+
+body.light-mode .hash-generator .tool-header p {
+    color: #57606a;
+}
+
+body.light-mode .hash-section-header label,
+body.light-mode .hash-control-item label {
+    color: #57606a;
+}
+
+body.light-mode .hash-meta-info {
+    color: #6e7781;
+}
+
+body.light-mode #hashInput,
+body.light-mode #hashAlgorithm,
+body.light-mode #hashCase {
+    background-color: #ffffff;
+    color: #24292f;
+    border-color: #d0d7de;
+}
+
+body.light-mode #hashInput:focus,
+body.light-mode #hashAlgorithm:focus,
+body.light-mode #hashCase:focus {
+    border-color: #0969da;
+    box-shadow: 0 0 0 3px rgba(9, 105, 218, 0.12);
+}
+
+body.light-mode #hashInput::placeholder,
+body.light-mode #hashOutput::placeholder {
+    color: #8c959f;
+}
+
+body.light-mode #hashOutput {
+    background-color: #f6f8fa;
+    color: #0550ae;
+    border-color: #d0d7de;
+}
+
+body.light-mode #hashOutput:focus {
+    border-color: #0969da;
+    box-shadow: 0 0 0 3px rgba(9, 105, 218, 0.12);
+}
+
+body.light-mode .btn-secondary,
+body.light-mode .btn-copy {
+    background-color: #f6f8fa;
+    border-color: #d0d7de;
+    color: #24292f;
+}
+
+body.light-mode .btn-secondary:hover,
+body.light-mode .btn-copy:hover {
+    background-color: #eaeef2;
+    border-color: #afb8c1;
+    color: #0969da;
+}
+
+body.light-mode .btn-copy.is-copied {
+    background-color: #1a7f37;
+    border-color: #1a7f37;
+    color: #ffffff;
+}
+
+body.light-mode .hash-status {
+    color: #57606a;
+}
+
+body.light-mode .hash-status.is-error {
+    color: #cf222e;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .hash-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hash-actions {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        flex: 1;
+    }
+
+    #hashAlgorithm,
+    #hashCase {
+        width: 100%;
+    }
+}
+

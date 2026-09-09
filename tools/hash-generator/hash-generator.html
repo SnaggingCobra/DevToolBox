@@ -1,0 +1,54 @@
+<div class="hash-generator">
+    <div class="tool-header">
+        <h2>Hash Generator</h2>
+        <p>Generate cryptographic hashes from text using standard algorithms.</p>
+    </div>
+
+    <div class="hash-section">
+        <div class="hash-section-header">
+            <label for="hashInput">Input Text</label>
+            <span id="hashInputLength" class="hash-meta-info">0 characters</span>
+        </div>
+        <textarea id="hashInput" placeholder="Enter text to hash..." rows="5"></textarea>
+    </div>
+
+    <div class="hash-controls">
+        <div class="hash-control-item">
+            <label for="hashAlgorithm">Algorithm</label>
+            <select id="hashAlgorithm">
+                <option value="SHA-256" selected>SHA-256</option>
+                <option value="SHA-1">SHA-1</option>
+                <option value="SHA-384">SHA-384</option>
+                <option value="SHA-512">SHA-512</option>
+            </select>
+        </div>
+
+        <div class="hash-control-item">
+            <label for="hashCase">Case</label>
+            <select id="hashCase">
+                <option value="lower" selected>Lowercase</option>
+                <option value="upper">Uppercase</option>
+            </select>
+        </div>
+
+        <div class="hash-actions">
+            <button id="generateHash" type="button" class="btn-primary">Generate Hash</button>
+            <button id="clearHash" type="button" class="btn-secondary">Clear</button>
+        </div>
+    </div>
+
+    <div class="hash-section">
+        <div class="hash-section-header">
+            <label for="hashOutput">Hash Output</label>
+            <div class="hash-output-actions">
+                <span id="hashOutputLength" class="hash-meta-info">0 characters</span>
+                <button id="copyHash" type="button" class="btn-copy">Copy</button>
+            </div>
+        </div>
+        <div class="hash-result-container">
+            <textarea id="hashOutput" readonly placeholder="Generated hash will appear here..." rows="3"></textarea>
+        </div>
+    </div>
+
+    <div id="hashStatus" class="hash-status" role="status" aria-live="polite">Ready</div>
+</div>
