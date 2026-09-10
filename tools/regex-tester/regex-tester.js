@@ -79,3 +79,15 @@ clearRegex.addEventListener("click", () => {
         "Enter a regex and some text to begin.";
 
 });
+
+regexPattern.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        testRegex.click();
+    }
+});
+
+regexFlags.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        testRegex.click();
+    }
+});

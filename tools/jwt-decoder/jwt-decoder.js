@@ -67,3 +67,27 @@ clearJwt.addEventListener("click", () => {
     jwtStatus.textContent = "Ready";
 
 });
+
+const copyJwtHeader = document.getElementById("copyJwtHeader");
+const copyJwtPayload = document.getElementById("copyJwtPayload");
+
+async function copyText(text, label) {
+    if (!text) {
+        jwtStatus.textContent = `No ${label.toLowerCase()} to copy.`;
+        return;
+    }
+    try {
+        await navigator.clipboard.writeText(text);
+        jwtStatus.textContent = `✓ ${label} copied to clipboard.`;
+    } catch {
+        jwtStatus.textContent = `Could not copy ${label.toLowerCase()}.`;
+    }
+}
+
+if (copyJwtHeader) {
+    copyJwtHeader.addEventListener("click", () => copyText(jwtHeader.value, "Header"));
+}
+
+if (copyJwtPayload) {
+    copyJwtPayload.addEventListener("click", () => copyText(jwtPayload.value, "Payload"));
+}

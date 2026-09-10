@@ -228,7 +228,6 @@
     color: #f85149;
 }
 
-/* Light Mode Theme Overrides */
 body.light-mode .hash-generator .tool-header h2 {
     color: #24292f;
 }
@@ -304,8 +303,6 @@ body.light-mode .hash-status {
 body.light-mode .hash-status.is-error {
     color: #cf222e;
 }
-
-/* Responsive adjustments */
 @media (max-width: 640px) {
     .hash-controls {
         flex-direction: column;

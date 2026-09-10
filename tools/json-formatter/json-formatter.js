@@ -10,49 +10,39 @@ const jsonStatus = document.getElementById("jsonStatus");
 
 
 formatJson.addEventListener("click", () => {
-
-    try {
-
-        const parsedJson =
-            JSON.parse(jsonInput.value);
-
-        jsonOutput.value =
-            JSON.stringify(parsedJson, null, 2);
-
-        jsonStatus.textContent =
-            "✓ Valid JSON";
-
-    } catch (error) {
-
+    const raw = jsonInput.value.trim();
+    if (!raw) {
         jsonOutput.value = "";
-
-        jsonStatus.textContent =
-            "✕ Invalid JSON: " + error.message;
-
+        jsonStatus.textContent = "Please enter some JSON to format.";
+        return;
     }
 
+    try {
+        const parsedJson = JSON.parse(raw);
+        jsonOutput.value = JSON.stringify(parsedJson, null, 2);
+        jsonStatus.textContent = "✓ Valid JSON";
+    } catch (error) {
+        jsonOutput.value = "";
+        jsonStatus.textContent = "✕ Invalid JSON: " + error.message;
+    }
 });
 
-
 minifyJson.addEventListener("click", () => {
-
-    try {
-
-        const parsedJson =
-            JSON.parse(jsonInput.value);
-        jsonOutput.value =
-            JSON.stringify(parsedJson);
-        jsonStatus.textContent =
-            "✓ JSON minified";
-
-    } catch (error) {
-
+    const raw = jsonInput.value.trim();
+    if (!raw) {
         jsonOutput.value = "";
-        jsonStatus.textContent =
-            "✕ Invalid JSON: " + error.message;
-
+        jsonStatus.textContent = "Please enter some JSON to minify.";
+        return;
     }
 
+    try {
+        const parsedJson = JSON.parse(raw);
+        jsonOutput.value = JSON.stringify(parsedJson);
+        jsonStatus.textContent = "✓ JSON minified";
+    } catch (error) {
+        jsonOutput.value = "";
+        jsonStatus.textContent = "✕ Invalid JSON: " + error.message;
+    }
 });
 
 clearJson.addEventListener("click", () => {

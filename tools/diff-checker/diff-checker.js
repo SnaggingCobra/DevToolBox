@@ -16,6 +16,10 @@ const diffResult =
 
     
 compareText.addEventListener("click", () => {
+    if (!originalText.value && !changedText.value) {
+        diffResult.innerHTML = `<div>Please enter text to compare.</div>`;
+        return;
+    }
 
     const original =
         originalText.value.split("\n");

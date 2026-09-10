@@ -16,6 +16,7 @@ const tools = {
     GradientGeneratorTool: "gradient-generator",
     BoxShadowTool: "box-shadow",
     FlexboxGeneratorTool: "flexbox-generator",
+    CSSUnitConverterTool: "css-unit-converter",
     Base64Tool: "base64",
     urlEncoderTool: "url-encoder",
     jwtDecoderTool: "jwt-decoder",
@@ -195,7 +196,7 @@ function showQuickLinksWorkspace() {
                 <div class="quick-links-column">
                     <h3>Paid</h3>
                     <ul class="quick-links-list">
-                        <li class="quick-link-card"><a href="https://pitch.com" target="_blank" rel="noopener">Pitch — Presentation alternative</a></li>
+                        <li class="quick-link-card"><a href="https://pitch.com" target="_blank" rel="noopener">Pitch — Presentation</a></li>
                     </ul>
                 </div>
             </div>

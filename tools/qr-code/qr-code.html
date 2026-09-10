@@ -1,15 +1,17 @@
 <div class="qr-generator">
-    <h2>QR Code Generator</h2>
-    <p>Create a QR code from a URL, text, or any other value.</p>
+    <div class="tool-header">
+        <h2>QR Code Generator</h2>
+        <p>Create a QR code from a URL, text, or any custom value.</p>
+    </div>
 
     <div class="qr-input-group">
         <label for="qrText">Text or URL</label>
-        <textarea id="qrText" rows="4">https://example.com</textarea>
+        <textarea id="qrText" rows="4" placeholder="Enter text or URL...">https://example.com</textarea>
     </div>
 
     <div class="qr-actions">
-        <button id="generateQRCode" type="button">Generate QR</button>
-        <button id="downloadQRCode" type="button">Download PNG</button>
+        <button id="generateQRCode" type="button" class="btn-primary">Generate QR</button>
+        <button id="downloadQRCode" type="button" class="btn-secondary">Download PNG</button>
     </div>
 
     <div class="qr-preview-box">

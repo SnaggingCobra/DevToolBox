@@ -177,6 +177,27 @@ colorPicker.addEventListener(
     }
 );
 
+if (colorPreview) {
+    colorPreview.addEventListener("click", () => {
+        colorPicker.click();
+    });
+}
+
+if (hexColor) {
+    hexColor.addEventListener("input", () => {
+        const val = hexColor.value.trim().replace("#", "");
+        if (val.length === 3 || val.length === 6) {
+            updateColor();
+        }
+    });
+
+    hexColor.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+            updateColor();
+        }
+    });
+}
+
 convertColor.addEventListener(
     "click",
     updateColor

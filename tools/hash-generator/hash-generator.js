@@ -128,7 +128,5 @@ if (copyHashButton) {
         }
     });
 }
-
-// Initial state
 updateInputLength();
 updateOutputLength("");

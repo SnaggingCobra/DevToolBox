@@ -1,45 +1,88 @@
 .uuid-generator {
-    padding: 20px;
-    max-width: 700px;
-
+    width: 100%;
+    max-width: 800px;
 }
 
-.uuid-generator h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-.uuid-generator p {
+.uuid-generator .tool-header {
     margin-bottom: 24px;
-    opacity: 0.8;
+}
 
+.uuid-generator .tool-header h2 {
+    color: #f0f6fc;
+    font-size: 28px;
+    margin-bottom: 6px;
+}
 
+.uuid-generator .tool-header p {
+    color: #8b949e;
+    font-size: 14px;
 }
 
 .uuid-output {
     display: flex;
     align-items: center;
     gap: 10px;
-
+    margin-bottom: 18px;
+    flex-wrap: wrap;
 }
 
 #uuidOutput {
     flex: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    min-width: 260px;
+    padding: 10px 14px;
+    border: 1px solid #30363d;
+    border-radius: 8px;
     font-family: monospace;
-    font-size: 16px;
-    background-color: #f9f9f9;
-
+    font-size: 15px;
+    background-color: #0d1117;
+    color: #7ee787;
+    outline: none;
 }
 
-.uuid-output button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
+#uuidOutput:focus {
+    border-color: #58a6ff;
+}
+
+#generateUUIDButton {
+    padding: 10px 18px;
+    background-color: #1f6feb;
+    color: #ffffff;
+    border: 1px solid #1f6feb;
+    border-radius: 8px;
     cursor: pointer;
-
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.15s ease;
 }
+
+#generateUUIDButton:hover {
+    background-color: #388bfd;
+}
+
+#copyUUIDButton {
+    padding: 10px 18px;
+    background-color: #21262d;
+    color: #f0f6fc;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+#copyUUIDButton:hover {
+    background-color: #30363d;
+    border-color: #58a6ff;
+}
+
+.uuid-status {
+    color: #8b949e;
+    font-size: 13px;
+}
+
+body.light-mode .uuid-generator .tool-header h2 { color: #24292f; }
+body.light-mode .uuid-generator .tool-header p { color: #57606a; }
+body.light-mode #uuidOutput { background-color: #ffffff; color: #0969da; border-color: #d0d7de; }
+body.light-mode #copyUUIDButton { background-color: #f6f8fa; color: #24292f; border-color: #d0d7de; }
+body.light-mode #copyUUIDButton:hover { background-color: #eaeef2; }

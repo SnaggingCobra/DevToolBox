@@ -28,19 +28,30 @@ if (generateQRCodeButton) {
 }
 
 if (downloadQRCodeButton && qrImage) {
-    downloadQRCodeButton.addEventListener("click", () => {
+    downloadQRCodeButton.addEventListener("click", async () => {
         if (!qrImage.src) {
             if (qrStatus) qrStatus.textContent = "Generate a QR code before downloading it.";
             return;
         }
 
-        const link = document.createElement("a");
-        link.href = qrImage.src;
-        link.download = "qr-code.png";
-        document.body.appendChild(link);
-        link.click();
-        link.remove();
-        if (qrStatus) qrStatus.textContent = "QR code download started.";
+        try {
+            if (qrStatus) qrStatus.textContent = "Preparing download...";
+            const response = await fetch(qrImage.src);
+            const blob = await response.blob();
+            const objectUrl = URL.createObjectURL(blob);
+            const link = document.createElement("a");
+            link.href = objectUrl;
+            link.download = "qr-code.png";
+            document.body.appendChild(link);
+            link.click();
+            link.remove();
+            URL.revokeObjectURL(objectUrl);
+            if (qrStatus) qrStatus.textContent = "QR code downloaded.";
+        } catch (error) {
+            console.error("Download error:", error);
+            window.open(qrImage.src, "_blank");
+            if (qrStatus) qrStatus.textContent = "QR code opened in new tab.";
+        }
     });
 }
 

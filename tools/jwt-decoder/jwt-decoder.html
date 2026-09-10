@@ -17,16 +17,20 @@
 
     </div>
 
-    <div class="jwt-sections">
-        <label for="jwtHeader"> Header</label>
-
-        <textarea id="jwtHeader" readonly placeholder="Result"></textarea>
-
+    <div class="jwt-section">
+        <div class="jwt-header-row">
+            <label for="jwtHeader">Header</label>
+            <button id="copyJwtHeader" type="button" class="btn-copy">Copy</button>
+        </div>
+        <textarea id="jwtHeader" readonly placeholder="Decoded header will appear here..."></textarea>
     </div>
 
     <div class="jwt-section">
-        <label for="jwtPayload">Payload</label>
-        <textarea id="jwtPayload" readonly placeholder="Decode result"></textarea>
+        <div class="jwt-header-row">
+            <label for="jwtPayload">Payload</label>
+            <button id="copyJwtPayload" type="button" class="btn-copy">Copy</button>
+        </div>
+        <textarea id="jwtPayload" readonly placeholder="Decoded payload will appear here..."></textarea>
     </div>
 
     <div id="jwtStatus" class="jwt-status">

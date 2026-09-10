@@ -1,0 +1,70 @@
+<div class="css-unit-converter">
+    <h2>CSS Unit Converter</h2>
+    <p>Convert CSS units </p>
+
+    <div class="converter-input">
+        <label for="unitValue">Values</label>
+        <input type="number" id="unitValue" value="16" step="any" placeholder="Enter a Value">
+
+    </div>
+
+    <div class="converter-row">
+        <div>
+            <label for="fromUnit">From</label>
+            <select  id="fromUnit">
+                <option value="px">px</option>
+                <option value="rem">rem</option>
+                <option value="em">em</option>
+                <option value="%">%</option>
+                <option value="vw">vw</option>
+                <option value="vh">vh</option>
+                <option value="vmin">vmin</option>
+                <option value="vmax">vmax</option>
+                <option value="pt">pt</option>
+            </select>
+        </div>
+
+        <button id="swapUnits" type="button" title="Swap Unit">⇄</button>
+
+        <div>
+            <label for="toUnit">To</label>
+            <select  id="toUnit">
+                <option value="rem">rem</option>
+                <option value="px">px</option>
+                <option value="em">em</option>
+                <option value="%">%</option>
+                <option value="vw">vw</option>
+                <option value="vh">vh</option>
+                <option value="vmin">vmin</option>
+                <option value="vmax">vmax</option>
+                <option value="pt">pt</option>
+            </select>
+        </div>
+    </div>
+     
+    <div class="converter-settings">
+        <label for="baseFontSize">Base Font Size (px)</label>
+        <input type="number" id="baseFontSize" value="16" min="1" step="1">
+        
+        <label for="referenceValue">Reference Value (px)</label>
+        <input type="number" id="referenceValue" value="100" min="1" step="any">
+
+    </div>
+
+    <div class="converter-result">
+        <span>Result</span>
+
+        <div class="result-box">
+            <input type="text" id="conversionResult" readonly>
+            <button id="copyConversion" type="button">Copy</button>
+
+        </div>
+
+    </div>
+
+    <div class="converter-info">
+        <span>View <strong id="viewportSize"></strong></span>
+
+    </div>
+
+</div>

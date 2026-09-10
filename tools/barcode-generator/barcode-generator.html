@@ -1,6 +1,8 @@
 <div class="barcode-generator">
-    <h2>Barcode Generator</h2>
-    <p>Generate barcodes from text or product numbers.</p>
+    <div class="tool-header">
+        <h2>Barcode Generator</h2>
+        <p>Generate barcodes from text or product numbers.</p>
+    </div>
 
     <div class="barcode-controls">
         <label for="barcodeText">Barcode Content</label>
@@ -17,8 +19,10 @@
         </select>
         <p id="barcodeFormatHelp" class="barcode-format-help">CODE128 supports text and numbers.</p>
 
-        <button id="generateBarcode" type="button">Generate Barcode</button>
-        
+        <div class="barcode-actions">
+            <button id="generateBarcode" type="button">Generate Barcode</button>
+            <button id="downloadBarcode" type="button">Download PNG</button>
+        </div>
     </div>
 
     <div class="barcode-preview">
@@ -26,6 +30,4 @@
     </div>
 
     <div id="barcodeStatus" class="barcode-status" role="status" aria-live="polite">Ready</div>
-
-    <button id="downloadBarcode" type="button">Download PNG</button>
 </div>

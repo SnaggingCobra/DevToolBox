@@ -27,12 +27,39 @@
 
 }
 
+.jwt-section label,
 .jwt-section > label {
     margin-bottom: 8px;
     color: #8b949e;
     font-size: 13px;
     font-weight: 600;
+}
 
+.jwt-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.jwt-header-row label {
+    margin-bottom: 0;
+}
+
+.btn-copy {
+    padding: 4px 12px;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    background-color: #21262d;
+    color: #f0f6fc;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn-copy:hover {
+    background-color: #1f6feb;
+    border-color: #58a6ff;
 }
 
 .jwt-section textarea {
