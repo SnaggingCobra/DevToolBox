@@ -1,0 +1,96 @@
+<div class="http-request-builder">
+    <div class="tool-header">
+        <h2>HTTP Request Builder</h2>
+        <p>Build, send, and inspect HTTP requests.</p>
+    </div>
+
+    <div class="request-bar">
+        <select id="httpMethod" aria-label="HTTP method">
+            <option value="GET">GET</option>
+            <option value="POST">POST</option>
+            <option value="PUT">PUT</option>
+            <option value="PATCH">PATCH</option>
+            <option value="DELETE">DELETE</option>
+        </select>
+
+        <input
+            type="url"
+            id="requestUrl"
+            placeholder="https://api.example.com/users"
+            aria-label="Request URL"
+        >
+
+        <button id="sendRequest" type="button">Send</button>
+    </div>
+
+    <div class="request-tabs" role="tablist" aria-label="Request options">
+        <button class="request-tab active" data-tab="params" type="button">
+            Params
+        </button>
+        <button class="request-tab" data-tab="headers" type="button">
+            Headers
+        </button>
+        <button class="request-tab" data-tab="body" type="button">
+            Body
+        </button>
+    </div>
+
+    <div class="request-panel active" id="paramsPanel">
+        <div class="key-value-header">
+            <span>Query Parameters</span>
+            <button id="addParam" type="button">Add</button>
+        </div>
+        <div id="paramsList" class="key-value-list"></div>
+    </div>
+
+    <div class="request-panel" id="headerPanel">
+        <div class="key-value-header">
+            <span>Request Headers</span>
+            <button id="addHeader" type="button">Add</button>
+        </div>
+        <div id="headersList" class="key-value-list"></div>
+    </div>
+
+    <div class="request-panel" id="bodyPanel">
+        <label for="requestBody">Request Body</label>
+        <textarea
+            id="requestBody"
+            rows="10"
+            placeholder='{
+  "name": "your-name",
+  "message": "Hello"
+}'
+        ></textarea>
+    </div>
+
+    <div class="response-section">
+        <div class="response-header">
+            <h3>Response</h3>
+            <div class="response-meta">
+                <span id="responseStatus">-</span>
+                <span id="responseTime">-</span>
+            </div>
+        </div>
+
+        <div class="response-body">
+            <pre id="responseOutput">Send a request to see the response.</pre>
+        </div>
+    </div>
+
+    <div class="code-generator">
+        <div class="code-generator-header">
+            <h3>Generate Code</h3>
+
+            <div class="code-generator-controls">
+                <select id="codeLanguage" aria-label="Code language">
+                    <option value="javascript">JavaScript Fetch</option>
+                    <option value="curl">cURL</option>
+                    <option value="python">Python Requests</option>
+                </select>
+                <button id="copyGeneratedCode" type="button">Copy</button>
+            </div>
+        </div>
+
+        <pre id="generatedCode">Enter a URL to generate code.</pre>
+    </div>
+</div>
