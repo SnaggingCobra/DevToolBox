@@ -52,6 +52,48 @@ If there is a mistake in the JSON, it tells me that the input is invalid instead
 The Regex Tester lets me write a regular expression and test it against some text.
 It shows which parts of the text match the expression. This makes it easier to test a regex before putting it into my actual code.
 
+### Base64 Encoder and Decoder
+
+The Base64 tool encodes text into Base64 and decodes Base64 back into readable text.
+
+### URL Encoder and Decoder
+
+The URL tool encodes and decodes URLs and query text so they can be safely used in web requests.
+
+### CSS Unit Converter
+
+The CSS Unit Converter converts common CSS units such as pixels, rem, em, and percentages.
+
+### Hash Generator
+
+The Hash Generator creates hashes from text using common hashing algorithms.
+
+### UUID Generator
+
+The UUID Generator creates UUIDs quickly when I need unique identifiers for an application or database.
+
+### Password Generator
+
+The Password Generator creates random passwords with options for length and character types.
+
+### QR Code Generator
+
+The QR Code Generator creates a QR code from text or a URL that can be scanned from another device.
+
+### Barcode Generator
+
+The Barcode Generator creates barcodes from text or numbers and lets me download the result.
+
+### HTTP Request Builder
+
+The HTTP Request Builder lets me choose a method, add parameters and headers, send a request, and inspect the response.
+It can also generate example code for JavaScript, cURL, and Python.
+
+### Quick Links
+
+Quick Links provides a simple list of useful free and paid websites for writing, design, coding, productivity, and other work.
+Each link opens the selected website in a new tab.
+
 ## Why I made it
 
 The main reason I made DevToolBox was because I wanted to build something that I could actually use while coding.

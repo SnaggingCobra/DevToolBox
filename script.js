@@ -29,6 +29,14 @@ const tools = {
 
 };
 
+Object.values(tools).forEach((toolName) => {
+    const stylesheet = document.createElement("link");
+    stylesheet.rel = "prefetch";
+    stylesheet.as = "style";
+    stylesheet.href = `tools/${toolName}/${toolName}.css`;
+    document.head.appendChild(stylesheet);
+});
+
 let loadVersion = 0;
 
 function setActiveTool(buttonId) {
@@ -83,19 +91,22 @@ async function loadTool(toolName, buttonId) {
             throw new Error(`Failed to load tool: ${toolName}`);
         }
 
-        const html = await response.text();
-        if (currentLoad !== loadVersion) return;
-
         const cssPath = `${toolPath}.css`;
         const stylesheet = document.createElement("link");
         stylesheet.rel = "stylesheet";
         stylesheet.href = cssPath;
 
-        await new Promise((resolve, reject) => {
+        const stylesheetReady = new Promise((resolve, reject) => {
             stylesheet.onload = resolve;
             stylesheet.onerror = () => reject(new Error(`Failed to load styles for ${toolName}`));
             document.head.appendChild(stylesheet);
         });
+
+        const [html] = await Promise.all([
+            response.text(),
+            stylesheetReady
+        ]);
+
         if (currentLoad !== loadVersion) {
             stylesheet.remove();
             return;
