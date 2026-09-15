@@ -1,0 +1,67 @@
+.ai-code-reviewer {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+.reviewer-header {
+    margin-bottom: 24px;
+
+}
+
+.reviewer-header h2 {
+    margin: 0 0 8px;
+   font-size: 28px; 
+}
+
+.reviewer-header p {
+    margin: 0;
+    color: #8b949e;
+    font-size: 14px;
+
+}
+
+.reviewer-controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+
+
+
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.control-group select,
+.discription-section textarea,
+.code-input-section textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    background: #0d1117;
+    color: #f0f6fc;
+    outline: none;
+    font-family: inherit;
+}
+
+.control-group select {
+    height: 42px;
+    padding: 0 12px;
+}
+
+.control-group select:focus,
+.discription-section textarea:focus,
+.code-input-section textarea:focus {
+    border-color: #58a6ff;
+
+}
+
+

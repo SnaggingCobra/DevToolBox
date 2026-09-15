@@ -26,6 +26,8 @@ const tools = {
     PasswordGeneratorTool: "password-generator",
     QRCodeGeneratorTool: "qr-code",
     BarcodeGeneratorTool: "barcode-generator",
+    AICodeReviewerTool: "ai-code-reviewer",
+    
 
 };
 
@@ -38,6 +40,7 @@ Object.values(tools).forEach((toolName) => {
 });
 
 let loadVersion = 0;
+const toolAssetVersion = "20260912";
 
 function setActiveTool(buttonId) {
     toolButtons.forEach((button) => {
@@ -86,7 +89,7 @@ async function loadTool(toolName, buttonId) {
     workspace.setAttribute("aria-busy", "true");
     try {
         const toolPath = `tools/${toolName}/${toolName}`;
-        const response = await fetch(`${toolPath}.html`);
+        const response = await fetch(`${toolPath}.html?v=${toolAssetVersion}`);
         if (!response.ok) {
             throw new Error(`Failed to load tool: ${toolName}`);
         }
@@ -94,7 +97,7 @@ async function loadTool(toolName, buttonId) {
         const cssPath = `${toolPath}.css`;
         const stylesheet = document.createElement("link");
         stylesheet.rel = "stylesheet";
-        stylesheet.href = cssPath;
+        stylesheet.href = `${cssPath}?v=${toolAssetVersion}`;
 
         const stylesheetReady = new Promise((resolve, reject) => {
             stylesheet.onload = resolve;
@@ -126,7 +129,7 @@ async function loadTool(toolName, buttonId) {
         const toolScript = document.createElement("script");
         toolScript.id = "active-tool-script";
         toolScript.type = "module";
-        toolScript.src = `${toolPath}.js`;
+        toolScript.src = `${toolPath}.js?v=${toolAssetVersion}`;
         toolScript.onerror = () => {
             if (currentLoad !== loadVersion) return;
             workspace.innerHTML = `
