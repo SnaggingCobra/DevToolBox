@@ -25,9 +25,9 @@
     box-sizing: border-box;
     width: 100%;
     padding: 12px;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border-color, #30363d);
     border-radius: 8px;
-    background: var(--input-background);
+    background: var(--input-background, #0d1117);
     color: inherit;
     font-size: 14px;
 }
@@ -64,7 +64,7 @@
     display: flex;
     gap: 4px;
     margin-bottom: 16px;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color, #30363d);
 }
 
 .request-tab {
@@ -126,18 +126,18 @@
     box-sizing: border-box;
     width: 100%;
     padding: 10px;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border-color, #30363d);
     border-radius: 8px;
-    background: var(--input-background);
+    background: var(--input-background, #0d1117);
     color: inherit;
     font-size: 14px;
 }
 
 .remove-row {
     width: 40px;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border-color, #30363d);
     border-radius: 8px;
-    background: var(--input-background);
+    background: var(--input-background, #0d1117);
     color: inherit;
     cursor: pointer;
 }
@@ -153,6 +153,26 @@
     min-height: 180px;
     resize: vertical;
     font-family: monospace;
+}
+
+#requestUrl:hover,
+#httpMethod:hover,
+#codeLanguage:hover,
+.key-value-row input:hover,
+#requestBody:hover,
+.remove-row:hover {
+    border-color: #58a6ff;
+}
+
+#requestUrl:focus,
+#httpMethod:focus,
+#codeLanguage:focus,
+.key-value-row input:focus,
+#requestBody:focus {
+    border-color: #58a6ff;
+    background: #111b2a;
+    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.12);
+    outline: none;
 }
 
 .response-section {
@@ -188,7 +208,7 @@
 #responseStatus,
 #responseTime {
     padding: 5px 9px;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border-color, #30363d);
     border-radius: 8px;
 }
 
@@ -198,9 +218,9 @@
     max-height: 500px;
     overflow: auto;
     padding: 16px;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border-color, #30363d);
     border-radius: 8px;
-    background: var(--input-background);
+    background: var(--input-background, #0d1117);
 }
 
 #responseOutput {

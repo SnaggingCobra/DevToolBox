@@ -40,7 +40,7 @@
 }
 
 .control-group select,
-.discription-section textarea,
+.description-section textarea,
 .code-input-section textarea {
     width: 100%;
     box-sizing: border-box;
@@ -58,7 +58,7 @@
 }
 
 .control-group select:focus,
-.discription-section textarea:focus,
+.description-section textarea:focus,
 .code-input-section textarea:focus {
     border-color: #58a6ff;
 
@@ -86,21 +86,21 @@
     line-height: 1.6;
 }
 
-.discription-section {
+.description-section {
     margin-bottom: 20px;
 }
 
-.discription-section label {
+.description-section label {
     display: block;
     margin-bottom: 8px;
 }
 
-.discription-section label span {
+.description-section label span {
     color: #8b949e;
     font-weight: normal;
 }
 
-.discription-section textarea {
+.description-section textarea {
     padding: 12px;
     resize: vertical;
     line-height: 1.6;
@@ -205,4 +205,128 @@ background: #161b22;
     font-weight: 600;
 }
 
+.review-summary {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 18px;
+    margin-bottom: 20px;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    background: #161b22;
+}
+
+.review-score {
+    min-width: 72px;
+    text-align: center;
+
+}
+
+
+.score-number {
+    display: block;
+    font-size: 30px;
+    font-weight: 600;
+    color: #58a6ff;
+}
+
+.score-label {
+    color: #8b949e;
+    font-size: 12px;
+
+}
+
+.review-summary-text h3 {
+    margin: 0 0 5px;
+    font-size: 16px;
+
+}
+
+.review-summary-text p {
+    margin: 0;
+    color: #8b949e;
+    font-size: 13px;
+
+}
+
+.review-success {
+    padding: 16px;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    background: #161b22;
+
+}
+
+.review-success strong {
+    color: #f0f6fc;
+}
+
+.review-success p {
+    margin: 7px 0 0;
+    color: #8b949e;
+    font-size: 13px;
+}
+
+.issues-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+}
+
+.review-issue {
+    padding: 16px;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    background: #161b22;
+}
+
+.issue-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+
+}
+
+.issue-severity {
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+}
+
+.issue-severity.high {
+    background: #3d321f;
+    color: #ff7b72;
+}
+
+.issue-severity.medium {
+    background: #3d321f;
+    color: #d29922;
+}
+
+.issue-severity.low {
+    background: #1f2d3d;
+    color: #58a6ff;
+}
+
+.issue-line {
+    color: #8b949e;
+    font-size: 12px;
+}
+
+.review-issue h4 {
+    margin: 0 0 7px;
+    font-size: 14px;
+    color: #f0f6fc;
+}
+
+.review-issue p {
+    margin: 0;
+    color: #8b949e;
+    font-size: 12px;
+    line-height: 1.6;
+}
 

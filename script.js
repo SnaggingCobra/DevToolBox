@@ -1,4 +1,4 @@
-const workspace = document.getElementById('Workspace');
+const workspace = document.querySelector('.workspace');
 const themeButton = document.getElementById('themeButton');
 const searchInput = document.getElementById('toolSearch');
 const searchEmpty = document.getElementById('searchEmpty');
@@ -26,7 +26,7 @@ const tools = {
     PasswordGeneratorTool: "password-generator",
     QRCodeGeneratorTool: "qr-code",
     BarcodeGeneratorTool: "barcode-generator",
-    AICodeReviewerTool: "ai-code-reviewer",
+    AiCodeReviewerTool: "ai-code-reviewer",
     
 
 };
@@ -40,7 +40,7 @@ Object.values(tools).forEach((toolName) => {
 });
 
 let loadVersion = 0;
-const toolAssetVersion = "20260912";
+const toolAssetVersion = "20260920";
 
 function setActiveTool(buttonId) {
     toolButtons.forEach((button) => {
@@ -128,19 +128,23 @@ async function loadTool(toolName, buttonId) {
 
         const toolScript = document.createElement("script");
         toolScript.id = "active-tool-script";
-        toolScript.type = "module";
         toolScript.src = `${toolPath}.js?v=${toolAssetVersion}`;
+        toolScript.onload = () => {
+            if (currentLoad === loadVersion) workspace.removeAttribute("aria-busy");
+        };
         toolScript.onerror = () => {
             if (currentLoad !== loadVersion) return;
+            workspace.removeAttribute("aria-busy");
             workspace.innerHTML = `
                 <p class="tool-load-error">
                     This tool could not be started.
                     Please try again.
                 </p>`;
         };
-        document.body.appendChild(toolScript);
+        workspace.appendChild(toolScript);
     } catch (error) {
         if (currentLoad !== loadVersion) return;
+        workspace.removeAttribute("aria-busy");
         workspace.innerHTML = `
             <p class="tool-load-error">
                 This tool could not be loaded.

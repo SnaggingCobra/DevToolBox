@@ -1,7 +1,7 @@
 <div class="ai-code-reviewer">
     <div class="reviewer-header">
         <h2>AI Code Reviewer</h2>
-        <p>Analyze your code for error bugs ssecurity isuue thrugh ai</p>
+        <p>Analyze your code for bugs, security issues, performance, and quality.</p>
     </div>
 
     <div class="reviewer-controls">
@@ -31,7 +31,7 @@
                 <option value="security">Security</option>
                 <option value="performance">Performance</option>
                 <option value="quality">Quality</option>
-                <option value="readaility">Readability</option>
+                <option value="readability">Readability</option>
                 <option value="tests">Generate Tests</option>
             </select>
         </div>
@@ -39,17 +39,17 @@
 
     <div class="code-input-section">
         <div class="section-header">
-            <label for="code-input">Your Code</label>
+            <label for="codeInput">Your Code</label>
             <button id="clearCode" type="button">Clear</button>
 
 
         </div>
 
-        <textarea  id="clearInput" spellcheck="false" placeholder="Paste Your Code"></textarea>
+        <textarea id="codeInput" spellcheck="false" placeholder="Paste your code"></textarea>
     </div>
 
 
-    <div class="discription-section">
+    <div class="description-section">
         <label for="codeDescription">What this code Does</label>
 
         <textarea  id="codeDescription" rows="3" placeholder="Example: this function should validate "></textarea>
@@ -57,7 +57,12 @@
 
     <button id="reviewCode" class="review-button" type="button">Review</button>
 
-    <div class="review-results" id="reviewResults">
+    <div class="review-output">
+        <div class="output-header">
+            <h3>Review Results</h3>
+            <span id="reviewStatus">Ready</span>
+        </div>
+        <div class="review-results" id="reviewResults">
         <div class="empty-review">
             <div class="empty-icon">
                 AI
@@ -65,6 +70,7 @@
             <h3>Review Required</h3>
 
         </div>
+    </div>
 
     </div>
 
