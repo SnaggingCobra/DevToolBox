@@ -377,7 +377,7 @@ Perform ONLY the selected review task.
 
         const model =
             process.env.GEMINI_MODEL ||
-            "gemini-2.5-flash";
+            "gemini-3.6-flash";
 
         const response = await fetch(
             `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`,
