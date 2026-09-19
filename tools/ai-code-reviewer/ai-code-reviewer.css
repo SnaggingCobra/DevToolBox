@@ -330,3 +330,37 @@ background: #161b22;
     line-height: 1.6;
 }
 
+.issue-category {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 4px 8px;
+    border-radius: 5px;
+    background: #21262d;
+    color: #8b949e;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+}
+
+.issue-suggestion {
+    margin-top: 14px;
+    padding: 12px;
+    border-left: 3px solid #58a6ff;
+    background: #0d1117;
+    border-radius: 0 6px 6px 0;
+}
+
+.issue-suggestion strong {
+    display: block;
+    margin-bottom: 5px;
+    color: #f0f6fc;
+    font-size: 12px;
+}
+
+.issue-suggestion p {
+    margin: 0;
+    color: #8b949e;
+    font-size: 13px;
+    line-height: 1.6;
+    
+}
