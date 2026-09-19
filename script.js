@@ -40,7 +40,7 @@ Object.values(tools).forEach((toolName) => {
 });
 
 let loadVersion = 0;
-const toolAssetVersion = "20260920";
+const toolAssetVersion = "20260919-1";
 
 function setActiveTool(buttonId) {
     toolButtons.forEach((button) => {

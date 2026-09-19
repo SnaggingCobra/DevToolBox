@@ -131,6 +131,8 @@ STRICT RULES:
 15. Do not rewrite the entire application.
 16. Do not provide unrelated explanations.
 17. Return only the structured JSON response requested by the API schema.
+18. Identify the programming language from the source code itself. The selected
+    language is only a hint and must not override clear evidence in the code.
 
 The server-selected review task is authoritative.
 
@@ -207,6 +209,12 @@ function normalizeReview(review, reviewType) {
     const allowedCategories = reviewCategories[reviewType];
 
     return {
+        detectedLanguage:
+            typeof review.detectedLanguage === "string" &&
+            review.detectedLanguage.trim()
+                ? review.detectedLanguage.trim()
+                : "Unknown",
+
         summary:
             typeof review.summary === "string"
                 ? review.summary
@@ -300,7 +308,7 @@ SELECTED REVIEW TASK:
 ${reviewTask}
 
 PROGRAMMING LANGUAGE:
-${language || "Unknown"}
+${language || "Not selected"}
 
 INTENDED BEHAVIOR:
 ${description || "Not provided"}
@@ -322,6 +330,10 @@ Perform ONLY the selected review task.
         type: "OBJECT",
 
         properties: {
+            detectedLanguage: {
+                type: "STRING"
+            },
+
             summary: {
                 type: "STRING"
             },
@@ -386,6 +398,7 @@ Perform ONLY the selected review task.
         },
 
         required: [
+            "detectedLanguage",
             "summary",
             "issues"
         ]
@@ -397,60 +410,88 @@ Perform ONLY the selected review task.
             process.env.GEMINI_MODEL ||
             "gemini-3.6-flash";
 
-        const response = await fetch(
-            `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`,
-            {
-                method: "POST",
+        const requestBody = JSON.stringify({
+            systemInstruction: {
+                parts: [
+                    {
+                        text: systemPrompt
+                    }
+                ]
+            },
 
-                headers: {
-                    "Content-Type": "application/json",
-                    "x-goog-api-key": apiKey
-                },
+            contents: [
+                {
+                    role: "user",
 
-                body: JSON.stringify({
-                    systemInstruction: {
-                        parts: [
-                            {
-                                text: systemPrompt
-                            }
-                        ]
+                    parts: [
+                        {
+                            text: userPrompt
+                        }
+                    ]
+                }
+            ],
+
+            generationConfig: {
+                responseMimeType:
+                    "application/json",
+
+                responseSchema
+            }
+        });
+
+        let response;
+        let lastErrorText = "";
+
+        for (let attempt = 0; attempt < 2; attempt += 1) {
+            response = await fetch(
+                `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`,
+                {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type": "application/json",
+                        "x-goog-api-key": apiKey
                     },
 
-                    contents: [
-                        {
-                            role: "user",
-
-                            parts: [
-                                {
-                                    text: userPrompt
-                                }
-                            ]
-                        }
-                    ],
-
-                    generationConfig: {
-                        responseMimeType:
-                            "application/json",
-
-                        responseSchema
-                    }
-                })
-            }
-        );
-
-        if (!response.ok) {
-
-            const errorText =
-                await response.text();
-
-            console.error(
-                "Gemini API error:",
-                errorText
+                    body: requestBody
+                }
             );
+
+            if (response.ok) {
+                break;
+            }
+
+            lastErrorText = await response.text();
+
+            const canRetry =
+                [429, 500, 502, 503, 504]
+                    .includes(response.status);
+
+            if (!canRetry || attempt === 1) {
+                console.error(
+                    "Gemini API error:",
+                    lastErrorText
+                );
+
+                return jsonResponse(
+                    {
+                        error: canRetry
+                            ? "The AI service is temporarily busy. Please try again."
+                            : "AI service request failed."
+                    },
+                    502
+                );
+            }
+
+            await new Promise(resolve => setTimeout(resolve, 600));
+        }
+
+        if (!response?.ok) {
+            console.error("Gemini API error:", lastErrorText);
 
             return jsonResponse(
                 {
-                    error: "AI service request failed."
+                    error: "The AI service is temporarily busy. Please try again."
                 },
                 502
             );

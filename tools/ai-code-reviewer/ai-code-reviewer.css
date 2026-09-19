@@ -249,6 +249,12 @@ background: #161b22;
 
 }
 
+.review-summary-text .detected-language {
+    margin-top: 8px;
+    color: #58a6ff;
+    font-weight: 600;
+}
+
 .review-success {
     padding: 16px;
     border: 1px solid #30363d;
