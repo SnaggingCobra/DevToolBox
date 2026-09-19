@@ -1,2 +1,7 @@
 [functions]
   directory = "api"
+
+[[redirects]]
+  from = "/api/review-code"
+  to = "/.netlify/functions/review-code"
+  status = 200

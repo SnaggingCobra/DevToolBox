@@ -356,3 +356,4 @@ clearCode.addEventListener(
         codeInput.focus();
     }
 );
+
