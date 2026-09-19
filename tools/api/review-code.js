@@ -511,3 +511,7 @@ Perform ONLY the selected review task.
         );
     }
 }
+
+export const config = {
+    path: "/api/review-code"
+};
