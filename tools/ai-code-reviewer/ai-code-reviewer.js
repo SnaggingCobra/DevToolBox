@@ -27,6 +27,30 @@ function getLanguageName() {
 }
 
 
+function isPythonCode(code) {
+    return /(^|\n)\s*(def|class|import|from)\s+[A-Za-z_]/.test(code) ||
+        /(^|\n)\s*(if|elif|else|for|while|try|except|with)\b.*:\s*(#.*)?$/.test(code) ||
+        /\b(print|len|range)\s*\(/.test(code);
+}
+
+
+function showLanguageMismatch() {
+    reviewStatus.textContent =
+        "Language mismatch";
+
+    reviewResults.innerHTML = `
+        <div class="empty-review">
+            <div class="empty-icon">!</div>
+            <h3>Language mismatch</h3>
+            <p>
+                This looks like Python code, but Javascript is selected.
+                Select Python before starting the review.
+            </p>
+        </div>
+    `;
+}
+
+
 function renderResults(review) {
     const issues = Array.isArray(review.issues)
         ? review.issues
@@ -190,6 +214,15 @@ reviewCode.addEventListener(
                 </div>
             `;
 
+            return;
+        }
+
+
+        if (
+            codeLanguage.value === "javascript" &&
+            isPythonCode(code)
+        ) {
+            showLanguageMismatch();
             return;
         }
 

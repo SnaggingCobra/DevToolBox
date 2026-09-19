@@ -153,7 +153,17 @@ function jsonResponse(body, status = 200) {
     );
 }
 
-function normalizeReview(review) {
+const reviewCategories = {
+    bugs: new Set(["BUG"]),
+    security: new Set(["SECURITY"]),
+    performance: new Set(["PERFORMANCE"]),
+    quality: new Set(["QUALITY"]),
+    readability: new Set(["READABILITY"]),
+    tests: new Set(["TEST"])
+};
+
+
+function normalizeReview(review, reviewType) {
     if (!review || typeof review !== "object") {
         throw new Error("Invalid review object.");
     }
@@ -162,43 +172,51 @@ function normalizeReview(review) {
         ? review.issues
         : [];
 
+    const normalizedIssues = issues.map(issue => ({
+        severity:
+            typeof issue.severity === "string"
+                ? issue.severity
+                : "LOW",
+
+        category:
+            typeof issue.category === "string"
+                ? issue.category.toUpperCase()
+                : "QUALITY",
+
+        line:
+            Number.isInteger(issue.line)
+                ? issue.line
+                : 0,
+
+        title:
+            typeof issue.title === "string"
+                ? issue.title
+                : "Review item",
+
+        description:
+            typeof issue.description === "string"
+                ? issue.description
+                : "",
+
+        suggestion:
+            typeof issue.suggestion === "string"
+                ? issue.suggestion
+                : ""
+    }));
+
+    const allowedCategories = reviewCategories[reviewType];
+
     return {
         summary:
             typeof review.summary === "string"
                 ? review.summary
                 : "Review complete",
 
-        issues: issues.map(issue => ({
-            severity:
-                typeof issue.severity === "string"
-                    ? issue.severity
-                    : "LOW",
-
-            category:
-                typeof issue.category === "string"
-                    ? issue.category
-                    : "QUALITY",
-
-            line:
-                Number.isInteger(issue.line)
-                    ? issue.line
-                    : 0,
-
-            title:
-                typeof issue.title === "string"
-                    ? issue.title
-                    : "Review item",
-
-            description:
-                typeof issue.description === "string"
-                    ? issue.description
-                    : "",
-
-            suggestion:
-                typeof issue.suggestion === "string"
-                    ? issue.suggestion
-                    : ""
-        }))
+        issues: allowedCategories
+            ? normalizedIssues.filter(issue =>
+                allowedCategories.has(issue.category)
+            )
+            : normalizedIssues
     };
 }
 
@@ -470,7 +488,8 @@ Perform ONLY the selected review task.
 
             review =
                 normalizeReview(
-                    JSON.parse(outputText)
+                    JSON.parse(outputText),
+                    reviewType
                 );
 
         } catch (error) {
