@@ -130,7 +130,8 @@
               </div>
         </nav>
       </aside>
-    <section class="workspace" id="Workspace">
+    <div class="content-column">
+      <section class="workspace" id="Workspace">
 
       <div class="welcome-screen">
 
@@ -154,9 +155,29 @@
           </button>
           
 
+
       </div>
 
-    </section>
+      </section>
+
+      <section class="dev-joke-card" aria-labelledby="devJokeTitle">
+        <div class="dev-joke-header">
+          <div>
+            <h2 id="devJokeTitle">Dev Joke</h2>
+            <p>A random joke for devs before getting back to that headache.</p>
+
+            <button id="refreshJoke" class="refresh-joke-btn" type="button">
+              New Joke
+            </button>
+
+          </div>
+          <div id="devJoke" class="dev-joke-content" aria-live="polite">
+            <p>Loading joke...</p>
+          </div>
+
+        </div>
+      </section>
+    </div>
       
     
     </main>

@@ -86,6 +86,7 @@ async function loadTool(toolName, buttonId) {
     if (!workspace) return;
     const currentLoad = ++loadVersion;
     setActiveTool(buttonId);
+    setDevJokeVisibility(false);
     workspace.setAttribute("aria-busy", "true");
     try {
         const toolPath = `tools/${toolName}/${toolName}`;
@@ -225,6 +226,7 @@ const quickLinkCatalog = [
 function renderWelcomeScreen() {
     loadVersion++;
     setActiveTool("");
+    setDevJokeVisibility(true);
     workspace.removeAttribute("aria-busy");
     workspace.innerHTML = `
     <div class="welcome-screen">
@@ -243,6 +245,7 @@ function renderWelcomeScreen() {
 function showQuickLinksWorkspace() {
     loadVersion++;
     setActiveTool("");
+    setDevJokeVisibility(true);
     workspace.removeAttribute("aria-busy");
     workspace.innerHTML = `
         <div class="quick-links-workspace">
@@ -314,3 +317,76 @@ function renderQuickLinkColumn(title, optionIndexes) {
 if (quickLinksButton) {
     quickLinksButton.addEventListener('click', showQuickLinksWorkspace);
 }
+
+const devJoke = document.getElementById("devJoke");
+const refreshJoke = document.getElementById("refreshJoke");
+const devJokeCard = document.querySelector(".dev-joke-card");
+
+function setDevJokeVisibility(isVisible) {
+    if (devJokeCard) devJokeCard.hidden = !isVisible;
+}
+
+function escapeHTML(value) {
+    const element = document.createElement("span");
+    element.textContent = value;
+    return element.innerHTML;
+}
+
+async function loadDevJoke() {
+    if (!devJoke) return;
+
+    devJoke.innerHTML = "<p>Loading joke...</p>";
+
+    if (refreshJoke) {
+        refreshJoke.disabled = true;
+    }
+
+    try {
+        const response = await fetch(
+            "https://v2.jokeapi.dev/joke/Programming?safe-mode&type=single"
+
+        );
+
+        if (!response.ok) {
+            throw new Error("Failed to fetch joke.");
+
+
+        }
+        const data = await response.json();
+
+        if (data.error || !data.joke) {
+            throw new Error("No joke is received");
+
+        }
+
+        devJoke.innerHTML = `<p>${escapeHTML(data.joke)}</p>`;
+
+    }
+
+    catch (error) {
+
+        console.error(
+            "Dev Joke Error: ",
+            error
+        );
+
+        devJoke.innerHTML = `
+        <p>Why do programmers prefer dark mode?<br>Because light attracts bugs.</p>
+        `;
+
+    } finally {
+        if (refreshJoke) {
+            refreshJoke.disabled = false;
+
+        }
+    }
+}
+
+if (refreshJoke) {
+    refreshJoke.addEventListener("click", loadDevJoke);
+
+}
+
+
+loadDevJoke();
+

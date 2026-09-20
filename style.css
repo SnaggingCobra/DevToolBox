@@ -87,6 +87,29 @@ main {
     overflow: hidden;
 }
 
+.content-column {
+    flex: 1;
+    min-width: 0;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #6e7681 transparent;
+}
+
+.content-column::-webkit-scrollbar {
+    width: 6px;
+}
+
+.content-column::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.content-column::-webkit-scrollbar-thumb {
+    background: #4b5563;
+    border-radius: 10px;
+}
+
 .toolbar {
     width: 260px;
     min-width: 240px;
@@ -231,13 +254,13 @@ a:focus-visible {
 
 
 .workspace {
-    flex: 1;
+    min-height: calc(100vh - 60px);
     display: flex;
     justify-content: center;
     align-items: flex-start;
     padding: 32px 24px 48px;
     background: transparent;
-    overflow-y: auto;
+    overflow-y: visible;
     overflow-x: hidden;
     min-width: 0;
     min-height: 0;
@@ -425,6 +448,9 @@ body.light-mode .workspace .flexbox-output {
     main { height: auto; min-height: calc(100vh - 60px); flex-direction: column; overflow: visible; flex: none; }
     .toolbar { width: 100%; min-width: 0; height: auto; }
     .workspace { padding: 24px 16px 40px; overflow: visible; }
+    .workspace { min-height: 0; }
+    .dev-joke-card { width: calc(100% - 32px); }
+    .dev-joke-header { align-items: stretch; flex-direction: column; }
 }
 
 .quick-links-button {
@@ -510,4 +536,106 @@ body.light-mode .workspace .flexbox-output {
 .quick-link-card a:hover {
     color: #79c0ff;
     text-decoration: underline;
+}
+
+.dev-joke-card {
+    width: min(calc(100% - 48px), 1100px);
+    margin: 0 auto 32px;
+    padding: 22px;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    background: rgba(22, 27, 34, 0.92);
+}
+
+.dev-joke-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.dev-joke-header h2 {
+    margin: 0 0 5px;
+    font-size: 18px;
+    color: #f0f6fc;
+}
+
+.dev-joke-header p {
+    margin: 0;
+    font-size: 13px;
+    color: #8b949e;
+
+}
+
+.refresh-joke-btn {
+    padding: 9px 14px;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    background: #21262d;
+    color: #f0f5fc;
+    font-size: 13px;
+    font-size: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+
+}
+
+.refresh-joke-btn:hover {
+    background: #30363d;
+    background-color: #484f58;
+
+}
+
+.refresh-joke-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+
+}
+
+.dev-joke-content {
+    flex: 1;
+    min-width: 0;
+    margin-top: 18px;
+    padding: 18px;
+    border-radius: 8px;
+    background: #0d1117;
+    border: 1px solid #21262d;
+
+}
+
+.dev-joke-content p {
+    margin: 0;
+    color: #f0f6fc;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+body.light-mode .dev-joke-card {
+    background: #f6f8fa;
+    border-color: #d0d7de;
+}
+
+body.light-mode .dev-joke-header h2,
+body.light-mode .dev-joke-content p {
+    color: #24292f;
+}
+
+body.light-mode .dev-joke-header p {
+    color: #57606a;
+}
+
+body.light-mode .dev-joke-content {
+    background: #ffffff;
+    border-color: #d0d7de;
+}
+
+body.light-mode .refresh-joke-btn {
+    background: #ffffff;
+    border-color: #d0d7de;
+    color: #24292f;
+}
+
+body.light-mode .refresh-joke-btn:hover {
+    background: #eaeef2;
+    border-color: #afb8c1;
 }
