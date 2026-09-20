@@ -370,3 +370,27 @@ background: #161b22;
     line-height: 1.6;
     
 }
+
+#clearCode {
+    padding: 12px 20px;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    background: #21262d;
+    color: #f0f6fc;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+}
+
+#clearCode:hover {
+    background: #30363d;
+    border-color: #484f58;
+}
+
+#clearCode:active {
+    transform: translateY(1px);
+}
+
+

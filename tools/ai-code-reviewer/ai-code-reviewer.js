@@ -350,7 +350,6 @@ clearCode.addEventListener(
             </div>
         `;
 
-
         codeInput.focus();
     }
 );
