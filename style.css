@@ -229,12 +229,30 @@ main {
         transform 0.08s ease;
 }
 
+.tool-category button > span {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.tool-category button small {
+    color: #748094;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
 
 .tool-category button:hover {
     background-color: rgba(255,255,255,0.02);
     border-color: rgba(255,255,255,0.04);
     color: #ffffff;
     transform: translateX(2px);
+}
+
+.tool-category button:hover small,
+.tool-category button.is-active small {
+    color: #a9c7e8;
 }
 
 .tool-category button.is-active {
@@ -368,6 +386,15 @@ body.light-mode .quick-links button:hover {
 body.light-mode .tool-category button.is-active {
     background-color: #ddf4ff;
     border-color: #54aeff;
+    color: #0969da;
+}
+
+body.light-mode .tool-category button small {
+    color: #6e7781;
+}
+
+body.light-mode .tool-category button:hover small,
+body.light-mode .tool-category button.is-active small {
     color: #0969da;
 }
 
