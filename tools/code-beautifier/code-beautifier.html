@@ -1,0 +1,65 @@
+<div class="code-beautifier-tool">
+    <div class="tool-header">
+        <h2>Code Beautifier</h2>
+        <p>Format and clean your code</p>
+    </div>
+
+    <div class="beautifier-controls">
+        <label for="beautifierLanguage">Language</label>
+
+        <select  id="beautifierLanguage">
+            <option value="javascript">JavaScript</option>
+            <option value="json">JSON</option>
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+        </select>
+
+    </div>
+</div>
+
+<div class="beautifier-editors">
+    <div class="editor-panel">
+        <div class="editor-header">
+            <span>Input</span>
+        </div>
+
+        <textarea  id="beautifierInput" placeholder="Paste your Code Here" spellcheck="false"></textarea>
+    </div>
+
+    <div class="editor-panel">
+        <div class="editor-header">
+            <span>Formatted Code</span>
+        </div>
+
+        <textarea  id="beautifierOutput" placeholder="Formatted Code will appear Here..." spellcheck="false" readonly></textarea>
+
+
+    </div>
+
+</div>
+
+<div class="beautifier-actions">
+    <button
+    id="beautifyCode"
+    class="primary-btn"
+    >
+Beautify
+</button>
+
+<button 
+id="clearBeautifier"
+class="secondary-btn"
+>
+clear
+</button>
+
+</div>
+
+    <div
+        id="beautifierStatus"
+        class="beautifier-status"
+    >
+        Ready
+    </div>
+
+</div>

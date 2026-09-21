@@ -1,0 +1,158 @@
+.code-beautifier-tool {
+    width: 100%;
+}
+
+.tool-header {
+    margin-bottom: 24px;
+}
+
+.tool-header h2 {
+    margin: 0 0 6px;
+    color: #f0f6fc;
+    font-size: 24px;
+  
+}
+
+.tool-header p{
+    margin: 0;
+    color: #8b949e;
+    font-size: 14px;
+}
+
+.beautifier-controls{
+    margin-bottom: 20px;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    max-width: 260px;
+}
+
+.control-group label {
+    color: #f0f6fc;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.control-group select {
+    padding: 10px 12px;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    background: #0d1117;
+    color: #f0f6fc;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+
+}
+
+.control-group select:focus {
+    border-color: #58a6ff;
+
+}
+
+.beautifier-editors {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.editor-panel {
+    min-width: 0;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #0d1117;
+
+}
+
+.editor-header {
+    display: flex;
+    align-items: center;
+    padding: 10px 14px;
+    border-bottom: 1px solid #30363d;
+    background: #161b22;
+
+}
+
+.editor-header span {
+    color: #f0f6fc;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.editor-panel textarea {
+    display: block;
+    width: 100%;
+    min-height: 360px;
+    padding: 16px;
+    border: none;
+    outline: none;
+    resize: vertical;
+    box-sizing: border-box;
+    background: #0d1117;
+    color: #f0f6fc;
+    font-family: monospace;
+    font-size: 14px;
+    line-height: 1.6;
+
+
+}
+
+.editor-panel textarea::placeholder {
+    color: #6e7681;
+
+}
+
+.beautifier-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+
+}
+
+.beautifier-actions button {
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+
+}
+
+.primary-btn {
+    border: 1px solid #238636;
+    background: #238636;
+    color: #ffffff;
+
+}
+
+.primary-btn:hover {
+    background: #2ea043;
+
+}
+
+.secondary-btn {
+    border: 1px solid #30363d;
+    background: #21262d;
+    color: #f0f6fc;
+}
+
+.secondary-btn:hover {
+    background: #30363d;
+}
+
+.beautifier-actions button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+
+}
+
+.beautifier-status {
+    margin-top: 12px;
+    color: #8b949e;
+    font-size: 13px;
+}
