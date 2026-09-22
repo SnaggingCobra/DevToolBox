@@ -13,6 +13,7 @@ const tools = {
     RegexTesterTool: "regex-tester",
     DiffCheckerTool: "diff-checker",
     HTTPRequestBuilderTool: "http-request-builder",
+    CodeBeautifierTool: "code-beautifier",
     ColorConverterTool: "color-converter",
     GradientGeneratorTool: "gradient-generator",
     BoxShadowTool: "box-shadow",
@@ -40,7 +41,7 @@ Object.values(tools).forEach((toolName) => {
 });
 
 let loadVersion = 0;
-const toolAssetVersion = "20260919-1";
+const toolAssetVersion = "20260922-2";
 
 function setActiveTool(buttonId) {
     toolButtons.forEach((button) => {
