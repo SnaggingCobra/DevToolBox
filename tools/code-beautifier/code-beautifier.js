@@ -6,7 +6,7 @@ const copyBeautified = document.getElementById("copyBeautified");
 const beautifierStatus = document.getElementById("beautifierStatus");
 const clearBeautifier = document.getElementById("clearBeautifier");
 
-function setStatus(message) {
+function setStatus(message) {   
     if (beautifierStatus) {
         beautifierStatus.textContent = message;
     }
@@ -186,6 +186,7 @@ function clearBeautifierTool() {
     beautifierInput.focus();
 }
 
+
 if (beautifyCode) {
     beautifyCode.addEventListener("click", beautify);
 }
@@ -199,3 +200,82 @@ if (clearBeautifier) {
 }
 
 loadPrettier();
+
+
+
+
+
+
+confirm.bind ( history)
+
+{
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,56 @@
+<div class="aes-tool">
+    <div class="tool-header">
+        <h2>AES Encryption</h2>
+        <p>Encrypt and decrypt text securely</p>
+    </div>
+
+    <div class="aes-controls">
+        <div class="control-group">
+            <label for="aesMode">Mode</label>
+            <select id="aesMode">
+                <option value="encrypt">Encrypt</option>
+                <option value="decrypt">Decrypt</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label for="aesKey">Password</label>
+            <input type="password" id="aesKey" placeholder="Enter Your Password" autocomplete="off" />
+        </div>
+    </div>
+
+    <div class="aes-editor-grid">
+        <div class="aes-panel">
+            <div class="aes-panel-header">
+                <span>Input</span>
+            </div>
+            <textarea id="aesInput" placeholder="Enter text to encrypt or decrypt..." spellcheck="false"></textarea>
+        </div>
+
+        <div class="aes-panel">
+            <div class="aes-panel-header">
+                <span>Output</span>
+            </div>
+            <textarea id="aesOutput" placeholder="Results will appear here..." spellcheck="false" readonly></textarea>
+        </div>
+    </div>
+
+    <div class="aes-actions">
+        <button id="aesProcess" class="primary-btn" type="button">Encrypt</button>
+        <button id="aesCopy" class="secondary-btn" type="button">Copy</button>
+        <button id="aesClear" class="secondary-btn" type="button">Clear</button>
+    </div>
+
+    <div class="aes-results">
+        <div class="aes-result-header">Result</div>
+        <div id="aesStatus" class="aes-status">Ready</div>
+    </div>
+</div>
+
+
+
+
+
+
+
+

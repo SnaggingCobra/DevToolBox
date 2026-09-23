@@ -1,0 +1,156 @@
+.color-palette-tool {
+    width: 100%;
+}
+
+.tool-header {
+    margin-bottom: 24px;
+}
+
+.tool-header h2 {
+    margin: 0 0 6px;
+    color: #f0f6fc;
+    font-size: 24px;
+}
+
+.tool-header p {
+    margin: 0;
+    color: #8b949e;
+    font-size: 14px;
+}
+
+.palette-controls {
+    margin-bottom: 20px;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    max-width: 260px;
+}
+
+.control-group label {
+    color: #f0f6fc;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.control-group select {
+    padding: 10px 12px;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    background: #0d1117;
+    color: #f0f6fc;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.control-group select:focus {
+    border-color: #58a6ff;
+}
+
+.color-palette {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+}
+
+.color-card {
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    background: #161b22;
+}
+
+.color-preview {
+    flex: 1;
+    min-height: 210px;
+}
+
+.color-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 12px;
+    background: #161b22;
+}
+
+.color-value {
+    color: #f0f6fc;
+    font-family: monospace;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.color-buttons {
+    display: flex;
+    gap: 6px;
+}
+
+.color-copy,
+.color-lock {
+    padding: 6px 8px;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    background: #21262d;
+    color: #f0f6fc;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.color-copy:hover,
+.color-lock:hover {
+    background: #30363d;
+}
+
+.color-lock.locked {
+    border-color: #58a6ff;
+    color: #58a6ff;
+}
+
+.palette-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.palette-actions button {
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.primary-btn {
+    border: 1px solid #238636;
+    background: #238636;
+    color: #ffffff;
+}
+
+.primary-btn:hover {
+    background: #2ea043;
+}
+
+.secondary-btn {
+    border: 1px solid #30363d;
+    background: #21262d;
+    color: #f0f6fc;
+}
+
+.secondary-btn:hover {
+    background: #30363d;
+}
+
+.palette-status {
+    margin-top: 12px;
+    color: #8b949e;
+    font-size: 13px;
+}

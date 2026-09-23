@@ -17,6 +17,7 @@ const tools = {
     ColorConverterTool: "color-converter",
     GradientGeneratorTool: "gradient-generator",
     BoxShadowTool: "box-shadow",
+    ColorPaletteTool: "color-palette",
     FlexboxGeneratorTool: "flexbox-generator",
     CSSUnitConverterTool: "css-unit-converter",
     Base64Tool: "base64",
@@ -27,9 +28,8 @@ const tools = {
     PasswordGeneratorTool: "password-generator",
     QRCodeGeneratorTool: "qr-code",
     BarcodeGeneratorTool: "barcode-generator",
+    AESEncryptionTool: "aes-encryption",
     AiCodeReviewerTool: "ai-code-reviewer",
-    
-
 };
 
 Object.values(tools).forEach((toolName) => {
@@ -41,7 +41,7 @@ Object.values(tools).forEach((toolName) => {
 });
 
 let loadVersion = 0;
-const toolAssetVersion = "20260922-2";
+const toolAssetVersion = "20260922-3";
 
 function setActiveTool(buttonId) {
     toolButtons.forEach((button) => {
