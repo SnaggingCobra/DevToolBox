@@ -1,0 +1,226 @@
+
+<div class="image-resizer-tool">
+
+    <div class="tool-header">
+        <h2>Image Resizer</h2>
+        <p>Resize images with full control over dimensions and quality.</p>
+    </div>
+
+    <div id="resizeDropZone" class="resize-drop-zone">
+        <div class="resize-drop-icon"></div>
+        <h3>Drop an image here</h3>
+        <p>or</p>
+
+        <label for="resizeImageInput" class="resize-browse-button">
+            Browse Image
+        </label>
+
+        <input
+            type="file"
+            id="resizeImageInput"
+            accept="image/jpeg,image/png,image/webp"
+            hidden
+        >
+
+        <span class="resize-drop-hint">JPG, PNG or WebP</span>
+    </div>
+
+
+    <div id="resizeWorkspace" hidden>
+
+        <div class="resize-preview-section">
+
+            <div class="resize-preview-card">
+                <h3>Original Image</h3>
+                <img id="resizeOriginalPreview" alt="Original image">
+                <div id="resizeOriginalInfo" class="resize-image-info">-</div>
+            </div>
+
+            <div class="resize-preview-card">
+                <h3>Resized Image</h3>
+                <img id="resizeOutputPreview" alt="Resized image">
+                <div id="resizeOutputInfo" class="resize-image-info">-</div>
+            </div>
+
+        </div>
+
+        <div class="resize-controls">
+
+            <h3 class="resize-section-title">Dimensions</h3>
+
+            <div class="resize-control-group">
+                <label for="resizePreset">Size Presets</label>
+
+                <select id="resizePreset">
+                    <option value="custom">Custom Dimensions</option>
+                    <option value="1920x1080">1920 × 1080 (Full HD)</option>
+                    <option value="1280x720">1280 × 720 (HD)</option>
+                    <option value="1080x1080">1080 × 1080 (Square)</option>
+                    <option value="1080x1920">1080 × 1920 (Portrait)</option>
+                    <option value="800x600">800 × 600</option>
+                    <option value="640x480">640 × 480</option>
+                </select>
+            </div>
+
+            <div class="resize-dimensions">
+
+                <div class="resize-control-group">
+                    <label for="resizeWidth">Width (px)</label>
+                    <input
+                        type="number"
+                        id="resizeWidth"
+                        min="1"
+                        max="12000"
+                        placeholder="Width"
+                    >
+                </div>
+
+                <button
+                    id="resizeAspectLock"
+                    class="resize-lock-button"
+                    type="button"
+                    aria-pressed="true"
+                    title="Lock aspect ratio"
+                >
+                    🔒
+                </button>
+
+                <div class="resize-control-group">
+                    <label for="resizeHeight">Height (px)</label>
+                    <input
+                        type="number"
+                        id="resizeHeight"
+                        min="1"
+                        max="12000"
+                        placeholder="Height"
+                    >
+                </div>
+
+            </div>
+
+            <div class="resize-aspect-note">
+                <span id="resizeAspectStatus">Aspect ratio locked</span>
+            </div>
+
+            <div class="resize-control-group">
+                <label for="resizeFitMode">Resize Mode</label>
+
+                <select id="resizeFitMode">
+                    <option value="stretch">Stretch to dimensions</option>
+                    <option value="fit">Fit inside dimensions</option>
+                    <option value="fill">Fill dimensions (crop)</option>
+                </select>
+            </div>
+
+            <div class="resize-control-group">
+
+                <label for="resizePercentage">
+                    Scale Percentage
+                    <span id="resizePercentageValue">100%</span>
+                </label>
+
+                <input
+                    type="range"
+                    id="resizePercentage"
+                    min="10"
+                    max="200"
+                    value="100"
+                >
+
+            </div>
+
+        </div>
+
+        <div class="resize-controls">
+
+            <h3 class="resize-section-title">Output Settings</h3>
+
+            <div class="resize-control-group">
+                <label for="resizeOutputFormat">Output Format</label>
+
+                <select id="resizeOutputFormat">
+                    <option value="image/png">PNG</option>
+                    <option value="image/jpeg">JPG</option>
+                    <option value="image/webp">WebP</option>
+                </select>
+            </div>
+
+            <div class="resize-control-group">
+
+                <label for="resizeQuality">
+                    Image Quality
+                    <span id="resizeQualityValue">90%</span>
+                </label>
+
+                <input
+                    type="range"
+                    id="resizeQuality"
+                    min="10"
+                    max="100"
+                    value="90"
+                >
+
+                <small class="resize-hint">
+                    Quality setting mainly affects JPG and WebP.
+                </small>
+
+            </div>
+
+        </div>
+
+        <div class="resize-stats">
+
+            <div class="resize-stat-card">
+                <span>Original Size</span>
+                <strong id="resizeOriginalSize">-</strong>
+            </div>
+
+            <div class="resize-stat-card">
+                <span>Output Size</span>
+                <strong id="resizeOutputSize">-</strong>
+            </div>
+
+            <div class="resize-stat-card">
+                <span>Size Change</span>
+                <strong id="resizeSizeChange">-</strong>
+            </div>
+
+        </div>
+
+
+        <div class="resize-actions">
+
+            <button
+                id="resizeButton"
+                class="resize-primary-btn"
+                type="button"
+            >
+                Resize Image
+            </button>
+
+            <button
+                id="resizeDownloadButton"
+                class="resize-secondary-btn"
+                type="button"
+                disabled
+            >
+                Download Image
+            </button>
+
+            <button
+                id="resizeResetButton"
+                class="resize-danger-btn"
+                type="button"
+            >
+                Reset
+            </button>
+
+        </div>
+
+        <div id="resizeStatus" class="resize-status" role="status">
+            Ready
+        </div>
+
+    </div>
+
+</div>

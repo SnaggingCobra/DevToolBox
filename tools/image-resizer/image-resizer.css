@@ -1,0 +1,355 @@
+
+.image-resizer-tool {
+    width: 100%;
+}
+
+.image-resizer-tool .tool-header {
+    margin-bottom: 24px;
+}
+
+.image-resizer-tool .tool-header h2 {
+    margin: 0 0 6px;
+    color: #f0f6fc;
+    font-size: 24px;
+}
+
+.image-resizer-tool .tool-header p {
+    margin: 0;
+    color: #8b949e;
+    font-size: 14px;
+}
+
+
+.resize-drop-zone {
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    border: 2px dashed #30363d;
+    border-radius: 14px;
+    background: #0d1117;
+    text-align: center;
+    transition: 0.2s ease;
+}
+
+.resize-drop-zone:hover,
+.resize-drop-zone.drag-over {
+    border-color: #58a6ff;
+    background: #111923;
+}
+
+.resize-drop-icon {
+    margin-bottom: 10px;
+    font-size: 42px;
+}
+
+.resize-drop-zone h3 {
+    margin: 0 0 8px;
+    color: #f0f6fc;
+    font-size: 18px;
+}
+
+.resize-drop-zone p {
+    margin: 0 0 10px;
+    color: #8b949e;
+    font-size: 13px;
+}
+
+.resize-browse-button {
+    display: inline-block;
+    padding: 10px 16px;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    background: #21262d;
+    color: #f0f6fc;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.resize-browse-button:hover {
+    background: #30363d;
+}
+
+.resize-drop-hint {
+    margin-top: 12px;
+    color: #8b949e;
+    font-size: 12px;
+}
+
+
+.resize-preview-section {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.resize-preview-card {
+    overflow: hidden;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    background: #161b22;
+}
+
+.resize-preview-card h3 {
+    margin: 0;
+    padding: 12px 14px;
+    border-bottom: 1px solid #30363d;
+    color: #f0f6fc;
+    font-size: 14px;
+}
+
+.resize-preview-card img {
+    display: block;
+    width: 100%;
+    height: 280px;
+    object-fit: contain;
+    background-color: #0d1117;
+}
+
+.resize-image-info {
+    padding: 10px 14px;
+    border-top: 1px solid #30363d;
+    color: #8b949e;
+    font-family: monospace;
+    font-size: 12px;
+}
+
+/* Settings Panels */
+
+.resize-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    background: #161b22;
+}
+
+.resize-section-title {
+    margin: 0;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #30363d;
+    color: #f0f6fc;
+    font-size: 16px;
+}
+
+.resize-control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.resize-control-group label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    color: #f0f6fc;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.resize-control-group label span {
+    color: #58a6ff;
+}
+
+.resize-control-group input[type="number"],
+.resize-control-group select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 11px 12px;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    outline: none;
+    background: #0d1117;
+    color: #f0f6fc;
+    font-size: 14px;
+}
+
+.resize-control-group input[type="number"]:focus,
+.resize-control-group select:focus {
+    border-color: #58a6ff;
+}
+
+.resize-control-group input[type="range"] {
+    width: 100%;
+    accent-color: #58a6ff;
+    cursor: pointer;
+}
+
+.resize-hint {
+    color: #8b949e;
+    font-size: 12px;
+}
+
+.resize-dimensions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: end;
+    gap: 14px;
+}
+
+.resize-lock-button {
+    width: 42px;
+    height: 42px;
+    border: 1px solid #58a6ff;
+    border-radius: 8px;
+    background: #172840;
+    color: #58a6ff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.resize-lock-button:hover {
+    background: #203955;
+}
+
+.resize-lock-button.unlocked {
+    border-color: #30363d;
+    background: #21262d;
+    color: #8b949e;
+}
+
+.resize-aspect-note {
+    margin-top: -10px;
+    color: #8b949e;
+    font-size: 12px;
+}
+
+.resize-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.resize-stat-card {
+    padding: 16px;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    background: #161b22;
+}
+
+.resize-stat-card span {
+    display: block;
+    margin-bottom: 8px;
+    color: #8b949e;
+    font-size: 12px;
+}
+
+.resize-stat-card strong {
+    color: #f0f6fc;
+    font-size: 16px;
+    overflow-wrap: anywhere;
+}
+
+.resize-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.resize-actions button {
+    padding: 11px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.resize-primary-btn {
+    border: 1px solid #238636;
+    background: #238636;
+    color: #ffffff;
+}
+
+.resize-primary-btn:hover {
+    background: #2ea043;
+}
+
+.resize-secondary-btn {
+    border: 1px solid #30363d;
+    background: #21262d;
+    color: #f0f6fc;
+}
+
+.resize-secondary-btn:hover:not(:disabled) {
+    background: #30363d;
+}
+
+.resize-secondary-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.resize-danger-btn {
+    border: 1px solid #da3633;
+    background: transparent;
+    color: #f85149;
+}
+
+.resize-danger-btn:hover {
+    background: #3d1615;
+}
+
+.resize-status {
+    margin-top: 12px;
+    color: #8b949e;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+@media (max-width: 800px) {
+    .resize-preview-section {
+        grid-template-columns: 1fr;
+    }
+
+    .resize-stats {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 500px) {
+    .resize-drop-zone {
+        min-height: 210px;
+        padding: 20px;
+    }
+
+    .resize-preview-card img {
+        height: 220px;
+    }
+
+    .resize-dimensions {
+        grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+        gap: 8px;
+    }
+
+    .resize-lock-button {
+        width: 36px;
+        height: 42px;
+        font-size: 15px;
+    }
+
+    .resize-controls {
+        padding: 14px;
+    }
+
+    .resize-actions {
+        flex-direction: column;
+    }
+
+    .resize-actions button {
+        width: 100%;
+    }
+}

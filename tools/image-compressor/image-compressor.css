@@ -1,0 +1,304 @@
+.image-compressor-tool {
+    width: 100%;
+}
+
+.image-compressor-tool .tool-header {
+    margin-bottom: 24px;
+}
+
+.image-compressor-tool .tool-header h2 {
+    margin: 0 0 6px;
+    color: #f0f6fc;
+    font-size: 24px;
+}
+
+.image-compressor-tool .tool-header p {
+    margin: 0;
+    color: #8b949e;
+    font-size: 14px;
+}
+
+.drop-zone {
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    border: 2px dashed #30363d;
+    border-radius: 14px;
+    background: #0d1117;
+    text-align: center;
+    transition: 0.2s ease;
+}
+
+.drop-zone:hover,
+.drop-zone.drag-over {
+    border-color: #58a6ff;
+    background: #111923;
+}
+
+.drop-icon {
+    margin-bottom: 10px;
+    font-size: 42px;
+}
+
+.drop-zone h3 {
+    margin: 0 0 8px;
+    color: #f0f6fc;
+    font-size: 18px;
+}
+
+.drop-zone p {
+    margin: 0 0 10px;
+    color: #8b949e;
+    font-size: 13px;
+}
+
+.browse-button {
+    display: inline-block;
+    padding: 9px 16px;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    background: #21262d;
+    color: #f0f6fc;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.browse-button:hover {
+    background: #30363d;
+}
+
+.drop-hint {
+    margin-top: 12px;
+    color: #8b949e;
+    font-size: 12px;
+}
+
+.image-workspace {
+    margin-top: 20px;
+}
+
+.image-preview-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.preview-card {
+    overflow: hidden;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    background: #161b22;
+}
+
+.preview-card h3 {
+    margin: 0;
+    padding: 12px 14px;
+    border-bottom: 1px solid #30363d;
+    color: #f0f6fc;
+    font-size: 14px;
+}
+
+.preview-card img {
+    display: block;
+    width: 100%;
+    height: 280px;
+    object-fit: contain;
+    background:
+        linear-gradient(45deg, #161b22 25%, transparent 25%),
+        linear-gradient(-45deg, #161b22 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #161b22 75%),
+        linear-gradient(-45deg, transparent 75%, #161b22 75%);
+    background-size: 24px 24px;
+    background-position:
+        0 0,
+        0 12px,
+        12px -12px,
+        -12px 0;
+}
+
+.image-info {
+    padding: 10px 14px;
+    border-top: 1px solid #30363d;
+    color: #8b949e;
+    font-family: monospace;
+    font-size: 12px;
+}
+
+
+.compression-controls {
+    display: grid;
+    grid-template-columns: 1fr 220px;
+    gap: 16px;
+    margin-top: 20px;
+    padding: 18px;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    background: #161b22;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.control-group label {
+    display: flex;
+    justify-content: space-between;
+    color: #f0f6fc;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.control-group label span {
+    color: #58a6ff;
+}
+
+.control-group input[type="range"] {
+    width: 100%;
+    accent-color: #58a6ff;
+    cursor: pointer;
+}
+
+.control-group select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    outline: none;
+    background: #0d1117;
+    color: #f0f6fc;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.control-group select:focus {
+    border-color: #58a6ff;
+}
+
+
+
+.compression-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.stat-card {
+    padding: 14px;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    background: #161b22;
+}
+
+.stat-card span {
+    display: block;
+    margin-bottom: 6px;
+    color: #8b949e;
+    font-size: 12px;
+}
+
+.stat-card strong {
+    color: #f0f6fc;
+    font-size: 16px;
+}
+
+.compression-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.compression-actions button {
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.primary-btn {
+    border: 1px solid #238636;
+    background: #238636;
+    color: #ffffff;
+}
+
+.primary-btn:hover {
+    background: #2ea043;
+}
+
+.secondary-btn {
+    border: 1px solid #30363d;
+    background: #21262d;
+    color: #f0f6fc;
+}
+
+.secondary-btn:hover:not(:disabled) {
+    background: #30363d;
+}
+
+.secondary-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.danger-btn {
+    border: 1px solid #da3633;
+    background: transparent;
+    color: #f85149;
+}
+
+.danger-btn:hover {
+    background: #3d1615;
+}
+
+
+.compression-status {
+    margin-top: 12px;
+    color: #8b949e;
+    font-size: 13px;
+}
+
+
+@media (max-width: 800px) {
+
+    .image-preview-section {
+        grid-template-columns: 1fr;
+    }
+
+    .compression-controls {
+        grid-template-columns: 1fr;
+    }
+
+    .compression-stats {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .drop-zone {
+        min-height: 220px;
+        padding: 20px;
+    }
+
+    .preview-card img {
+        height: 220px;
+    }
+
+    .compression-actions {
+        flex-direction: column;
+    }
+
+    .compression-actions button {
+        width: 100%;
+    }
+}
+

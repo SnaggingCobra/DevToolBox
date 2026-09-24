@@ -30,6 +30,7 @@ const tools = {
     BarcodeGeneratorTool: "barcode-generator",
     AESEncryptionTool: "aes-encryption",
     AiCodeReviewerTool: "ai-code-reviewer",
+    imageCompressor: "image-compressor",
 };
 
 Object.values(tools).forEach((toolName) => {

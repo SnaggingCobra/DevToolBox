@@ -1,0 +1,96 @@
+<div class="image-compressor-tool">
+    <div class="tool-header">
+        <h2>Image Compressor</h2>
+        <p>Compress image Directly in your Browser</p>
+    </div>
+
+    <div id="dropZone" class="drop-zone">
+        <h3>Drop an image Here</h3>
+        <p>or</p>
+ 
+        <label for="imageInput" class="browse-button">Browse Image</label>
+        <input type="file" id="imageInput" accept="image/jpeg, image/png, image/webp" hidden >
+
+        <span class="drop-hint">
+            JPG, PNG or WebP
+        </span>
+    </div>
+
+
+    <div id="imageWorkspace" class="image-workspace" hidden>
+
+        <div class="image-preview-section">
+            <div class="preview-card">
+                <h3>Original</h3>
+                <img id="originalPreview" alt="Original image preview">
+
+                <div id="originalInfo" class="image-info">-</div>
+
+
+            </div>
+
+            <div class="preview-card">
+                <h3>Compressed</h3>
+
+                <img  alt="compressedPreview" id="compressedPreview">
+                <div id="compressedInfo" class="image-info">-
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="compression-controls">
+            <div class="control-group">
+                <label for="quality">Quality <span id="qualityValue">80%</span></label>
+                
+                <input type="range" id="quality" min="10" max="100" value="80">
+
+            </div>
+
+            <div class="control-group">
+                <label for="outputFormat">Output Format</label>
+                <select id="outputFormat">
+
+                    <option value="image/webp">WepP</option>
+                    <option value="image/jpeg">JPG</option>
+                    <option value="image/png">PNG</option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+        <div class="compression-stats">
+        <div class="stat-card">
+            <span>Original Size</span>
+            <strong id="originalSize">-</strong>
+        </div>
+
+        <div class="stat-card">
+            <span>Compressed Size</span>
+            <strong id="compressedSize">-</strong>
+        </div>
+
+        <div class="stat-card">
+            <span>Reduction</span>
+            <strong id="compressionPercent">-</strong>
+        </div>
+        </div>
+        
+        <div class="compression-actions">
+            <button id="compressButton" class="primary-btn" type="button">Compress Image</button>
+            <button id="downloadButton" class="secondary-btn" type="button" disabled>Download</button>
+            <button id="resetButton" class="danger-btn" type="button">Reset
+            </button>
+
+
+        </div>
+
+        <div id="compressionStatus" class="compression-status">Ready
+        </div>
+    </div>
+
+
+</div>
