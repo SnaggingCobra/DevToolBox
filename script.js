@@ -31,6 +31,7 @@ const tools = {
     AESEncryptionTool: "aes-encryption",
     AiCodeReviewerTool: "ai-code-reviewer",
     imageCompressor: "image-compressor",
+    imageResizer: "image-resizer",
 };
 
 Object.values(tools).forEach((toolName) => {
