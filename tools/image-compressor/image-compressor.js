@@ -28,6 +28,22 @@ function setStatus(message) {
     compressionStatus.textContent = message;
 }
 
+function isSupportedImageFile(file) {
+    if (!file) return false;
+
+    const mime = (file.type || "").toLowerCase();
+    const extension = (file.name || "").split(".").pop()?.toLowerCase();
+
+    const supportedTypes = [
+        "image/jpeg",
+        "image/png",
+        "image/webp"
+    ];
+
+    return supportedTypes.includes(mime) ||
+        ["jpg", "jpeg", "png", "webp"].includes(extension);
+}
+
 function formatBytes(bytes) {
     if (bytes === 0) {
         return "0 Bytes";
@@ -72,13 +88,7 @@ async function handleImage(file) {
         return;
     }
 
-    const supportedTypes = [
-        "image/jpeg",
-        "image/png",
-        "image/webp"
-    ];
-
-    if (!supportedTypes.includes(file.type)) {
+    if (!isSupportedImageFile(file)) {
         setStatus("Please select a JPG, PNG, or WebP image.");
         return;
     }

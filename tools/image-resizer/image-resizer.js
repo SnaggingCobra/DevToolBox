@@ -38,6 +38,21 @@ function setResizeStatus(message) {
     resizeStatus.textContent = message;
 }
 
+function isSupportedResizeImageFile(file) {
+    if (!file) return false;
+
+    const mime = (file.type || "").toLowerCase();
+    const extension = (file.name || "").split(".").pop()?.toLowerCase();
+
+    const supportedTypes = [
+        "image/jpeg",
+        "image/png",
+        "image/webp"
+    ];
+
+    return supportedTypes.includes(mime) ||
+        ["jpg", "jpeg", "png", "webp"].includes(extension);
+}
 
 function formatResizeBytes(bytes) {
     if (bytes === 0) return "0 Bytes";
@@ -76,13 +91,7 @@ function loadResizeImage(file) {
 async function handleResizeImage(file) {
     if (!file) return;
 
-    const supportedTypes = [
-        "image/jpeg",
-        "image/png",
-        "image/webp"
-    ];
-
-    if (!supportedTypes.includes(file.type)) {
+    if (!isSupportedResizeImageFile(file)) {
         setResizeStatus("Please select a JPG, PNG, or WebP image.");
         return;
     }
