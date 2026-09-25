@@ -1,0 +1,61 @@
+<div class="playground">
+    <div class="playground-header">
+        <div>
+            <h2>HTML / CSS / JS Playground</h2>
+            <p>Write code and see the result instantly.</p>
+        </div>
+
+        <div class="playground-actions">
+            <button id="runCode">Run</button>
+            <button id="clearCode">Clear</button>
+        </div>
+    </div>
+
+    <div class="playground-body">
+        <div class="editors">
+            <div class="editor-panel">
+                <div class="editor-title">
+                    <span>HTML</span>
+                </div>
+
+                <textarea id="htmlCode" spellcheck="false"><h1>Hello, DevSatchel!</h1>
+<p>Start building something here.</p></textarea>
+            </div>
+
+            <div class="editor-panel">
+                <div class="editor-title">
+                    <span>CSS</span>
+                </div>
+
+                <textarea id="cssCode" spellcheck="false">body {
+    font-family: Arial, sans-serif;
+    padding: 30px;
+}
+
+h1 {
+    color: #6ea8fe;
+}</textarea>
+            </div>
+
+            <div class="editor-panel">
+                <div class="editor-title">
+                    <span>JavaScript</span>
+                </div>
+
+                <textarea id="jsCode" spellcheck="false">console.log("Hello from DevToolBox!");</textarea>
+            </div>
+        </div>
+
+        <div class="preview-panel">
+            <div class="preview-title">
+                <span>Preview</span>
+            </div>
+
+            <iframe
+                id="preview"
+                title="Live Preview"
+                sandbox="allow-scripts">
+            </iframe>
+        </div>
+    </div>
+</div>

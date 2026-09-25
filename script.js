@@ -14,6 +14,7 @@ const tools = {
     DiffCheckerTool: "diff-checker",
     HTTPRequestBuilderTool: "http-request-builder",
     CodeBeautifierTool: "code-beautifier",
+    "html-playground": "html-playground",
     ColorConverterTool: "color-converter",
     GradientGeneratorTool: "gradient-generator",
     BoxShadowTool: "box-shadow",

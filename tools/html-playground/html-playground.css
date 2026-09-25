@@ -1,0 +1,241 @@
+.playground {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 650px;
+    background: #0d1117;
+    color: #f0f6fc;
+
+}
+
+.playground-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 18px 22px;
+    background: #172840;
+    border-bottom: 1px solid #20364d;
+
+}
+
+.playground-header h2 {
+    margin: 0;
+    font-size: 20px;
+
+}
+
+.playground-header p {
+    margin: 5px 0 0;
+    color: #8b949e;
+    font-size: 13px;
+
+}
+
+.playground-actions {
+    display: flex;
+    gap: 8px;
+
+}
+
+.playground-actions button {
+    border: 1px solid #34495e;
+    border-radius: 6px;
+    padding: 8px 15px;
+    background: #1f3048;
+    color: #f0f6fc;
+    cursor: pointer;
+    font-size: 13px;
+    transition: 0.2s;
+
+}
+
+.playground-actions button:hover {
+    background: #2b8636;
+}
+
+#runCode {
+    background: #238636;
+    border-color: #2ea043;
+
+}
+
+#runCode:hover {
+    background: #2ea043;
+}
+
+.playground-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    flex: 1;
+    min-height: 0;
+    gap: 12px;
+    padding: 12px;
+
+}
+
+.editors {
+    display: grid;
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+    min-height: 0;
+    overflow: hidden;
+    background: #111820;
+    border: 1px solid #26364d;
+    border-radius: 8px;
+
+}
+
+.editor-panel,
+.preview-panel {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.editor-title,
+.preview-title {
+    display: flex;
+    align-items: center;
+    height: 36px;
+    padding: 0 12px;
+    background: #172840;
+    border-bottom: 1px solid #26364d;
+    color: #c9d1d9;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+}
+
+.editor-panel textarea {
+    flex: 1;
+    width: 100%;
+    min-height: 0;
+    box-sizing: border-box;
+    resize: none;
+    border: none;
+    outline: none;
+    padding: 14px;
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: "Fira Code", "Cascadia Code", monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    tab-size: 2;
+}
+
+.editor-panel textarea::selection {
+    background: #264f78;
+}
+
+.preview-panel {
+    min-height: 0;
+}
+
+#preview {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: white;
+}
+
+@media (max-width: 900px) {
+    .playground-body {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .editors {
+        grid-template-rows: repeat(3, 180px);
+    }
+
+    .preview-panel {
+        min-height: 400px;
+    }
+}
+
+@media (max-width: 600px) {
+    .playground-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .playground-actions {
+        width: 100%;
+    }
+
+    .playground-actions button {
+        flex: 1;
+    }
+
+    .playground-body {
+        padding: 8px;
+        gap: 8px;
+    }
+}
+
+/* Light Mode */
+body.light-mode .playground {
+    background: #ffffff;
+    color: #24292f;
+}
+
+body.light-mode .playground-header {
+    background: #f6f8fa;
+    border-bottom-color: #d0d7de;
+}
+
+body.light-mode .playground-header h2 {
+    color: #24292f;
+}
+
+body.light-mode .playground-header p {
+    color: #57606a;
+}
+
+body.light-mode .playground-actions button {
+    background: #f6f8fa;
+    border-color: #d0d7de;
+    color: #24292f;
+}
+
+body.light-mode .playground-actions button:hover {
+    background: #eaeef2;
+}
+
+body.light-mode #runCode {
+    background: #2da44e;
+    color: #ffffff;
+    border-color: #2ea043;
+}
+
+body.light-mode #runCode:hover {
+    background: #2c974b;
+}
+
+body.light-mode .editors {
+    background: #ffffff;
+    border-color: #d0d7de;
+}
+
+body.light-mode .editor-title,
+body.light-mode .preview-title {
+    background: #f6f8fa;
+    border-bottom-color: #d0d7de;
+    color: #57606a;
+}
+
+body.light-mode .editor-panel textarea {
+    background: #ffffff;
+    color: #24292f;
+}
+
+body.light-mode .editor-panel textarea::selection {
+    background: #bbf;
+}
+
+body.light-mode #preview {
+    border-top: 1px solid #d0d7de;
+}
