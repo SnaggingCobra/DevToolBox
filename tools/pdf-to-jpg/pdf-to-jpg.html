@@ -1,0 +1,57 @@
+<div class="pdf-converter">
+    <div class="pdf-header">
+        <div>
+            <h2>PDF to JPG Converter</h2>
+            <p>Convert PDF pages into High Quality JPG Image</p>
+        </div>
+
+    </div>
+
+    <div class="pdf-upload" id="pdfDropZone">
+        <div class="pdf-upload-icon">#
+        </div>
+        <h3>Upload your PDF</h3>
+        <p>Drag and drop a PDF Here or select a file</p>
+
+        <input type="file" id="pdfFile" accept=".pdf,application/pdf" hidden>
+        <button id="selectPdf" type="button">Choose PDF</button>
+        <p class="pdf-file-info" id="pdfFileInfo">No file Selected</p>
+
+    </div>
+
+    <div class="pdf-settings">
+        <label for="jpgQuality">JpgQuality <span id="qualityValue">90%</span></label>
+
+        <input type="range" id="jpgQuality" min="10" max="100" value="90">
+
+        <button id="convertPdf">Convert to JPG</button>
+
+    </div>
+
+     <div class="pdf-progress" id="pdfProgress" hidden>
+        <p id="pdfProgressText">Preparing PDF...</p>
+        <progress id="pdfProgressBar" value="0" max="100"></progress>
+    </div>
+
+    <div class="pdf-results" id="pdfResults">
+
+        <div class="pdf-results-header">
+            <h3>Converted Pages</h3>
+
+            <button id="downloadAll" disabled>
+                Download All (ZIP)
+            </button>
+        </div>
+
+
+    <div class="pdf-page-grid" id="pdfPageGrid">
+            <p class="pdf-empty">
+                Your converted pages will appear here.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+

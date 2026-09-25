@@ -1,0 +1,261 @@
+.pdf-converter {
+    padding: 24px;
+    color: #f0f6fc;
+    background: #0d1117;
+    min-height: 100%;
+    box-sizing: border-box;
+    font-family: inherit;
+
+
+}
+
+.pdf-header {
+    margin-bottom: 25px;
+
+}
+
+.pdf-header h2 {
+    margin: 0 0 8px;
+    font-size: 24px;
+    color: #f0f6fc;
+
+}
+
+.pdf-header p {
+    margin: 0;
+    color: #8b949e;
+    font-size: 14px;
+
+}
+
+.pdf-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    border: 2px dashed #34495e;
+    border-radius: 12px;
+    background: #111820;
+    text-align: center;
+    transition: 0.2s ease;
+}
+
+.pdf-upload.drag-over {
+    border-color: #58a6ff;
+    background: #172840;
+}
+
+.pdf-upload-icon {
+    font-size: 45px;
+    margin-bottom: 12px;
+}
+
+.pdf-upload h3 {
+    margin: 0 0 8px;
+    font-size: 19px;
+}
+
+.pdf-upload p {
+    color: #8b949e;
+    font-size: 14px;
+}
+
+.pdf-upload button,
+.pdf-settings button,
+.pdf-results-header button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 7px;
+    background: #238636;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.pdf-upload button:hover,
+.pdf-settings button:hover:not(:disabled),
+.pdf-results-header button:hover:not(:disabled) {
+    background: #2ea043;
+}
+
+.pdf-file-info {
+    margin-bottom: 0;
+    font-size: 13px !important;
+}
+
+.pdf-settings {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 22px 0;
+    padding: 20px;
+    border: 1px solid #26364d;
+    border-radius: 10px;
+    background: #111820;
+
+}
+
+.pdf-settings label {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    color: #c9d1d9;
+    font-size: 14px;
+}
+
+#qualityValue {
+    color: #58a6ff;
+    font-weight: 600;
+}
+
+#jpgQuality {
+    width: 100%;
+    accent-color: #58a6ff;
+    cursor: pointer;
+}
+
+.pdf-settings button {
+    align-self: flex-start;
+    margin-top: 8px;
+    background: #2563eb;
+}
+
+.pdf-settings button:hover:not(:disabled) {
+    background: #1d4ed8;
+}
+
+.pdf-settings button:disabled,
+.pdf-upload button:disabled,
+.pdf-results-header button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.pdf-progress {
+    margin: 20px 0;
+    padding: 18px;
+    border: 1px solid #26364d;
+    border-radius: 10px;
+    background: #111820;
+}
+
+.pdf-progress p {
+    margin-top: 0;
+    color: #c9d1d9;
+    font-size: 14px;
+}
+
+#pdfProgressBar {
+    width: 100%;
+    height: 12px;
+    accent-color: #238636;
+}
+.pdf-results {
+    margin-top: 30px;
+}
+
+.pdf-results-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+
+.pdf-results-header h3 {
+    margin: 0;
+    font-size: 19px;
+}
+
+.pdf-results-header button {
+    background: #1f3048;
+    border: 1px solid #34495e;
+}
+
+.pdf-results-header button:hover:not(:disabled) {
+    background: #2b4262;
+}
+
+.pdf-page-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+.pdf-empty {
+    color: #8b949e;
+    font-size: 14px;
+}
+
+.pdf-page-card {
+    overflow: hidden;
+    border: 1px solid #26364d;
+    border-radius: 10px;
+    background: #111820;
+}
+
+.pdf-page-card img {
+    display: block;
+    width: 100%;
+    height: 260px;
+    object-fit: contain;
+    background: #ffffff;
+}
+
+.pdf-page-card-info {
+    padding: 14px;
+}
+
+.pdf-page-card-info h4 {
+    margin: 0 0 10px;
+    font-size: 14px;
+    color: #f0f6fc;
+}
+
+.pdf-page-card-info a {
+    display: block;
+    padding: 9px;
+    border-radius: 6px;
+    background: #1f3048;
+    color: #58a6ff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.pdf-page-card-info a:hover {
+    background: #2b4262;
+}
+
+
+@media (max-width: 600px) {
+    .pdf-converter {
+        padding: 14px;
+    }
+
+    .pdf-upload {
+        padding: 30px 15px;
+    }
+
+    .pdf-header h2 {
+        font-size: 21px;
+    }
+
+    .pdf-results-header {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .pdf-results-header button {
+        width: 100%;
+    }
+
+    .pdf-page-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
