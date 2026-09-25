@@ -1,5 +1,5 @@
 
-# DevToolBox
+# DevSatchel
 
 DevToolBox is a project I made to keep some small developer tools that I use while coding in one place.
 When I'm working on a website, I sometimes need to convert a color, test a regex, format JSON, make a CSS gradient, or check what changed between two pieces of code. Normally I would have to search for a different website for each of these things. I wanted to make my own small toolbox instead.
@@ -88,6 +88,38 @@ The Barcode Generator creates barcodes from text or numbers and lets me download
 
 The HTTP Request Builder lets me choose a method, add parameters and headers, send a request, and inspect the response.
 It can also generate example code for JavaScript, cURL, and Python.
+
+### Code Beautifier
+
+The Code Beautifier formats JavaScript, JSON, HTML, and CSS so the code is easier to read and maintain.
+
+### HTML / CSS / JS Playground
+
+The HTML / CSS / JS Playground lets me write HTML, CSS, and JavaScript and run it in a live preview directly in the browser.
+
+### Color Palette Generator
+
+The Color Palette Generator creates random, monochromatic, complementary, analogous, and triadic color palettes.
+Palettes can be copied for use in a project.
+
+### Image Compressor
+
+The Image Compressor reduces image file sizes directly in the browser.
+It supports JPG, PNG, and WebP images, with adjustable quality and downloadable results.
+
+### Image Resizer
+
+The Image Resizer changes image dimensions with custom sizes, presets, aspect-ratio locking, and stretch, fit, or crop modes.
+It supports JPG, PNG, and WebP output.
+
+### AES Encryption
+
+The AES Encryption tool encrypts and decrypts text using a password directly in the browser.
+
+### AI Code Reviewer
+
+The AI Code Reviewer analyzes code for bugs, security issues, performance problems, readability, and overall quality.
+It supports several programming languages and review types.
 
 ### Quick Links
 
