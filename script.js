@@ -29,6 +29,7 @@ const tools = {
     PasswordGeneratorTool: "password-generator",
     QRCodeGeneratorTool: "qr-code",
     BarcodeGeneratorTool: "barcode-generator",
+    imageToPdfTool: "image-to-pdf",
     pdfToJpgTool: "pdf-to-jpg",
     AESEncryptionTool: "aes-encryption",
     AiCodeReviewerTool: "ai-code-reviewer",
@@ -45,7 +46,7 @@ Object.values(tools).forEach((toolName) => {
 });
 
 let loadVersion = 0;
-const toolAssetVersion = "20260925-1";
+const toolAssetVersion = "20260926-3";
 
 function setActiveTool(buttonId) {
     toolButtons.forEach((button) => {

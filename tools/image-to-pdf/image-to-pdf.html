@@ -1,0 +1,136 @@
+<div class="itp-container">
+    <div class="itp-header">
+        <h2>Image to PDF Converter</h2>
+        <p>Convert Your Image into a PDF document</p>
+
+    </div>
+
+    <div class="itp-upload" id="itpDropZone">
+        <input type="file" id="itpFileInput" accept="image/jpeg, image/png, image/webp" multiple hidden>
+
+        <div class="itp-upload-icon" >#
+        </div>
+
+        <h3>Drop Your Images Here</h3>
+        <p>Supports JPG, PNG and Webp</p>
+
+        <button type="button" id="itpBrowseButton">Choose Images</button>
+    </div>
+
+
+    <div class="itp-workspace" id="itpWorkspace" hidden>
+        <div class="itp-section-header">
+            <h3>Selected Images</h3>
+            <span id="itpImageCount">0 Images</span>
+
+        </div>
+
+        <p class="itp-hint">
+            Drag image to reorder them. 
+        </p>
+
+        <div class="itp-image-list" id="itpImageList">
+            <button type="button" id="itpAddMoreButton">Add more Images</button>
+        </div>
+
+
+        <div class="itp-settings">
+            <h3>PDF Setting</h3>
+            <div class="itp-setting">
+                <label for="itpPageSize">Page Size</label>
+                <select  id="itpPageSize">
+                    <option value="a4">A4</option>
+                    <option value="letter">Letter</option>
+                    <option value="legal">Legal</option>
+                    <option value="fit">Fit to Image</option>
+                </select>
+
+            </div>
+
+            <div class="itp-setting">
+                <label for="itpOrientation">Orientation</label>
+                <select  id="itpOrientation">
+                    <option value="portrait">Portrait</option>
+                    <option value="landscape">landscape</option>
+
+                </select>
+
+            </div>
+
+            <div class="itp-setting">
+                <label for="itpMargin">Page Margin</label>
+                <select  id="itpMargin">
+                    <option value="0">No Margin</option>
+                    <option value="10">Small (10 mm)</option>
+                    <option value="20">Medium (20 mm)</option>
+                    <option value="30">Large (30 mm)</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="itp-setting">
+        <label for="itpImageFit">Image Fit</label>
+        <select id="itpImageFit">
+          <option value="contain">Fit Inside Page</option>
+          <option value="cover">Fill Page (Crop)</option>
+        </select>
+      </div>
+
+      <div class="itp-setting">
+        <label for="itpPdfQuality">
+          Image Quality
+          <span id="itpQualityValue">90%</span>
+        </label>
+
+        <input
+          type="range"
+          id="itpPdfQuality"
+          min="10"
+          max="100"
+          value="90"
+        >
+      </div>
+
+      <div class="itp-setting">
+        <label for="itpPdfName">PDF File Name</label>
+        <input
+          type="text"
+          id="itpPdfName"
+          value="my-images"
+          placeholder="Enter PDF name"
+        >
+      </div>
+
+
+    </div>
+
+    <div class="itp-actions">
+      <button type="button" id="itpConvertButton">
+        Convert to PDF
+      </button>
+
+      <button
+        type="button"
+        id="itpDownloadButton"
+        disabled
+      >
+        Download PDF
+      </button>
+
+      <button type="button" id="itpResetButton">
+        Reset
+      </button>
+    </div>
+
+    <div class="itp-status" id="itpStatus" role="status"></div>
+
+    <div class="itp-result" id="itpResult" hidden>
+      <h3>PDF Created Successfully!</h3>
+      <p id="itpPdfInfo"></p>
+    </div>
+
+  </div>
+
+</div>
