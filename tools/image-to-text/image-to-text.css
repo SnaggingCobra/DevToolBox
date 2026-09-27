@@ -1,0 +1,182 @@
+
+.ocr-tool {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.ocr-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.ocr-header h2 {
+    margin: 0 0 8px;
+    font-size: 28px;
+}
+
+.ocr-header p {
+    margin: 0;
+    opacity: 0.7;
+}
+
+
+
+.ocr-upload-area {
+    border: 2px dashed #4b5563;
+    border-radius: 14px;
+    padding: 45px 20px;
+    text-align: center;
+    transition: 0.2s ease;
+}
+
+.ocr-upload-area:hover {
+    border-color: #7c8cff;
+    background: rgba(124, 140, 255, 0.04);
+}
+
+.ocr-upload-icon {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.ocr-upload-area h3 {
+    margin: 0 0 8px;
+}
+
+.ocr-upload-area p {
+    margin: 0 0 20px;
+    opacity: 0.7;
+}
+
+.ocr-upload-area small {
+    display: block;
+    margin-top: 15px;
+    opacity: 0.55;
+}
+
+
+.ocr-btn {
+    border: none;
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.ocr-btn-primary {
+    background: #5865f2;
+    color: white;
+}
+
+.ocr-btn-primary:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.ocr-btn-secondary {
+    background: #2d3748;
+    color: #fff;
+}
+
+.ocr-btn-secondary:hover {
+    background: #3b4658;
+}
+
+.ocr-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+.ocr-preview-section {
+    margin-top: 25px;
+}
+
+.ocr-section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.ocr-section-heading h3 {
+    margin: 0;
+}
+
+.ocr-image-preview {
+    width: 100%;
+    max-height: 500px;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #111827;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.ocr-image-preview img {
+    display: block;
+    max-width: 100%;
+    max-height: 500px;
+    object-fit: contain;
+}
+
+
+#ocrExtractBtn {
+    width: 100%;
+}
+
+
+.ocr-progress {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 8px;
+    background: rgba(88, 101, 242, 0.1);
+    text-align: center;
+    font-size: 14px;
+}
+
+
+.ocr-result-section {
+    margin-top: 30px;
+}
+
+.ocr-result {
+    width: 100%;
+    min-height: 220px;
+    box-sizing: border-box;
+    resize: vertical;
+    padding: 15px;
+    border: 1px solid #374151;
+    border-radius: 10px;
+    background: #111827;
+    color: #f9fafb;
+    font-family: inherit;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

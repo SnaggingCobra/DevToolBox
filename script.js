@@ -31,10 +31,12 @@ const tools = {
     BarcodeGeneratorTool: "barcode-generator",
     imageToPdfTool: "image-to-pdf",
     pdfToJpgTool: "pdf-to-jpg",
+    pdfMergerTool: "pdf-merger",
     AESEncryptionTool: "aes-encryption",
     AiCodeReviewerTool: "ai-code-reviewer",
     imageCompressor: "image-compressor",
     imageResizer: "image-resizer",
+    imageToTextTool: "image-to-text",
 };
 
 Object.values(tools).forEach((toolName) => {

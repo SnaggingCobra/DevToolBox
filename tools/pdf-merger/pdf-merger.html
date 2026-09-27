@@ -1,0 +1,72 @@
+
+<div class="pdf-merger-tool">
+    <div class="pdf-merger-header">
+        <h2>PDF Merger</h2>
+        <p>Combine multiple PDF files into one document.</p>
+    </div>
+
+    <div class="pdf-upload-area" id="pdfUploadArea">
+        <div class="pdf-upload-icon">📄</div>
+        <h3>Drop your PDF files here</h3>
+        <p>or click below to browse your files</p>
+
+        <input
+            type="file"
+            id="pdfFileInput"
+            accept=".pdf,application/pdf"
+            multiple
+            hidden
+        >
+
+        <button type="button" id="pdfBrowseBtn" class="pdf-btn pdf-btn-primary">
+            Choose PDF Files
+        </button>
+
+        <small>Upload two or more PDF files to merge</small>
+    </div>
+
+    <div class="pdf-file-section">
+        <div class="pdf-file-heading">
+            <h3>Selected Files</h3>
+            <span id="pdfFileCount">0 files</span>
+        </div>
+
+        <p class="pdf-hint">
+            Arrange files in the order you want them to appear in the final PDF.
+        </p>
+
+        <div id="pdfFileList" class="pdf-file-list">
+            <div class="pdf-empty-state">
+                No PDF files selected yet.
+            </div>
+        </div>
+    </div>
+
+    <div class="pdf-merge-footer">
+        <div class="pdf-total-size">
+            Total size: <strong id="pdfTotalSize">0 B</strong>
+        </div>
+
+        <div class="pdf-action-buttons">
+            <button
+                type="button"
+                id="pdfClearBtn"
+                class="pdf-btn pdf-btn-secondary"
+                disabled
+            >
+                Clear All
+            </button>
+
+            <button
+                type="button"
+                id="pdfMergeBtn"
+                class="pdf-btn pdf-btn-primary"
+                disabled
+            >
+                Merge PDFs
+            </button>
+        </div>
+    </div>
+
+    <div id="pdfStatus" class="pdf-status" role="status" aria-live="polite"></div>
+</div>

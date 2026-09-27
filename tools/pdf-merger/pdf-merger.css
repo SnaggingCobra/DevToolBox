@@ -1,0 +1,327 @@
+
+.pdf-merger-tool {
+    --pdf-accent: #6366f1;
+    --pdf-accent-hover: #4f46e5;
+    --pdf-border: var(--border-color, #30363d);
+    --pdf-text: var(--text-color, #f0f6fc);
+    --pdf-muted: var(--secondary-text, #8b949e);
+    --pdf-card: var(--card-bg, #161b22);
+
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 24px;
+    color: var(--pdf-text);
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+.pdf-merger-tool *,
+.pdf-merger-tool *::before,
+.pdf-merger-tool *::after {
+    box-sizing: border-box;
+}
+
+.pdf-merger-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.pdf-merger-header h2 {
+    font-size: 28px;
+    margin: 0 0 10px;
+    font-weight: 700;
+}
+
+.pdf-merger-header p {
+    color: var(--pdf-muted);
+    font-size: 15px;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.pdf-upload-area {
+    border: 2px dashed var(--pdf-border);
+    background: var(--pdf-card);
+    border-radius: 16px;
+    padding: 40px 20px;
+    text-align: center;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.pdf-upload-area.drag-over {
+    border-color: var(--pdf-accent);
+    background: rgba(99, 102, 241, 0.08);
+}
+
+.pdf-upload-icon {
+    font-size: 42px;
+    margin-bottom: 12px;
+}
+
+.pdf-upload-area h3 {
+    font-size: 19px;
+    margin: 0 0 8px;
+}
+
+.pdf-upload-area p {
+    color: var(--pdf-muted);
+    margin: 0 0 20px;
+    font-size: 14px;
+}
+
+.pdf-upload-area small {
+    display: block;
+    color: var(--pdf-muted);
+    margin-top: 15px;
+    font-size: 12px;
+}
+
+.pdf-btn {
+    padding: 11px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.pdf-btn:hover:not(:disabled) {
+    transform: translateY(-1px);
+}
+
+.pdf-btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.pdf-btn-primary {
+    background: var(--pdf-accent);
+    color: #fff;
+}
+
+.pdf-btn-primary:hover:not(:disabled) {
+    background: var(--pdf-accent-hover);
+}
+
+.pdf-btn-secondary {
+    background: var(--pdf-card);
+    color: var(--pdf-text);
+    border: 1px solid var(--pdf-border);
+}
+
+.pdf-file-section {
+    margin-top: 30px;
+}
+
+.pdf-file-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.pdf-file-heading h3 {
+    font-size: 18px;
+    margin: 0;
+}
+
+#pdfFileCount {
+    background: rgba(99, 102, 241, 0.12);
+    color: var(--pdf-accent);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.pdf-hint {
+    color: var(--pdf-muted);
+    font-size: 13px;
+    margin: 10px 0 16px;
+    line-height: 1.5;
+}
+
+.pdf-file-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.pdf-empty-state {
+    padding: 30px 15px;
+    text-align: center;
+    color: var(--pdf-muted);
+    border: 1px solid var(--pdf-border);
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.pdf-file-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    background: var(--pdf-card);
+    border: 1px solid var(--pdf-border);
+    border-radius: 10px;
+    min-width: 0;
+}
+
+.pdf-file-number {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: rgba(99, 102, 241, 0.12);
+    color: var(--pdf-accent);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.pdf-file-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.pdf-file-name {
+    font-size: 14px;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+    margin-bottom: 5px;
+}
+
+.pdf-file-size {
+    font-size: 12px;
+    color: var(--pdf-muted);
+}
+
+.pdf-file-controls {
+    display: flex;
+    gap: 5px;
+    flex-shrink: 0;
+}
+
+.pdf-icon-btn {
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--pdf-border);
+    background: transparent;
+    color: var(--pdf-text);
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.pdf-icon-btn:hover:not(:disabled) {
+    background: rgba(99, 102, 241, 0.12);
+    border-color: var(--pdf-accent);
+}
+
+.pdf-icon-btn:disabled {
+    opacity: 0.25;
+    cursor: not-allowed;
+}
+
+.pdf-icon-btn.pdf-remove-btn:hover {
+    color: #f85149;
+    border-color: #f85149;
+    background: rgba(248, 81, 73, 0.08);
+}
+
+.pdf-merge-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--pdf-border);
+}
+
+.pdf-total-size {
+    color: var(--pdf-muted);
+    font-size: 14px;
+}
+
+.pdf-total-size strong {
+    color: var(--pdf-text);
+}
+
+.pdf-action-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.pdf-status {
+    margin-top: 18px;
+    font-size: 14px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.pdf-status:empty {
+    display: none;
+}
+
+.pdf-status.success {
+    color: #3fb950;
+}
+
+.pdf-status.error {
+    color: #f85149;
+}
+
+.pdf-status.info {
+    color: var(--pdf-muted);
+}
+
+@media (max-width: 600px) {
+    .pdf-merger-tool {
+        padding: 15px;
+    }
+
+    .pdf-upload-area {
+        padding: 30px 15px;
+    }
+
+    .pdf-merger-header h2 {
+        font-size: 24px;
+    }
+
+    .pdf-merge-footer {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .pdf-action-buttons {
+        width: 100%;
+    }
+
+    .pdf-action-buttons .pdf-btn {
+        flex: 1;
+    }
+
+    .pdf-file-item {
+        gap: 8px;
+        padding: 10px;
+    }
+
+    .pdf-file-controls {
+        gap: 3px;
+    }
+
+    .pdf-icon-btn {
+        width: 28px;
+        height: 28px;
+    }
+}

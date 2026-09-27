@@ -1,0 +1,91 @@
+
+<div class="ocr-tool">
+
+    <div class="ocr-header">
+        <h2>Image to Text</h2>
+        <p>Extract text from image</p>
+    </div>
+
+    <div class="ocr-upload-area" id="ocrUploadArea">
+
+        <div class="ocr-upload-icon">
+            🖼️
+        </div>
+
+        <h3>Drop your image here</h3>
+        <p>or select an image from your device</p>
+
+        <input
+            type="file"
+            id="ocrFileInput"
+            accept="image/png,image/jpeg,image/webp,image/bmp"
+            hidden
+        >
+
+        <button
+            type="button"
+            id="ocrBrowseBtn"
+            class="ocr-btn ocr-btn-primary"
+        >
+            Choose Image
+        </button>
+
+        <small>Supports PNG, JPG, JPEG, WEBP, and BMP</small>
+
+    </div>
+
+    <div class="ocr-preview-section" id="ocrPreviewSection" hidden>
+
+        <div class="ocr-section-heading">
+            <h3>Image Preview</h3>
+
+            <button
+                type="button"
+                id="ocrRemoveImage"
+                class="ocr-btn ocr-btn-secondary"
+            >
+                Remove Image
+            </button>
+        </div>
+
+        <div class="ocr-image-preview">
+            <img id="ocrImagePreview" alt="Selected image preview">
+        </div>
+
+        <button
+            type="button"
+            id="ocrExtractBtn"
+            class="ocr-btn ocr-btn-primary"
+        >
+            Extract Text
+        </button>
+
+        <div id="ocrProgress" class="ocr-progress" hidden>
+            Extracting text...
+        </div>
+
+    </div>
+    <div class="ocr-result-section" id="ocrResultSection" hidden>
+
+        <div class="ocr-section-heading">
+            <h3>Extracted Text</h3>
+
+            <button
+                type="button"
+                id="ocrCopyBtn"
+                class="ocr-btn ocr-btn-secondary"
+            >
+                Copy Text
+            </button>
+        </div>
+
+        <textarea
+            id="ocrResult"
+            class="ocr-result"
+            placeholder="Extracted text will appear here..."
+            readonly
+        ></textarea>
+
+    </div>
+
+</div>

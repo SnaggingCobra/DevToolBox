@@ -340,9 +340,3 @@ itpResetButton.addEventListener("click", () => {
 
 itpStatus.textContent = "Ready. Add images to begin.";
 
-
-
-
-
-
-
