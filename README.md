@@ -112,6 +112,26 @@ It supports JPG, PNG, and WebP images, with adjustable quality and downloadable 
 The Image Resizer changes image dimensions with custom sizes, presets, aspect-ratio locking, and stretch, fit, or crop modes.
 It supports JPG, PNG, and WebP output.
 
+### Image to Text
+
+The Image to Text tool uses optical character recognition (OCR) to extract text from images directly in the browser.
+Upload an image containing text and copy the extracted content to your clipboard.
+
+### Image to PDF
+
+The Image to PDF converter combines multiple images into a single PDF document, all in the browser with no uploads.
+You can reorder images by dragging, set the page size, orientation, margin, and image quality before downloading.
+
+### PDF to JPG
+
+The PDF to JPG converter extracts each page from a PDF and saves it as a high-quality JPG image.
+You can adjust the output quality and download all pages at once as a ZIP file.
+
+### PDF Merger
+
+The PDF Merger combines multiple PDF files into one document without any server upload.
+You can drag to reorder the files before merging and then download the finished PDF.
+
 ### AES Encryption
 
 The AES Encryption tool encrypts and decrypts text using a password directly in the browser.
